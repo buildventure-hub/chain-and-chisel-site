@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chain & Chisel Art</title>
+  <meta name="description" content="Chain & Chisel Art — Custom creatures & commissioned carvings." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header id="top" class="site-header">
+    <nav class="nav">
+      <a class="nav-brand" href="#top">Chain & Chisel Art</a>
+      <div class="nav-links">
+        <a href="#featured">Featured</a>
+        <a href="#videos">Videos</a>
+        <a href="#request">Commission</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-wrap">
+        <!-- Put your cleaned sign cutout here -->
+        <img class="hero-sign" src="assets/hero_sign.png" alt="Chain & Chisel Art — Custom Creatures & Commissioned Carvings" />
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#request">Request a Commission</a>
+          <a class="btn" href="#featured">View Featured Work</a>
+          <a class="btn" href="tel:+17203346313">Call / Text: (720) 334-6313</a>
+        </div>
+
+        <div class="hero-sub">Scroll for featured work & videos</div>
+      </div>
+    </section>
+  </header>
+
+  <main class="page">
+    <section id="featured" class="section">
+      <h2 class="section-title">Featured Work</h2>
+
+      <div class="thumb-grid" id="thumbGrid">
+        <!-- Tight portfolio (replace filenames if yours differ) -->
+        <button class="thumb" type="button" data-full="gallery_featured/full/Img11.jpg" aria-label="Open Img11">
+          <img src="gallery_featured/thumbs/Img11-thumb.jpg" alt="Chainsaw carving Img11" loading="lazy" />
+        </button>
+
+        <button class="thumb" type="button" data-full="gallery_featured/full/Img15.jpg" aria-label="Open Img15">
+          <img src="gallery_featured/thumbs/Img15-thumb.jpg" alt="Chainsaw carving Img15" loading="lazy" />
+        </button>
+
+        <button class="thumb" type="button" data-full="gallery_featured/full/Img17.jpg" aria-label="Open Img17">
+          <img src="gallery_featured/thumbs/Img17-thumb.jpg" alt="Chainsaw carving Img17" loading="lazy" />
+        </button>
+
+        <button class="thumb" type="button" data-full="gallery_featured/full/Img21.jpg" aria-label="Open Img21">
+          <img src="gallery_featured/thumbs/Img21-thumb.jpg" alt="Chainsaw carving Img21" loading="lazy" />
+        </button>
+
+        <button class="thumb" type="button" data-full="gallery_featured/full/Img27.jpg" aria-label="Open Img27">
+          <img src="gallery_featured/thumbs/Img27-thumb.jpg" alt="Chainsaw carving Img27" loading="lazy" />
+        </button>
+
+        <button class="thumb" type="button" data-full="gallery_featured/full/Img35.jpg" aria-label="Open Img35">
+          <img src="gallery_featured/thumbs/Img35-thumb.jpg" alt="Chainsaw carving Img35" loading="lazy" />
+        </button>
+
+        <button class="thumb" type="button" data-full="gallery_featured/full/Img39.jpg" aria-label="Open Img39">
+          <img src="gallery_featured/thumbs/Img39-thumb.jpg" alt="Chainsaw carving Img39" loading="lazy" />
+        </button>
+
+        <button class="thumb" type="button" data-full="gallery_featured/full/Img40.jpg" aria-label="Open Img40">
+          <img src="gallery_featured/thumbs/Img40-thumb.jpg" alt="Chainsaw carving Img40" loading="lazy" />
+        </button>
+
+        <button class="thumb" type="button" data-full="gallery_featured/full/Img41.jpg" aria-label="Open Img41">
+          <img src="gallery_featured/thumbs/Img41-thumb.jpg" alt="Chainsaw carving Img41" loading="lazy" />
+        </button>
+
+        <button class="thumb" type="button" data-full="gallery_featured/full/Img43.jpg" aria-label="Open Img43">
+          <img src="gallery_featured/thumbs/Img43-thumb.jpg" alt="Chainsaw carving Img43" loading="lazy" />
+        </button>
+      </div>
+
+      <p class="note">
+        Hover to zoom in place. Click any image for a larger preview.
+      </p>
+    </section>
+
+    <section id="videos" class="section">
+      <h2 class="section-title">Videos</h2>
+
+      <div class="video-grid">
+        <!-- Replace filenames if yours differ -->
+        <div class="video-card">
+          <video controls playsinline preload="metadata">
+            <source src="videos/20240720_120704.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div class="video-card">
+          <video controls playsinline preload="metadata">
+            <source src="videos/20240724_171927.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section id="request" class="section">
+      <h2 class="section-title">Request a Commission</h2>
+
+      <div class="card">
+        <p><strong>Fastest way:</strong> text a photo + size + budget range.</p>
+        <p class="big">
+          <a class="btn primary" href="tel:+17203346313">Call / Text (720) 334-6313</a>
+        </p>
+
+        <div class="mini">
+          <h3>How it works</h3>
+          <ol>
+            <li><strong>Share your idea</strong> (photo or description)</li>
+            <li><strong>Design & quote</strong> (size, wood, timeline, price)</li>
+            <li><strong>Carving & delivery</strong> (pickup or local delivery)</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox preview panel -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div class="lightbox-inner" role="dialog" aria-modal="true">
+      <button class="lb-close" type="button" aria-label="Close preview">×</button>
+      <button class="lb-prev" type="button" aria-label="Previous image">‹</button>
+      <img class="lb-img" alt="Preview" />
+      <button class="lb-next" type="button" aria-label="Next image">›</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>© <span id="year"></span> Chain & Chisel Art</div>
+    <div><a href="faq.html">FAQ</a> · <a href="tel:+17203346313">(720) 334-6313</a></div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
