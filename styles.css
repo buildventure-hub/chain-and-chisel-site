@@ -118,7 +118,7 @@ body {
   overflow: hidden;
 
   /* wood grain behind thumbnails */
-  background: url("assets/wood_tile.jpg") center/cover no-repeat;
+  background: rgba(245,240,230,0.92);
 
   box-shadow: 0 10px 24px rgba(0,0,0,0.14);
   transform: translateZ(0);
