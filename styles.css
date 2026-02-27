@@ -1,152 +1,130 @@
+
 /* ===============================
    GLOBAL
 ================================= */
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: 'Georgia', serif;
-  background-color: #111;
-  color: #f2f2f2;
-  line-height: 1.6;
-}
-
-h1, h2 {
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family: Georgia, serif;
+  background:#111;
+  color:#f2f2f2;
+  line-height:1.6;
 }
 
 /* ===============================
-   MASTERPIECE TOP IMAGE
+   FIXED HEADER (Centered + 100% Larger Logo)
 ================================= */
-
-.masterpiece {
-  width: 100%;
-  overflow: hidden;
+:root{
+  --header-pad-y: 12px;
+  --header-pad-x: 5%;
+  --logo-h: 140px;      /* desktop logo height */
+  --header-border: 1px; /* bottom border thickness */
+  --header-h: calc(var(--logo-h) + (var(--header-pad-y) * 2) + var(--header-border));
 }
 
-.masterpiece-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ===============================
-   LOGO HEADER
-================================= */
-
-.site-header {
-  text-align: center;
-  padding: 50px 20px 30px;
-  background: #111;
-}
-
-.site-logo {
-  max-width: 500px;
-  width: 90%;
-  height: auto;
-}
-
-/* ===============================
-   GALLERY
-================================= */
-
-.gallery {
-  padding: 60px 5%;
-}
-
-.gallery h2 {
-  margin-top: 80px;
-  margin-bottom: 30px;
-  font-size: 28px;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  padding-bottom: 10px;
-}
-
-.gallery-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.gallery-row img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 6px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.gallery-row img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-}
-
-/* ===============================
-   HERO (BOTTOM SECTION)
-================================= */
-
-.hero {
-  margin-top: 100px;
-  padding: 120px 20px;
-  text-align: center;
-  background: linear-gradient(to top, #000 0%, #111 100%);
-}
-
-.hero h1 {
-  font-size: 42px;
-  margin: 0;
-}
-
-/* ===============================
-   RESPONSIVE
-================================= */
-
-@media (max-width: 768px) {
-
-  .gallery h2 {
-    font-size: 22px;
-  }
-
-  .hero h1 {
-    font-size: 30px;
-  }
-
-}
-
-/* ===============================
-   HEADER (Fixed / Static)
-================================= */
 .site-header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: #111;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:1000;
+  background:#111;
+  border-bottom:1px solid rgba(255,255,255,0.12);
 }
 
-/* LCR-friendly container */
 .header-inner{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* left by default; change to center/right if desired */
-  padding: 14px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: var(--header-pad-y) var(--header-pad-x);
 }
 
-/* Keep content from sliding under the fixed header */
-.page{
-  padding-top: 86px; /* adjust if logo/header height changes */
-}
-
-/* Logo sizing */
 .site-logo{
-  height: 52px;
-  width: auto;
-  max-width: 90vw;
+  height: var(--logo-h);
+  width:auto;
+  max-width:95vw;
+}
+
+/* Prevent content sliding under fixed header */
+.page{
+  padding-top: var(--header-h);
+}
+
+/* ===============================
+   MASTERPIECE (Hero Rabbit)
+   Goal: fits on screen at load (under the fixed header)
+================================= */
+.masterpiece{
+  padding: 10px var(--header-pad-x) 0;
+  /* make the hero section itself fit within the remaining viewport */
+  min-height: calc(100vh - var(--header-h));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.masterpiece-img{
+  display:block;
+  width:100%;
+  height: auto;
+  /* ensure the image never exceeds the available viewport area */
+  max-height: calc(100vh - var(--header-h) - 20px);
+  object-fit: contain;
+  object-position: center 18%;
+}
+
+/* ===============================
+   GALLERY THUMB CONTROL
+================================= */
+.gallery{
+  padding: 40px var(--header-pad-x) 70px;
+}
+
+.gallery-row{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:22px;
+}
+
+.gallery-row img{
+  display:block;
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:10px;
+  background:rgba(255,255,255,0.04);
+}
+
+/* Safety net */
+.gallery img{ max-width:100%; }
+
+/* ===============================
+   BOTTOM HERO
+================================= */
+.hero{
+  padding:110px 20px 130px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,0.12);
+  background:linear-gradient(to top,#000 0%,#111 100%);
+}
+
+.hero h1{
+  margin:0;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:42px;
+}
+
+/* ===============================
+   MOBILE
+================================= */
+@media (max-width:768px){
+  :root{
+    --logo-h: 100px;
+    --header-h: calc(var(--logo-h) + (var(--header-pad-y) * 2) + var(--header-border));
+  }
+  .gallery-row img{ height:240px; }
+  .hero h1{ font-size:30px; }
+  .masterpiece-img{
+    max-height: calc(100vh - var(--header-h) - 16px);
+    object-position: center 20%;
+  }
 }
