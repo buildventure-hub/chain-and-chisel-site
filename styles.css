@@ -1,4 +1,3 @@
-
 /* ===============================
    GLOBAL
 ================================= */
@@ -12,89 +11,130 @@ body{
 }
 
 /* ===============================
-   FIXED HEADER (Centered + 100% Larger Logo)
+   FLOATING LOGO (NO BANNER)
 ================================= */
 :root{
-  --header-pad-y: 12px;
-  --header-pad-x: 5%;
-  --logo-h: 140px;      /* desktop logo height */
-  --header-border: 1px; /* bottom border thickness */
-  --header-h: calc(var(--logo-h) + (var(--header-pad-y) * 2) + var(--header-border));
+  --logo-h-desktop: 180px; /* ~75% larger */
+  --logo-h-mobile: 132px;
+
+  --thumb-w: 260px;        /* fixed thumb tile width so single items don't blow up */
+  --thumb-h: 320px;
+  --thumb-h-mobile: 240px;
+
+  --thumb-face-y: 22%;     /* move image DOWN in frame (shows faces better) */
 }
 
-.site-header{
-  position:fixed;
-  top:0; left:0; right:0;
-  z-index:1000;
-  background:#111;
-  border-bottom:1px solid rgba(255,255,255,0.12);
+.floating-logo{
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 2000;
+
+  height: var(--logo-h-desktop);
+  width: auto;
+  max-width: calc(100vw - 20px);
+
+  padding: 10px 14px;
+  background: rgba(17,17,17,0.80);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 12px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
 }
 
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding: var(--header-pad-y) var(--header-pad-x);
-}
-
-.site-logo{
-  height: var(--logo-h);
-  width:auto;
-  max-width:95vw;
-}
-
-/* Prevent content sliding under fixed header */
-.page{
-  padding-top: var(--header-h);
-}
+.page{ padding-top: 0; }
 
 /* ===============================
-   MASTERPIECE (Hero Rabbit)
-   Goal: fits on screen at load (under the fixed header)
+   MASTERPIECE (Rabbit Hero)
 ================================= */
 .masterpiece{
-  padding: 10px var(--header-pad-x) 0;
-  /* make the hero section itself fit within the remaining viewport */
-  min-height: calc(100vh - var(--header-h));
+  padding: 20px 5% 0;
+  min-height: 100vh;
   display:flex;
   align-items:center;
   justify-content:center;
+
+  /* keep hero from sitting under logo block */
+  padding-top: calc(var(--logo-h-desktop) + 26px);
 }
 
 .masterpiece-img{
   display:block;
   width:100%;
-  height: auto;
-  /* ensure the image never exceeds the available viewport area */
-  max-height: calc(100vh - var(--header-h) - 20px);
+  height:auto;
+  max-height: calc(100vh - (var(--logo-h-desktop) + 70px));
   object-fit: contain;
-  object-position: center 18%;
+  object-position: center 16%;
 }
 
 /* ===============================
-   GALLERY THUMB CONTROL
+   GALLERY
+   Fixes:
+   1) Thumbs show faces better (object-position lowered)
+   2) Single-image rows (Cartoon, Hunny pot) no longer expand full width
 ================================= */
 .gallery{
-  padding: 40px var(--header-pad-x) 70px;
+  padding: 40px 5% 70px;
 }
 
+.section-title,
+.gallery h2{
+  margin: 60px 0 18px;
+  font-size: 26px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 10px;
+}
+
+/* IMPORTANT: fixed-width grid columns */
 .gallery-row{
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap:22px;
+  grid-template-columns: repeat(auto-fill, minmax(var(--thumb-w), var(--thumb-w)));
+  gap: 22px;
+  justify-content: start;   /* keeps grid left-aligned */
 }
 
+/* If you want rows centered when there are only 1–2 items, change to:
+   justify-content: center;
+*/
+
+.gallery-row a{
+  display:block;
+  width: var(--thumb-w);
+  max-width: 100%;
+  text-decoration:none;
+}
+
+/* Thumbnail styling */
 .gallery-row img{
   display:block;
   width:100%;
-  height:320px;
-  object-fit:cover;
-  border-radius:10px;
-  background:rgba(255,255,255,0.04);
+  height: var(--thumb-h);
+  object-fit: cover;
+  object-position: center var(--thumb-face-y); /* move image down within crop */
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-/* Safety net */
+.gallery-row img:hover{
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.55);
+}
+
+/* Safety net: any loose images inside gallery still behave like thumbs */
 .gallery img{ max-width:100%; }
+.gallery > img,
+.gallery p img,
+.gallery div:not(.gallery-row) > img{
+  width: var(--thumb-w);
+  height: var(--thumb-h);
+  object-fit: cover;
+  object-position: center var(--thumb-face-y);
+  border-radius: 10px;
+  display:block;
+}
 
 /* ===============================
    BOTTOM HERO
@@ -117,14 +157,39 @@ body{
    MOBILE
 ================================= */
 @media (max-width:768px){
-  :root{
-    --logo-h: 100px;
-    --header-h: calc(var(--logo-h) + (var(--header-pad-y) * 2) + var(--header-border));
+  .floating-logo{
+    height: var(--logo-h-mobile);
+    padding: 8px 12px;
   }
-  .gallery-row img{ height:240px; }
-  .hero h1{ font-size:30px; }
+
+  .masterpiece{
+    padding-top: calc(var(--logo-h-mobile) + 22px);
+  }
+
   .masterpiece-img{
-    max-height: calc(100vh - var(--header-h) - 16px);
-    object-position: center 20%;
+    max-height: calc(100vh - (var(--logo-h-mobile) + 60px));
+    object-position: center 18%;
   }
+
+  :root{
+    --thumb-w: 180px;
+    --thumb-h: var(--thumb-h-mobile);
+    --thumb-face-y: 24%;
+  }
+
+  .gallery-row{
+    grid-template-columns: repeat(auto-fill, minmax(var(--thumb-w), var(--thumb-w)));
+    justify-content: start;
+  }
+
+  .gallery-row a{
+    width: var(--thumb-w);
+  }
+
+  .gallery-row img{ height: var(--thumb-h); }
+  .gallery > img,
+  .gallery p img,
+  .gallery div:not(.gallery-row) > img{ height: var(--thumb-h); }
+
+  .hero h1{ font-size:30px; }
 }
