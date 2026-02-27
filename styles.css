@@ -1,4 +1,3 @@
-
 /* ===============================
    GLOBAL
 ================================= */
@@ -117,4 +116,37 @@ h1, h2 {
     font-size: 30px;
   }
 
+}
+
+/* ===============================
+   HEADER (Fixed / Static)
+================================= */
+.site-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #111;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+/* LCR-friendly container */
+.header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* left by default; change to center/right if desired */
+  padding: 14px 5%;
+}
+
+/* Keep content from sliding under the fixed header */
+.page{
+  padding-top: 86px; /* adjust if logo/header height changes */
+}
+
+/* Logo sizing */
+.site-logo{
+  height: 52px;
+  width: auto;
+  max-width: 90vw;
 }
