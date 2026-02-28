@@ -24,52 +24,134 @@
 
     <div class="content-card">
       <p>
-        Fill this out, pass the “Are you human” check, then click Email.
+        Fill out the request details below. After you pass the “Are you human” check, the Email button will unlock.
       </p>
 
       <p style="opacity:0.85;">
-        Cloudflare states server-side token validation is mandatory for real bot protection. 
+        Note: Turnstile tokens are meant to be validated server-side for real bot protection. A mailto-only workflow can’t validate the token.
       </p>
 
-      <form id="orderForm">
-        <label>What would you like carved?</label><br/>
-        <input id="piece" type="text" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" placeholder="e.g., rabbit, owl, memorial piece" /><br/><br/>
+      <form id="orderForm" onsubmit="return false;">
+        <h3 style="margin-top:0;">Contact</h3>
 
-        <label>Size / location / notes</label><br/>
-        <textarea id="notes" rows="6" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" placeholder="Include size, where it will live, deadline, budget range, etc."></textarea><br/><br/>
+        <label for="firstName">First name</label><br/>
+        <input id="firstName" type="text" autocomplete="given-name"
+               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" /><br/><br/>
+
+        <label for="lastName">Last name</label><br/>
+        <input id="lastName" type="text" autocomplete="family-name"
+               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" /><br/><br/>
+
+        <label for="phone">Phone</label><br/>
+        <input id="phone" type="tel" autocomplete="tel"
+               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" placeholder="(###) ###-####" /><br/><br/>
+
+        <h3>Address</h3>
+
+        <label for="street">Street address</label><br/>
+        <input id="street" type="text" autocomplete="street-address"
+               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" /><br/><br/>
+
+        <label for="city">City</label><br/>
+        <input id="city" type="text" autocomplete="address-level2"
+               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" /><br/><br/>
+
+        <label for="zip">ZIP</label><br/>
+        <input id="zip" type="text" inputmode="numeric" autocomplete="postal-code"
+               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" /><br/><br/>
+
+        <h3>Tree / Material</h3>
+
+        <label for="species">Tree species you would like carved</label><br/>
+        <input id="species" type="text"
+               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" placeholder="e.g., pine, cottonwood, aspen…" /><br/><br/>
+
+        <label for="circumference">Trunk circumference</label><br/>
+        <input id="circumference" type="text"
+               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" placeholder="e.g., 48 in (or 122 cm)" /><br/><br/>
+
+        <div style="display:grid; gap:10px; margin: 6px 0 18px;">
+          <label style="display:flex; gap:10px; align-items:center;">
+            <input id="treeDry" type="checkbox" />
+            <span>Tree is dry (sitting for years)</span>
+          </label>
+          <label style="display:flex; gap:10px; align-items:center;">
+            <input id="treeGreen" type="checkbox" />
+            <span>Tree is green (freshly cut)</span>
+          </label>
+        </div>
+
+        <h3>Project description</h3>
+        <label for="description">Description</label><br/>
+        <textarea id="description" rows="7"
+                  style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;"
+                  placeholder="Tell us what you want carved, size, style, deadline, budget range, delivery needs, photos/links, etc."></textarea><br/><br/>
 
         <!-- Turnstile widget -->
-        <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-callback="onHuman"></div>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAACjp72zfI1VMydXX" data-callback="onHuman"></div>
 
         <br/>
         <a id="emailBtn" class="plank-link" href="#" onclick="return false;"><span>Email Order Request</span></a>
-
         <p style="opacity:0.8; margin-top:10px;">
-          Update <code>YOUR_TURNSTILE_SITE_KEY</code> and <code>YOUR_EMAIL_ADDRESS_HERE</code> in this file.
+          Turnstile is enabled for this page.
         </p>
       </form>
     </div>
   </main>
 
   <script>
-    function onHuman(token){
-      const piece = document.getElementById('piece').value || '';
-      const notes = document.getElementById('notes').value || '';
-      const subject = encodeURIComponent('Chain & Chisel Order Request');
-      const body = encodeURIComponent(
-        'Piece: ' + piece + '\n\n' +
-        'Notes: ' + notes + '\n\n' +
-        'Turnstile token (not server-validated): ' + token
-      );
+    const ORDER_EMAIL = "info@chainandchisel.art";
 
-      const to = 'YOUR_EMAIL_ADDRESS_HERE';
-      const mailto = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+    function buildBody(token){
+      const first = document.getElementById('firstName').value || "";
+      const last = document.getElementById('lastName').value || "";
+      const phone = document.getElementById('phone').value || "";
+
+      const street = document.getElementById('street').value || "";
+      const city = document.getElementById('city').value || "";
+      const zip = document.getElementById('zip').value || "";
+
+      const species = document.getElementById('species').value || "";
+      const circumference = document.getElementById('circumference').value || "";
+      const dry = document.getElementById('treeDry').checked ? "Yes" : "No";
+      const green = document.getElementById('treeGreen').checked ? "Yes" : "No";
+
+      const desc = document.getElementById('description').value || "";
+
+      return [
+        "CONTACT",
+        "Name: " + (first + " " + last).trim(),
+        "Phone: " + phone,
+        "",
+        "ADDRESS",
+        "Street: " + street,
+        "City: " + city,
+        "ZIP: " + zip,
+        "",
+        "TREE / MATERIAL",
+        "Species requested: " + species,
+        "Trunk circumference: " + circumference,
+        "Tree dry (sitting for years): " + dry,
+        "Tree green (freshly cut): " + green,
+        "",
+        "DESCRIPTION",
+        desc,
+        "",
+        "Turnstile token (not server-validated): " + (token || "")
+      ].join("\n");
+    }
+
+    // Unlock mailto after Turnstile success callback (client-side only).
+    function onHuman(token){
+      const subject = encodeURIComponent("Chain & Chisel Order Request");
+      const body = encodeURIComponent(buildBody(token));
+      const mailto = "mailto:" + ORDER_EMAIL + "?subject=" + subject + "&body=" + body;
 
       const btn = document.getElementById('emailBtn');
       btn.href = mailto;
       btn.onclick = null;
       btn.setAttribute('target','_blank');
-      btn.querySelector('span').textContent = 'Click to Email (Unlocked)';
+      btn.querySelector('span').textContent = "Click to Email (Unlocked)";
     }
   </script>
 </body>
