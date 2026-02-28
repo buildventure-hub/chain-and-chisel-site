@@ -1,118 +1,169 @@
 /* ===============================
-   GLOBAL
+   Chain & Chisel — Sidebar Brand + Wood Plank Nav
+   - Logo stays fixed on the side (no full-width banner)
+   - Page content scrolls UNDER it
+   - Wood plank buttons with "burnt" lettering
 ================================= */
+
+:root{
+  --bg: #111;
+  --fg: #f2f2f2;
+
+  --sidebar-w: 260px;
+  --sidebar-pad: 16px;
+
+  --logo-max-w: 228px;      /* readable but not banner */
+  --logo-max-h: 190px;
+
+  --plank-radius: 12px;
+  --plank-border: rgba(255,255,255,0.16);
+  --plank-shadow: 0 10px 24px rgba(0,0,0,0.55);
+
+  --thumb-w: 260px;
+  --thumb-h: 320px;
+  --thumb-face-y: 22%;      /* lower crop target so faces show */
+}
+
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
 body{
   font-family: Georgia, serif;
-  background:#111;
-  color:#f2f2f2;
-  line-height:1.6;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
 }
 
-/* ===============================
-   FLOATING LOGO (NO BANNER)
-================================= */
-:root{
-  --logo-h-desktop: 180px; /* ~75% larger */
-  --logo-h-mobile: 132px;
-
-  --thumb-w: 260px;        /* fixed thumb tile width so single items don't blow up */
-  --thumb-h: 320px;
-  --thumb-h-mobile: 240px;
-
-  --thumb-face-y: 22%;     /* move image DOWN in frame (shows faces better) */
-}
-
-.floating-logo{
+/* ===== Sidebar brand ===== */
+.side-brand{
   position: fixed;
-  top: 10px;
-  left: 10px;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-w);
+  height: 100vh;
+  padding: var(--sidebar-pad);
   z-index: 2000;
 
-  height: var(--logo-h-desktop);
-  width: auto;
-  max-width: calc(100vw - 20px);
-
-  padding: 10px 14px;
-  background: rgba(17,17,17,0.80);
-  border: 1px solid rgba(255,255,255,0.14);
-  border-radius: 12px;
-  box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+  background: rgba(17,17,17,0.72);
+  border-right: 1px solid rgba(255,255,255,0.10);
   backdrop-filter: blur(6px);
 }
 
-.page{ padding-top: 0; }
+.brand-logo{
+  display:block;
+  width: 100%;
+  max-width: var(--logo-max-w);
+  max-height: var(--logo-max-h);
+  height: auto;
+  margin: 6px 0 14px;
+}
 
-/* ===============================
-   MASTERPIECE (Rabbit Hero)
-================================= */
+/* Wood plank nav */
+.plank-nav{
+  display: grid;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.plank-link{
+  display:block;
+  text-decoration:none;
+  color: #2b1a10; /* burnt/dark brown */
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align:center;
+
+  padding: 14px 12px;
+  border-radius: var(--plank-radius);
+  border: 1px solid var(--plank-border);
+  box-shadow: var(--plank-shadow);
+
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0.18)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(210,160,105,0.85) 0px,
+      rgba(210,160,105,0.85) 10px,
+      rgba(190,135,85,0.85) 10px,
+      rgba(190,135,85,0.85) 22px
+    );
+  position: relative;
+  overflow: hidden;
+}
+
+.plank-link::after{
+  content:"";
+  position:absolute;
+  inset:-10px;
+  background: radial-gradient(circle at 30% 20%, rgba(0,0,0,0.12), rgba(0,0,0,0.42));
+  pointer-events:none;
+}
+
+.plank-link span{
+  position: relative;
+  z-index: 1;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.18),
+    0 2px 8px rgba(0,0,0,0.45);
+}
+
+.plank-link:hover{
+  transform: translateY(-1px);
+}
+
+/* ===== Main layout (content scrolls under the fixed sidebar) ===== */
+.page{
+  margin-left: var(--sidebar-w);
+  padding: 22px 5% 80px;
+}
+
+/* ===== Masterpiece (top) ===== */
 .masterpiece{
-  padding: 20px 5% 0;
   min-height: 100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-
-  /* keep hero from sitting under logo block */
-  padding-top: calc(var(--logo-h-desktop) + 26px);
+  padding: 10px 0 30px;
 }
 
 .masterpiece-img{
-  display:block;
-  width:100%;
-  height:auto;
-  max-height: calc(100vh - (var(--logo-h-desktop) + 70px));
+  width: 100%;
+  height: auto;
+  max-height: 92vh;
   object-fit: contain;
   object-position: center 16%;
 }
 
-/* ===============================
-   GALLERY
-   Fixes:
-   1) Thumbs show faces better (object-position lowered)
-   2) Single-image rows (Cartoon, Hunny pot) no longer expand full width
-================================= */
-.gallery{
-  padding: 40px 5% 70px;
-}
-
-.section-title,
-.gallery h2{
-  margin: 60px 0 18px;
-  font-size: 26px;
+/* ===== Sections ===== */
+.section-title{
+  margin: 70px 0 16px;
+  font-size: 24px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.18);
   padding-bottom: 10px;
 }
 
-/* IMPORTANT: fixed-width grid columns */
+/* ===== Gallery thumbs ===== */
 .gallery-row{
-  display:grid;
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--thumb-w), var(--thumb-w)));
   gap: 22px;
-  justify-content: start;   /* keeps grid left-aligned */
+  justify-content: start;
 }
-
-/* If you want rows centered when there are only 1–2 items, change to:
-   justify-content: center;
-*/
 
 .gallery-row a{
   display:block;
   width: var(--thumb-w);
-  max-width: 100%;
   text-decoration:none;
 }
 
-/* Thumbnail styling */
 .gallery-row img{
   display:block;
-  width:100%;
+  width: 100%;
   height: var(--thumb-h);
   object-fit: cover;
-  object-position: center var(--thumb-face-y); /* move image down within crop */
+  object-position: center var(--thumb-face-y);
   border-radius: 10px;
   background: rgba(255,255,255,0.04);
   transition: transform .25s ease, box-shadow .25s ease;
@@ -123,73 +174,70 @@ body{
   box-shadow: 0 18px 45px rgba(0,0,0,0.55);
 }
 
-/* Safety net: any loose images inside gallery still behave like thumbs */
-.gallery img{ max-width:100%; }
-.gallery > img,
-.gallery p img,
-.gallery div:not(.gallery-row) > img{
-  width: var(--thumb-w);
-  height: var(--thumb-h);
-  object-fit: cover;
-  object-position: center var(--thumb-face-y);
-  border-radius: 10px;
-  display:block;
-}
+.gallery img{ max-width: 100%; }
 
-/* ===============================
-   BOTTOM HERO
-================================= */
+/* ===== Footer hero ===== */
 .hero{
-  padding:110px 20px 130px;
+  margin-top: 90px;
+  padding: 110px 20px 130px;
   text-align:center;
-  border-top:1px solid rgba(255,255,255,0.12);
-  background:linear-gradient(to top,#000 0%,#111 100%);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  background: linear-gradient(to top, #000 0%, #111 100%);
 }
-
 .hero h1{
   margin:0;
   letter-spacing:2px;
   text-transform:uppercase;
-  font-size:42px;
+  font-size: 40px;
+  font-weight: 500;
 }
 
-/* ===============================
-   MOBILE
-================================= */
-@media (max-width:768px){
-  .floating-logo{
-    height: var(--logo-h-mobile);
-    padding: 8px 12px;
-  }
+/* ===== Simple content pages ===== */
+.content-card{
+  max-width: 980px;
+  padding: 22px 22px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+}
 
-  .masterpiece{
-    padding-top: calc(var(--logo-h-mobile) + 22px);
-  }
-
-  .masterpiece-img{
-    max-height: calc(100vh - (var(--logo-h-mobile) + 60px));
-    object-position: center 18%;
-  }
-
+/* ===== Mobile: sidebar becomes top bar ===== */
+@media (max-width: 860px){
   :root{
+    --sidebar-w: 100vw;
     --thumb-w: 180px;
-    --thumb-h: var(--thumb-h-mobile);
+    --thumb-h: 240px;
     --thumb-face-y: 24%;
   }
 
-  .gallery-row{
-    grid-template-columns: repeat(auto-fill, minmax(var(--thumb-w), var(--thumb-w)));
-    justify-content: start;
+  .side-brand{
+    width: 100vw;
+    height: auto;
+    position: fixed;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
   }
 
-  .gallery-row a{
-    width: var(--thumb-w);
+  .brand-logo{
+    max-width: 220px;
+    max-height: 120px;
+    margin: 6px auto 10px;
   }
 
-  .gallery-row img{ height: var(--thumb-h); }
-  .gallery > img,
-  .gallery p img,
-  .gallery div:not(.gallery-row) > img{ height: var(--thumb-h); }
+  .plank-nav{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
 
-  .hero h1{ font-size:30px; }
+  .plank-link{
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  .page{
+    margin-left: 0;
+    padding-top: 220px;
+  }
+
+  .hero h1{ font-size: 28px; }
 }

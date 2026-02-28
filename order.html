@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Request | Chain & Chisel</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Cloudflare Turnstile widget script -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+
+  <aside class="side-brand" aria-label="Site navigation">
+    <img class="brand-logo" src="Chain-&-Chisel-Logo.png" alt="Chain & Chisel Logo" />
+    <nav class="plank-nav">
+      <a class="plank-link" href="index.html"><span>Gallery</span></a>
+      <a class="plank-link" href="about.html"><span>About</span></a>
+      <a class="plank-link" href="faq.html"><span>FAQ</span></a>
+    </nav>
+  </aside>
+
+  <main class="page">
+    <h1 class="section-title">Order Request</h1>
+
+    <div class="content-card">
+      <p>
+        Fill this out, pass the “Are you human” check, then click Email.
+      </p>
+
+      <p style="opacity:0.85;">
+        Cloudflare states server-side token validation is mandatory for real bot protection. 
+      </p>
+
+      <form id="orderForm">
+        <label>What would you like carved?</label><br/>
+        <input id="piece" type="text" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" placeholder="e.g., rabbit, owl, memorial piece" /><br/><br/>
+
+        <label>Size / location / notes</label><br/>
+        <textarea id="notes" rows="6" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" placeholder="Include size, where it will live, deadline, budget range, etc."></textarea><br/><br/>
+
+        <!-- Turnstile widget -->
+        <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-callback="onHuman"></div>
+
+        <br/>
+        <a id="emailBtn" class="plank-link" href="#" onclick="return false;"><span>Email Order Request</span></a>
+
+        <p style="opacity:0.8; margin-top:10px;">
+          Update <code>YOUR_TURNSTILE_SITE_KEY</code> and <code>YOUR_EMAIL_ADDRESS_HERE</code> in this file.
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    function onHuman(token){
+      const piece = document.getElementById('piece').value || '';
+      const notes = document.getElementById('notes').value || '';
+      const subject = encodeURIComponent('Chain & Chisel Order Request');
+      const body = encodeURIComponent(
+        'Piece: ' + piece + '\n\n' +
+        'Notes: ' + notes + '\n\n' +
+        'Turnstile token (not server-validated): ' + token
+      );
+
+      const to = 'YOUR_EMAIL_ADDRESS_HERE';
+      const mailto = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+
+      const btn = document.getElementById('emailBtn');
+      btn.href = mailto;
+      btn.onclick = null;
+      btn.setAttribute('target','_blank');
+      btn.querySelector('span').textContent = 'Click to Email (Unlocked)';
+    }
+  </script>
+</body>
+</html>
