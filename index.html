@@ -6,6 +6,43 @@
   <title>Chain & Chisel | Chainsaw Carvings</title>
   <link rel="stylesheet" href="styles.css" />
   <meta name="description" content="Rustic chainsaw-carved wooden sculptures by Chain & Chisel." />
+
+  <style>
+    /* Videos section (inline so you don't have to touch styles.css) */
+    .videos-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 22px;
+      margin-top: 16px;
+    }
+    .video-card{
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      padding: 12px;
+    }
+    .video-card video{
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display:block;
+      background: rgba(0,0,0,0.35);
+    }
+    .video-title{
+      margin: 10px 2px 2px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.9;
+      font-size: 14px;
+    }
+    .video-note{
+      opacity: 0.8;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -80,6 +117,29 @@
         </a>
       </div>
     </section>
+
+
+    <section id="videos" class="videos" aria-label="Videos">
+      <h2 class="section-title">Videos</h2>
+
+      <p class="video-note">
+        Insufficient information to restore your exact video filenames/paths.
+        Add your video files to your repo (commonly <code>/videos/</code>) and then update the <code>src</code> attributes below.
+      </p>
+
+      <div class="videos-grid">
+
+        <div class="video-card">
+          <video controls preload="metadata" poster="videos/bear-cubs-poster.jpg">
+            <source src="videos/bear-cubs.mp4" type="video/mp4">
+            
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-title">Bear Cubs</div>
+        </div>
+      </div>
+    </section>
+
 
     <section class="hero" aria-label="Footer hero">
       <h1>RUSTIC CHAINSAW ART</h1>
