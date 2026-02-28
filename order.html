@@ -88,71 +88,105 @@
                   placeholder="Tell us what you want carved, size, style, deadline, budget range, delivery needs, photos/links, etc."></textarea><br/><br/>
 
         <!-- Turnstile widget -->
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAACjp72zfI1VMydXX" data-callback="onHuman"></div>
+        <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-callback="onHuman"></div>
 
         <br/>
-        <a id="emailBtn" class="plank-link" href="#" onclick="return false;"><span>Email Order Request</span></a>
+        <button id="submitBtn" class="plank-link" type="button" disabled><span>Send Request</span></button>
+        <p id="formStatus" style="opacity:0.9; margin-top:10px;"></p>
         <p style="opacity:0.8; margin-top:10px;">
-          Turnstile is enabled for this page.
+          Replace <code>YOUR_TURNSTILE_SITE_KEY</code> with your Cloudflare Turnstile site key.
         </p>
       </form>
     </div>
   </main>
+<script>
+  let turnstileToken = "";
 
-  <script>
-    const ORDER_EMAIL = "info@chainandchisel.art";
+  function buildPayload(){
+    return {
+      firstName: document.getElementById('firstName').value || "",
+      lastName: document.getElementById('lastName').value || "",
+      phone: document.getElementById('phone').value || "",
+      street: document.getElementById('street').value || "",
+      city: document.getElementById('city').value || "",
+      zip: document.getElementById('zip').value || "",
+      species: document.getElementById('species').value || "",
+      circumference: document.getElementById('circumference').value || "",
+      treeDry: document.getElementById('treeDry').checked,
+      treeGreen: document.getElementById('treeGreen').checked,
+      description: document.getElementById('description').value || "",
+      turnstileToken
+    };
+  }
 
-    function buildBody(token){
-      const first = document.getElementById('firstName').value || "";
-      const last = document.getElementById('lastName').value || "";
-      const phone = document.getElementById('phone').value || "";
+  function setStatus(msg, isError=false){
+    const el = document.getElementById('formStatus');
+    if(!el) return;
+    el.textContent = msg;
+    el.style.color = isError ? "#ffb3b3" : "#cfe8cf";
+  }
 
-      const street = document.getElementById('street').value || "";
-      const city = document.getElementById('city').value || "";
-      const zip = document.getElementById('zip').value || "";
+  // Turnstile success callback (token provided by Cloudflare)
+  function onHuman(token){
+    turnstileToken = token || "";
+    const btn = document.getElementById('submitBtn');
+    if(btn){
+      btn.disabled = !turnstileToken;
+    }
+    if(turnstileToken){
+      setStatus("Verified. You can send your request now.", false);
+    }
+  }
 
-      const species = document.getElementById('species').value || "";
-      const circumference = document.getElementById('circumference').value || "";
-      const dry = document.getElementById('treeDry').checked ? "Yes" : "No";
-      const green = document.getElementById('treeGreen').checked ? "Yes" : "No";
-
-      const desc = document.getElementById('description').value || "";
-
-      return [
-        "CONTACT",
-        "Name: " + (first + " " + last).trim(),
-        "Phone: " + phone,
-        "",
-        "ADDRESS",
-        "Street: " + street,
-        "City: " + city,
-        "ZIP: " + zip,
-        "",
-        "TREE / MATERIAL",
-        "Species requested: " + species,
-        "Trunk circumference: " + circumference,
-        "Tree dry (sitting for years): " + dry,
-        "Tree green (freshly cut): " + green,
-        "",
-        "DESCRIPTION",
-        desc,
-        "",
-        "Turnstile token (not server-validated): " + (token || "")
-      ].join("\n");
+  async function submitRequest(){
+    const btn = document.getElementById('submitBtn');
+    if(!turnstileToken){
+      setStatus("Please complete the verification first.", true);
+      return;
     }
 
-    // Unlock mailto after Turnstile success callback (client-side only).
-    function onHuman(token){
-      const subject = encodeURIComponent("Chain & Chisel Order Request");
-      const body = encodeURIComponent(buildBody(token));
-      const mailto = "mailto:" + ORDER_EMAIL + "?subject=" + subject + "&body=" + body;
+    const payload = buildPayload();
 
-      const btn = document.getElementById('emailBtn');
-      btn.href = mailto;
-      btn.onclick = null;
-      btn.setAttribute('target','_blank');
-      btn.querySelector("span").textContent = "Click to Email";
+    // Minimal required fields
+    if(!payload.firstName || !payload.lastName || !payload.phone){
+      setStatus("Please fill in First name, Last name, and Phone.", true);
+      return;
     }
-  </script>
+    if(!payload.description){
+      setStatus("Please add a short description of what you want carved.", true);
+      return;
+    }
+
+    if(btn) btn.disabled = true;
+    setStatus("Sending…", false);
+
+    try{
+      const res = await fetch("/api/order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json().catch(()=> ({}));
+
+      if(!res.ok || !data.ok){
+        throw new Error(data.error || ("Request failed (" + res.status + ")"));
+      }
+
+      setStatus("Sent! We'll get back to you soon.", false);
+    }catch(err){
+      setStatus(String(err.message || err), true);
+      if(btn) btn.disabled = false;
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    const btn = document.getElementById('submitBtn');
+    if(btn){
+      btn.addEventListener("click", submitRequest);
+    }
+  });
+</script>
+
 </body>
 </html>
