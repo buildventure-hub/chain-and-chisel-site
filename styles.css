@@ -1,97 +1,160 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+/* Global */
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family: Georgia, serif;
+  background:#111;
+  color:#f2f2f2;
+  line-height:1.6;
 }
 
-.site-header {
-  position: relative;
-  text-align: center;
-  padding: 40px 0;
-  background: transparent;
+/* Fixed header (logo stays put) */
+.site-header{
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:1000;
+  background:#111;
+  border-bottom:1px solid rgba(255,255,255,0.12);
 }
 
-.site-logo {
-  max-width: 420px;
-  width: 90%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+.header-inner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 16px 8px;
 }
 
-.hero {
-  height: 60vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.site-logo{
+  display:block;
+  width:min(520px, 92vw);
+  height:auto;
 }
 
-section {
-  padding: 60px 20px;
+/* Prevent content sliding under fixed header */
+.page{ padding-top: 310px; }
+
+/* Masterpiece */
+.masterpiece{
+  padding: 10px 5% 0;
+}
+.masterpiece-img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height: 78vh;
+  object-fit: contain;
 }
 
-/* --- Plank image navigation (always vertical, never horizontal) --- */
+/* Gallery */
+.gallery{ padding: 40px 5% 70px; }
+.section-title{
+  margin: 60px 0 18px;
+  font-size: 26px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 10px;
+}
+
+.gallery-row{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.gallery-row a{ display:block; text-decoration:none; }
+
+/* Make thumbnails consistent */
+.gallery-row img{
+  display:block;
+  width:100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.gallery-row img:hover{
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.55);
+}
+
+/* Bottom hero */
+.hero{
+  padding: 110px 20px 130px;
+  text-align:center;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  background: linear-gradient(to top, #000 0%, #111 100%);
+}
+.hero h1{
+  margin:0;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 42px;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .page{ padding-top: 78px; }
+  .site-logo{ height: 46px; }
+  .gallery-row img{ height: 240px; }
+  .hero h1{ font-size: 30px; }
+}
+
+/* Plank Nav (always vertical; text centered on the plank) */
 .plank-nav{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  margin: 18px auto 10px;
-  padding: 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  padding: 6px 16px 16px;
 }
 
-/* Keep buttons a sane size */
 .plank-link{
-  position: relative;
-  display: block;
-  width: min(260px, 92vw);
-  text-decoration: none;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  transform-origin: center;
+  position:relative;
+  display:block;
+  width:min(220px, 86vw);
+  text-decoration:none;
+  background:transparent;
+  padding:0;
+  border:0;
+  transform-origin:center;
 }
 
-/* Image fills the clickable area */
+.plank-link.plank-wide{
+  width:min(260px, 86vw); /* plank-button-4 is a bit wider */
+}
+
 .plank-img{
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 18px;
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:18px;
 }
 
-/* Centered label on the board */
 .plank-text{
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: rgba(25, 14, 8, 0.92);
   text-shadow: 0 1px 0 rgba(255,255,255,0.18), 0 2px 10px rgba(0,0,0,0.35);
-  pointer-events: none;
+  pointer-events:none;
 }
 
-/* Press effect */
+.plank-link:hover{ transform: translateY(-1px); }
 .plank-link:active{ transform: scale(0.97); }
 
-/* Optional hover */
-.plank-link:hover{ transform: translateY(-1px); }
-
-/* If plank-button-4 is used elsewhere, allow a wider variant */
-.plank-link.plank-4{ width: min(340px, 92vw); }
-
-/* Logo sizing: keep readable but not a full banner */
-.brand-logo{
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+/* If header grows on very small screens, allow more offset */
+@media (max-width: 420px){
+  .page{ padding-top: 340px; }
 }
