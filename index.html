@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chain &amp; Chisel | Chainsaw Carvings</title>
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=4" />
   <meta name="description" content="Chainsaw carved wooden sculptures: rabbit, owl, cub, bear, and custom rustic art by Chain &amp; Chisel." />
 </head>
 
@@ -129,6 +129,88 @@
       </div>
     </main>
   </div>
+
+<!-- Lightbox (full-size image overlay) -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image">×</button>
+
+  <button class="lightbox-nav prev" id="lightboxPrev" type="button" aria-label="Previous image">
+    <img class="lightbox-nav-img" src="assets/buttons/plank-button-2.png?v=3" alt="">
+    <span class="lightbox-nav-arrow" aria-hidden="true">←</span>
+  </button>
+
+  <img class="lightbox-img" id="lightboxImg" alt="">
+
+  <button class="lightbox-nav next" id="lightboxNext" type="button" aria-label="Next image">
+    <img class="lightbox-nav-img" src="assets/buttons/plank-button-2.png?v=3" alt="">
+    <span class="lightbox-nav-arrow" aria-hidden="true">→</span>
+  </button>
+</div>
+
+<script>
+  (function () {
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const lbClose = document.getElementById('lightboxClose');
+    const lbPrev = document.getElementById('lightboxPrev');
+    const lbNext = document.getElementById('lightboxNext');
+
+    const links = Array.from(document.querySelectorAll('.gallery-row a[href]'));
+    let currentIndex = 0;
+
+    function openAt(index) {
+      if (!links.length) return;
+      currentIndex = ((index % links.length) + links.length) % links.length;
+      const a = links[currentIndex];
+      const img = a.querySelector('img');
+      const alt = img ? img.getAttribute('alt') : '';
+      lbImg.src = a.getAttribute('href');
+      lbImg.alt = alt || '';
+      lb.classList.add('is-open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeLightbox() {
+      lb.classList.remove('is-open');
+      lb.setAttribute('aria-hidden', 'true');
+      lbImg.src = '';
+      document.body.classList.remove('no-scroll');
+    }
+
+    function next() { openAt(currentIndex + 1); }
+    function prev() { openAt(currentIndex - 1); }
+
+    links.forEach((a, i) => {
+      a.addEventListener('click', (e) => {
+        // Only intercept likely image links
+        const href = a.getAttribute('href') || '';
+        if (!/\.(png|jpe?g|webp|gif)$/i.test(href)) return;
+        e.preventDefault();
+        openAt(i);
+      });
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbNext.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+    lbPrev.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+
+    // Click on backdrop closes
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb) closeLightbox();
+    });
+
+    // Keyboard support
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft') prev();
+    });
+  })();
+</script>
+
+
 
   <script src="site.js" defer></script>
 </body>
