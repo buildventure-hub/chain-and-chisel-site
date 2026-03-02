@@ -1,59 +1,79 @@
 (() => {
-  // Footer year
-  const y = document.getElementById("year");
-  if (y) y.textContent = String(new Date().getFullYear());
+  const root = document.documentElement;
+  const sidebar = document.getElementById('siteSidebar');
+  const inner = document.getElementById('sidebarInner');
+  const hero = document.querySelector('.masterpiece');
 
-  // Lightbox
-  const thumbs = Array.from(document.querySelectorAll(".thumb[data-full]"));
-  const lb = document.getElementById("lightbox");
-  if (!thumbs.length || !lb) return;
+  // Keep this in sync with CSS
+  const mq = window.matchMedia('(max-width: 860px)');
 
-  const img = lb.querySelector(".lb-img");
-  const btnClose = lb.querySelector(".lb-close");
-  const btnPrev = lb.querySelector(".lb-prev");
-  const btnNext = lb.querySelector(".lb-next");
+  const clamp01 = (v) => Math.max(0, Math.min(1, v));
 
-  let idx = 0;
+  const setPx = (name, px) => {
+    root.style.setProperty(name, `${Math.max(0, Math.round(px))}px`);
+  };
 
-  function openAt(i) {
-    idx = (i + thumbs.length) % thumbs.length;
-    const src = thumbs[idx].getAttribute("data-full");
-    img.src = src;
-    lb.classList.add("open");
-    lb.setAttribute("aria-hidden", "false");
+  const setNum = (name, num) => {
+    root.style.setProperty(name, String(num));
+  };
+
+  function measureExpandedHeight() {
+    // On mobile, we only show the logo area (nav is hidden by CSS).
+    // Measure the natural height of inner content while sidebar is "auto".
+    const prevH = sidebar.style.height;
+    sidebar.style.height = 'auto';
+    // Force layout
+    const expanded = inner.getBoundingClientRect().height;
+    sidebar.style.height = prevH;
+
+    setPx('--mhead-expanded', expanded);
+    return expanded;
   }
 
-  function close() {
-    lb.classList.remove("open");
-    lb.setAttribute("aria-hidden", "true");
-    img.removeAttribute("src");
+  function updateMobileHeader() {
+    if (!mq.matches) {
+      document.body.classList.remove('is-mobile');
+      // Clear mobile vars so desktop isn't affected
+      root.style.removeProperty('--mhead-h');
+      root.style.removeProperty('--mhead-scale');
+      root.style.removeProperty('--mhead-opacity');
+      return;
+    }
+
+    document.body.classList.add('is-mobile');
+
+    const expanded =
+      parseFloat(getComputedStyle(root).getPropertyValue('--mhead-expanded')) ||
+      measureExpandedHeight();
+
+    // Shrink smoothly as you scroll down through the hero.
+    const heroH = hero ? hero.getBoundingClientRect().height : 0;
+    const range = Math.max(1, heroH || expanded);
+
+    const y = window.scrollY || window.pageYOffset || 0;
+    const t = clamp01(y / range);
+
+    const h = expanded * (1 - t);
+
+    setPx('--mhead-h', h);
+    setNum('--mhead-scale', 1 - t);
+    setNum('--mhead-opacity', 1 - t);
   }
 
-  function prev() { openAt(idx - 1); }
-  function next() { openAt(idx + 1); }
+  function refresh() {
+    if (mq.matches) {
+      measureExpandedHeight();
+    }
+    updateMobileHeader();
+  }
 
-  thumbs.forEach((t, i) => {
-    t.addEventListener("click", () => openAt(i));
-    t.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openAt(i);
-      }
-    });
-  });
+  // Init
+  refresh();
 
-  btnClose.addEventListener("click", close);
-  btnPrev.addEventListener("click", prev);
-  btnNext.addEventListener("click", next);
+  // After images load (logo + hero)
+  window.addEventListener('load', refresh, { passive: true });
+  window.addEventListener('resize', refresh, { passive: true });
+  window.addEventListener('scroll', updateMobileHeader, { passive: true });
 
-  lb.addEventListener("click", (e) => {
-    if (e.target === lb) close();
-  });
-
-  window.addEventListener("keydown", (e) => {
-    if (!lb.classList.contains("open")) return;
-    if (e.key === "Escape") close();
-    if (e.key === "ArrowLeft") prev();
-    if (e.key === "ArrowRight") next();
-  });
+  mq.addEventListener?.('change', refresh);
 })();

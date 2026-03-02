@@ -7,32 +7,49 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="app">
+    <aside class="sidebar" id="siteSidebar" aria-label="Site navigation">
+      <div class="sidebar-inner" id="sidebarInner">
+        <div class="sidebar-logo" id="sidebarLogo">
+          <img src="assets/brand/chain-and-chisel-logo.png?v=1" alt="Chain &amp; Chisel Logo" />
+        </div>
 
-  <aside class="side-brand" aria-label="Site navigation">
-    <img class="brand-logo" src="Chain-&-Chisel-Logo.png" alt="Chain & Chisel Logo" />
-    <nav class="plank-nav">
-      <a class="plank-link" href="index.html"><span>Gallery</span></a>
-      <a class="plank-link" href="about.html"><span>About</span></a>
-      <a class="plank-link" href="order.html"><span>Order</span></a>
-    </nav>
-  </aside>
+        <nav class="sidebar-nav" id="sidebarNav" aria-label="Primary">
+          <!-- Gallery should be first -->
+          <a class="side-plank" href="index.html#gallery">
+            <img class="side-plank-img" src="assets/buttons/plank-button-1.png?v=3" alt="">
+            <span class="side-plank-text">Gallery</span>
+          </a>
+          <a class="side-plank" href="about.html">
+            <img class="side-plank-img" src="assets/buttons/plank-button-2.png?v=3" alt="">
+            <span class="side-plank-text">About</span>
+          </a>
+          <a class="side-plank" href="order.html">
+            <img class="side-plank-img" src="assets/buttons/plank-button-3.png?v=3" alt="">
+            <span class="side-plank-text">Order</span>
+          </a>
+        </nav>
+      </div>
+    </aside>
 
-  <main class="page">
-    <h1 class="section-title">FAQ</h1>
+    <main class="content" id="siteContent">
+      <div class="content-inner">
+        <main class="page">
+          <h1 class="section-title">FAQ</h1>
 
-    <div class="content-card">
-      <h3>What do you carve?</h3>
-      <p>Custom animals, rustic yard sculptures, memorial pieces, signs, and commissions.</p>
+          <div class="content-card">
+            <p style="margin-top:0;">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </main>
+      </div>
+    </main>
+  </div>
 
-      <h3>What’s the timeline?</h3>
-      <p>Depends on size and schedule. Typical turnaround: 1–3 weeks once approved.</p>
-
-      <h3>Do you deliver?</h3>
-      <p>Local delivery is available. For farther distances, delivery/shipping is quoted per job.</p>
-
-      <h3>How do pricing and deposits work?</h3>
-      <p>Pricing depends on size, complexity, and finishing. Deposits may be required for larger commissions.</p>
-    </div>
-  </main>
+  <script src="site.js" defer></script>
 </body>
 </html>

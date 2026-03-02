@@ -1,104 +1,148 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Order Request | Chain & Chisel</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Cloudflare Turnstile widget script -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Request | Chain &amp; Chisel</title>
+<link href="styles.css" rel="stylesheet"/>
+<!-- Cloudflare Turnstile widget script -->
+<script async="" defer="" src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+<style>
+    /* Responsive form sizing */
+    .content-card {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Make text inputs fill the form, but DO NOT stretch checkboxes/radios */
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"],
+    form input[type="number"],
+    form input[type="url"],
+    form textarea,
+    form select {
+      width: 100% !important;
+      box-sizing: border-box;
+    }
+
+    form input[type="checkbox"],
+    form input[type="radio"]{
+      width: auto !important;
+    }
+
+    /* Keep checkbox lines inside the form and aligned */
+    .stump-options{
+      display: grid;
+      gap: 10px;
+      margin: 6px 0 18px;
+    }
+    .stump-options label{
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      max-width: 100%;
+    }
+    .stump-options label span{
+      display: inline-block;
+      line-height: 1.25;
+    }
+
+    /* Plank submit button sizing */
+    .submit-plank{
+      max-width: 360px;
+      margin: 10px auto 0;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+    }
+    .submit-plank[disabled],
+    .submit-plank[aria-disabled="true"]{
+      opacity: 0.55;
+      cursor: not-allowed;
+      filter: grayscale(25%);
+    }
+</style>
 </head>
 <body>
-
-  <aside class="side-brand" aria-label="Site navigation">
-    <img class="brand-logo" src="Chain-&-Chisel-Logo.png" alt="Chain & Chisel Logo" />
-    <nav class="plank-nav">
-      <a class="plank-link" href="index.html"><span>Gallery</span></a>
-      <a class="plank-link" href="about.html"><span>About</span></a>
-      <a class="plank-link" href="faq.html"><span>FAQ</span></a>
-    </nav>
-  </aside>
-
-  <main class="page">
-    <h1 class="section-title">Order Request</h1>
-
-    <div class="content-card">
-      <p>
+<div class="app">
+<aside aria-label="Site navigation" class="sidebar" id="siteSidebar">
+<div class="sidebar-inner" id="sidebarInner">
+<div class="sidebar-logo" id="sidebarLogo">
+<img alt="Chain &amp; Chisel Logo" src="assets/brand/chain-and-chisel-logo.png?v=1"/>
+</div>
+<nav aria-label="Primary" class="sidebar-nav" id="sidebarNav">
+<a class="side-plank" href="index.html#gallery">
+<img alt="" class="side-plank-img" src="assets/buttons/plank-button-1.png?v=3"/>
+<span class="side-plank-text">Gallery</span>
+</a>
+<a class="side-plank" href="faq.html">
+<img alt="" class="side-plank-img" src="assets/buttons/plank-button-2.png?v=3"/>
+<span class="side-plank-text">FAQ</span>
+</a>
+<a class="side-plank" href="about.html">
+<img alt="" class="side-plank-img" src="assets/buttons/plank-button-3.png?v=3"/>
+<span class="side-plank-text">About</span>
+</a> </nav>
+</div>
+</aside>
+<main class="content" id="siteContent">
+<div class="content-inner">
+<main class="page">
+<h1 class="section-title">Order Request</h1>
+<div class="content-card">
+<p>
         Fill out the request details below. After you pass the “Are you human” check, the Email button will unlock.
       </p>
-
-      <p style="opacity:0.85;">
+<p style="opacity:0.85;">
         Note: Turnstile tokens are meant to be validated server-side for real bot protection. A mailto-only workflow can’t validate the token.
       </p>
-
-      <form id="orderForm" onsubmit="return false;">
-        <h3 style="margin-top:0;">Contact</h3>
-
-        <label for="firstName">First name</label><br/>
-        <input id="firstName" type="text" autocomplete="given-name"
-               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" /><br/><br/>
-
-        <label for="lastName">Last name</label><br/>
-        <input id="lastName" type="text" autocomplete="family-name"
-               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" /><br/><br/>
-
-        <label for="phone">Phone</label><br/>
-        <input id="phone" type="tel" autocomplete="tel"
-               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" placeholder="(###) ###-####" /><br/><br/>
-
-        <h3>Address</h3>
-
-        <label for="street">Street address</label><br/>
-        <input id="street" type="text" autocomplete="street-address"
-               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" /><br/><br/>
-
-        <label for="city">City</label><br/>
-        <input id="city" type="text" autocomplete="address-level2"
-               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" /><br/><br/>
-
-        <label for="zip">ZIP</label><br/>
-        <input id="zip" type="text" inputmode="numeric" autocomplete="postal-code"
-               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" /><br/><br/>
-
-        <h3>Tree / Material</h3>
-
-        <label for="species">Tree species you would like carved</label><br/>
-        <input id="species" type="text"
-               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" placeholder="e.g., pine, cottonwood, aspen…" /><br/><br/>
-
-        <label for="circumference">Trunk circumference</label><br/>
-        <input id="circumference" type="text"
-               style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" placeholder="e.g., 48 in (or 122 cm)" /><br/><br/>
-
-        <div style="display:grid; gap:10px; margin: 6px 0 18px;">
-          <label style="display:flex; gap:10px; align-items:center;">
-            <input id="treeDry" type="checkbox" />
-            <span>Tree is dry (sitting for years)</span>
-          </label>
-          <label style="display:flex; gap:10px; align-items:center;">
-            <input id="treeGreen" type="checkbox" />
-            <span>Tree is green (freshly cut)</span>
-          </label>
-        </div>
-
-        <h3>Project description</h3>
-        <label for="description">Description</label><br/>
-        <textarea id="description" rows="7"
-                  style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;"
-                  placeholder="Tell us what you want carved, size, style, deadline, budget range, delivery needs, photos/links, etc."></textarea><br/><br/>
-
-        <!-- Turnstile widget -->
-        <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-callback="onHuman"></div>
-
-        <br/>
-        <button id="submitBtn" class="plank-link" type="button" disabled><span>Send Request</span></button>
-        <p id="formStatus" style="opacity:0.9; margin-top:10px;"></p>
-        <p style="opacity:0.8; margin-top:10px;">
+<form id="orderForm" onsubmit="return false;">
+<h3 style="margin-top:0;">Contact</h3>
+<label for="firstName">First name</label><br/>
+<input autocomplete="given-name" id="firstName" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" type="text"/><br/><br/>
+<label for="lastName">Last name</label><br/>
+<input autocomplete="family-name" id="lastName" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" type="text"/><br/><br/>
+<label for="phone">Phone</label><br/>
+<input autocomplete="tel" id="phone" placeholder="(###) ###-####" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" type="tel"/><br/><br/>
+<h3>Address</h3>
+<label for="street">Street address</label><br/>
+<input autocomplete="street-address" id="street" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" type="text"/><br/><br/>
+<label for="city">City</label><br/>
+<input autocomplete="address-level2" id="city" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" type="text"/><br/><br/>
+<label for="zip">ZIP</label><br/>
+<input autocomplete="postal-code" id="zip" inputmode="numeric" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" type="text"/><br/><br/>
+<h3>Tree / Material</h3>
+<label for="species">Tree species you would like carved</label><br/>
+<input id="species" placeholder="e.g., pine, cottonwood, aspen…" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" type="text"/><br/><br/>
+<label for="circumference">Trunk circumference</label><br/>
+<input id="circumference" placeholder="e.g., 48 in (or 122 cm)" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" type="text"/><br/><br/>
+<div class="stump-options">
+<label style="display:flex; gap:10px; align-items:center;">
+<input id="treeDry" type="checkbox"/>
+<span>Dry stump (tree was cut years ago and has had time to season).</span>
+</label>
+<label style="display:flex; gap:10px; align-items:center;">
+<input id="treeGreen" type="checkbox"/>
+<span>Green stump (a living tree that was freshly cut).</span>
+</label>
+</div>
+<h3>Project description</h3>
+<label for="description">Description</label><br/>
+<textarea id="description" placeholder="Tell us what you want carved, size, style, deadline, budget range, delivery needs, photos/links, etc." rows="7" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;"></textarea><br/><br/>
+<!-- Turnstile widget -->
+<div class="cf-turnstile" data-callback="onHuman" data-sitekey="YOUR_TURNSTILE_SITE_KEY"></div>
+<br/>
+<button aria-disabled="true" class="side-plank submit-plank" disabled="" id="submitBtn" type="button"><img alt="" class="side-plank-img" src="assets/buttons/plank-button-4.png?v=3"/><span class="side-plank-text">Send Request</span></button>
+<p id="formStatus" style="opacity:0.9; margin-top:10px;"></p>
+<p style="opacity:0.8; margin-top:10px;">
           Replace <code>YOUR_TURNSTILE_SITE_KEY</code> with your Cloudflare Turnstile site key.
         </p>
-      </form>
-    </div>
-  </main>
+</form>
+</div>
 <script>
   let turnstileToken = "";
 
@@ -132,7 +176,9 @@
     const btn = document.getElementById('submitBtn');
     if(btn){
       btn.disabled = !turnstileToken;
+    btn.setAttribute('aria-disabled', btn.disabled ? 'true' : 'false');
     }
+  }
     if(turnstileToken){
       setStatus("Verified. You can send your request now.", false);
     }
@@ -187,6 +233,10 @@
     }
   });
 </script>
-
+</main>
+</div>
+</main>
+</div>
+<script defer="" src="site.js"></script>
 </body>
 </html>

@@ -5,34 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Chain & Chisel</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* About page: responsive sign image */
+    .content-media{
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      display: block;
+      margin: 2rem auto 0 auto;
+    }
+  </style>
+
 </head>
 <body>
+  <div class="app">
+    <aside class="sidebar" id="siteSidebar" aria-label="Site navigation">
+      <div class="sidebar-inner" id="sidebarInner">
+        <div class="sidebar-logo" id="sidebarLogo">
+          <img src="assets/brand/chain-and-chisel-logo.png?v=1" alt="Chain &amp; Chisel Logo" />
+        </div>
 
-  <aside class="side-brand" aria-label="Site navigation">
-    <img class="brand-logo" src="Chain-&-Chisel-Logo.png" alt="Chain & Chisel Logo" />
-    <nav class="plank-nav">
-      <a class="plank-link" href="index.html"><span>Gallery</span></a>
-      <a class="plank-link" href="faq.html"><span>FAQ</span></a>
-      <a class="plank-link" href="order.html"><span>Order</span></a>
-    </nav>
-  </aside>
+        <nav class="sidebar-nav" id="sidebarNav" aria-label="Primary">
+          <a class="side-plank" href="index.html#gallery">
+            <img class="side-plank-img" src="assets/buttons/plank-button-1.png?v=3" alt="">
+            <span class="side-plank-text">Gallery</span>
+          </a>
+          <a class="side-plank" href="faq.html">
+            <img class="side-plank-img" src="assets/buttons/plank-button-2.png?v=3" alt="">
+            <span class="side-plank-text">FAQ</span>
+          </a>
+          <a class="side-plank" href="order.html">
+            <img class="side-plank-img" src="assets/buttons/plank-button-3.png?v=3" alt="">
+            <span class="side-plank-text">Order</span>
+          </a>
+        </nav>
+      </div>
+    </aside>
+    <main class="content" id="siteContent">
+      <div class="content-inner">
+        <main class="page">
+          <h1 class="section-title">About</h1>
 
-  <main class="page">
-    <h1 class="section-title">About</h1>
+          <div class="content-card">
+            <p>
+              My uncle is a chainsaw artist who has been carving wooden sculptures for over 30 years. Needless to say, whenever I would visit 'Uncle Frank' I couldn't help but have some fun trying my hand at carving. Looking at the Gallery photos, you can see that some of my early work was a bit blocky and unrefined. I've grown since, but I'm still improving with each piece I create. I have to say, that I wish I had stepped out sooner, although not all commissioned, each of the pieces you see here on the site have sold, which gave me the confidence to show my work and endevor to get more commissioned sculptures. Better late than never!        </p>
 
-    <div class="content-card">
-      <p>
-        Replace this text with your story, process, materials, and how commissions work.
-      </p>
-
-      <p><strong>Former hero “sign” image:</strong></p>
-      <p style="opacity:0.85;">
-        Insufficient information to restore the exact filename/path of your sign image (it was not provided in this chat).
-        I placed a placeholder path below. Update the <code>src</code> to the real file in your repo.
-      </p>
-
-      <img src="assets/about/hero-sign.jpg" alt="Chain & Chisel sign" style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,0.12);" />
-    </div>
-  </main>
+            <img src="assets/hero_sign.png" alt="Chain &amp; Chisel sign" class="content-media" />
+          </div>
+        </main>
+      </div>
+    </main>
+  </div>
+  <script src="site.js" defer></script>
 </body>
 </html>
