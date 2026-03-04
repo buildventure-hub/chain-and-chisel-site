@@ -8,6 +8,9 @@
 <link href="styles.css?v=3" rel="stylesheet"/>
 <!-- Cloudflare Turnstile widget script -->
 <script async="" defer="" src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>window.addEventListener('load',function(){ emailjs.init("wgTynIVfEl9JwKWO7"); });</script>
 <style>
     /* Responsive form sizing */
     .content-card {
@@ -258,21 +261,23 @@
     setStatus("Sending…", false);
 
     try{
-      const res = await fetch("/api/order", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
+      const condition = [];
+      if(document.getElementById('treeDry').checked) condition.push("Dry (sitting for years)");
+      if(document.getElementById('treeGreen').checked) condition.push("Green (freshly cut)");
+      await emailjs.send("service_z617ptd", "l4woz9a", {
+        from_name:     payload.firstName + " " + payload.lastName,
+        phone:         payload.phone,
+        street:        payload.street,
+        city:          payload.city,
+        zip:           payload.zip,
+        species:       payload.species,
+        circumference: payload.circumference,
+        condition:     condition.join(", ") || "Not specified",
+        message:       payload.description
       });
-
-      const data = await res.json().catch(()=> ({}));
-
-      if(!res.ok || !data.ok){
-        throw new Error(data.error || ("Request failed (" + res.status + ")"));
-      }
-
       setStatus("Sent! We'll get back to you soon.", false);
     }catch(err){
-      setStatus(String(err.message || err), true);
+      setStatus("Failed to send: " + (err.text || err.message || String(err)), true);
       if(btn) btn.disabled = false;
     }
   }
