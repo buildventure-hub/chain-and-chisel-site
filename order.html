@@ -4,11 +4,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Order Request | Chain &amp; Chisel</title>
-<link href="styles.css" rel="stylesheet"/>
-<!-- Site config must load first (synchronous) -->
-<script src="site-config.js"></script>
-<!-- Turnstile script is loaded conditionally by the form script below -->
+<title>Contact | Chain &amp; Chisel</title>
+<link href="styles.css?v=3" rel="stylesheet"/>
+<!-- Cloudflare Turnstile widget script -->
+<script async="" defer="" src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
 <style>
     /* Responsive form sizing */
     .content-card {
@@ -17,55 +16,94 @@
       margin: 0 auto;
     }
 
-    /* Make text inputs fill the form, but DO NOT stretch checkboxes/radios */
-    form input[type="text"],
-    form input[type="email"],
-    form input[type="tel"],
-    form input[type="number"],
-    form input[type="url"],
-    form textarea,
-    form select {
+    form input,
+    form textarea {
       width: 100% !important;
       box-sizing: border-box;
     }
+  
+    /* ============================= */
+    /* ORDER PAGE HOTFIX (ALIGN + BUTTON) */
+    /* ============================= */
 
+    /* Never stretch checkboxes/radios */
     form input[type="checkbox"],
     form input[type="radio"]{
       width: auto !important;
+      inline-size: auto !important;
+      flex: 0 0 auto !important;
+      max-width: none !important;
     }
 
-    /* Keep checkbox lines inside the form and aligned */
+    /* Keep stump checkbox lines INSIDE form and next to boxes */
     .stump-options{
-      display: grid;
-      gap: 10px;
-      margin: 6px 0 18px;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 10px !important;
+      margin: 6px 0 18px !important;
+      max-width: 100% !important;
     }
     .stump-options label{
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      max-width: 100%;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 10px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow: hidden !important;
     }
     .stump-options label span{
-      display: inline-block;
-      line-height: 1.25;
+      flex: 1 1 auto !important;
+      max-width: 100% !important;
+      white-space: normal !important;
+      word-break: normal !important;
+      overflow-wrap: anywhere !important;
+      line-height: 1.25 !important;
     }
 
-    /* Plank submit button sizing */
+    /* Submit plank: 30% smaller than the 320px baseline */
     .submit-plank{
-      max-width: 360px;
-      margin: 10px auto 0;
-      border: 0;
-      background: transparent;
-      padding: 0;
-      cursor: pointer;
+      max-width: 224px !important;
+      width: 100% !important;
+      margin: 18px auto 0 !important;
+      border: 0 !important;
+      background: transparent !important;
+      padding: 0 !important;
+      cursor: pointer !important;
+      display: block !important;
+      position: relative !important;
     }
+
+    /* Force the plank image to render (prevents "plain gray button" look) */
+    .submit-plank .side-plank-img{
+      display: block !important;
+      width: 100% !important;
+      height: auto !important;
+      opacity: 1 !important;
+      filter: none !important;
+    }
+
+    /* Center the text over the plank even if global styles fail */
+    .submit-plank .side-plank-text{
+      position: absolute !important;
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      font-weight: 800 !important;
+      color: #111 !important;
+      text-shadow: none !important;
+      pointer-events: none !important;
+      text-align: center !important;
+      white-space: nowrap !important;
+    }
+
+    /* Disabled state: slight dim, not washed out */
     .submit-plank[disabled],
     .submit-plank[aria-disabled="true"]{
-      opacity: 0.55;
-      cursor: not-allowed;
-      filter: grayscale(25%);
+      opacity: 0.92 !important;
+      cursor: not-allowed !important;
     }
+
 </style>
 </head>
 <body>
@@ -85,18 +123,40 @@
 <span class="side-plank-text">FAQ</span>
 </a>
 <a class="side-plank" href="about.html">
-<img alt="" class="side-plank-img" src="assets/buttons/plank-button-3.png?v=3"/>
+<img alt="" class="side-plank-img" src="assets/buttons/plank-button-1.png?v=3"/>
 <span class="side-plank-text">About</span>
 </a> </nav>
+<div class="sidebar-social" aria-label="Social links">
+  <div class="social-links">
+    <a class="social-icon" href="https://www.facebook.com/share/1SCfxkUz5P/" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.1c0-.9.3-1.6 1.7-1.6h1.5V4.8c-.3 0-1.4-.1-2.7-.1-2.6 0-4.4 1.6-4.4 4.6V11H7v3h2.1v8h4.4z"/></svg>
+    </a>
+    <span class="social-icon disabled" aria-label="Instagram link needed" title="Instagram link needed">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.2A3.8 3.8 0 1 1 8.2 12 3.8 3.8 0 0 1 12 8.2zm0 2A1.8 1.8 0 1 0 13.8 12 1.8 1.8 0 0 0 12 10.2zM17.6 6.6a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+    </span>
+    <span class="social-icon disabled" aria-label="X link needed" title="X link needed">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.7 2H22l-7.2 8.2L23 22h-6.8l-5.3-7.1L4.7 22H1.4l7.7-8.7L1 2h7l4.8 6.5L18.7 2zm-1.2 18h1.8L6.5 4H4.6l12.9 16z"/></svg>
+    </span>
+    <a class="social-icon" href="https://www.tiktok.com/@chainchiselart" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2v11.2a3.6 3.6 0 1 1-3.1-3.6V6.6c-.6-.1-1.2-.1-1.8 0A6.2 6.2 0 1 0 16 12.2V7.3c1.3 1.1 2.9 1.7 4.6 1.7V6.2c-2.2 0-4-1.8-4-4.2H14z"/></svg>
+    </a>
+    <a class="social-icon" href="https://whatsapp.com/channel/0029VbCQMMyJENy9mtNleL1d" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.6-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1s-.6.8-.7 1c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.7-1.1-.6-.6-1.1-1.3-1.2-1.5-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2.1-.4 0-.6s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.2s.9 2.6 1 2.8c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.1.1 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3z"/></svg>
+    </a>
+  </div>
+</div>
 </div>
 </aside>
 <main class="content" id="siteContent">
 <div class="content-inner">
 <main class="page">
-<h1 class="section-title">Order Request</h1>
+<h1 class="section-title">Contact</h1>
 <div class="content-card">
-<p id=”formInstructions”>
-        Fill out the request details below. After you pass the “Are you human” check, the Email button will unlock.
+<p>
+        Use this form to submit a request, leave a review, or share a comment. After the quick “Are you human” check, the Email button will unlock.
+      </p>
+<p style="opacity:0.85;">
+        Tip: If you ever move to a server-backed form, Turnstile can be validated for stronger bot protection.
       </p>
 <form id="orderForm" onsubmit="return false;">
 <h3 style="margin-top:0;">Contact</h3>
@@ -119,27 +179,29 @@
 <label for="circumference">Trunk circumference</label><br/>
 <input id="circumference" placeholder="e.g., 48 in (or 122 cm)" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" type="text"/><br/><br/>
 <div class="stump-options">
-<label style="display:flex; gap:10px; align-items:center;">
+<label>
 <input id="treeDry" type="checkbox"/>
-<span>Dry stump (tree was cut years ago and has had time to season).</span>
+<span>Tree is dry (sitting for years)</span>
 </label>
-<label style="display:flex; gap:10px; align-items:center;">
+<label>
 <input id="treeGreen" type="checkbox"/>
-<span>Green stump (a living tree that was freshly cut).</span>
+<span>Tree is green (freshly cut)</span>
 </label>
 </div>
 <h3>Project description</h3>
 <label for="description">Description</label><br/>
 <textarea id="description" placeholder="Tell us what you want carved, size, style, deadline, budget range, delivery needs, photos/links, etc." rows="7" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;"></textarea><br/><br/>
-<!-- Turnstile widget (only visible when Cloudflare is enabled) -->
-<div class="cf-turnstile" data-callback="onHuman" data-sitekey="YOUR_TURNSTILE_SITE_KEY" id="turnstileWidget"></div>
+<!-- Turnstile widget -->
+<div class="cf-turnstile" data-callback="onHuman" data-sitekey="YOUR_TURNSTILE_SITE_KEY"></div>
 <br/>
-<button aria-disabled="true" class="side-plank submit-plank" disabled="" id="submitBtn" type="button"><img alt="" class="side-plank-img" src="assets/buttons/plank-button-4.png?v=3"/><span class="side-plank-text">Send Request</span></button>
+<button aria-disabled="true" class="side-plank submit-plank" disabled="" id="submitBtn" type="button"><img alt="" class="side-plank-img" src="assets/buttons/plank-button-1.png?v=3"/><span class="side-plank-text">Submit Request</span></button>
 <p id="formStatus" style="opacity:0.9; margin-top:10px;"></p>
+<p style="opacity:0.8; margin-top:10px;">
+          Replace <code>YOUR_TURNSTILE_SITE_KEY</code> with your Cloudflare Turnstile site key.
+        </p>
 </form>
 </div>
 <script>
-  const useCF = typeof SITE_CONFIG !== "undefined" && SITE_CONFIG.useCloudflare;
   let turnstileToken = "";
 
   function buildPayload(){
@@ -166,43 +228,25 @@
     el.style.color = isError ? "#ffb3b3" : "#cfe8cf";
   }
 
-  // Turnstile success callback (only called when Cloudflare is enabled)
+  // Turnstile success callback (token provided by Cloudflare)
   function onHuman(token){
     turnstileToken = token || "";
     const btn = document.getElementById('submitBtn');
     if(btn){
       btn.disabled = !turnstileToken;
-      btn.setAttribute('aria-disabled', btn.disabled ? 'true' : 'false');
     }
     if(turnstileToken){
       setStatus("Verified. You can send your request now.", false);
     }
   }
 
-  function buildMailtoBody(p){
-    return [
-      "CONTACT",
-      "Name: " + (p.firstName + " " + p.lastName).trim(),
-      "Phone: " + p.phone,
-      "",
-      "ADDRESS",
-      "Street: " + p.street,
-      "City: " + p.city,
-      "ZIP: " + p.zip,
-      "",
-      "TREE / MATERIAL",
-      "Species: " + p.species,
-      "Circumference: " + p.circumference,
-      "Dry stump: " + (p.treeDry ? "Yes" : "No"),
-      "Green stump: " + (p.treeGreen ? "Yes" : "No"),
-      "",
-      "DESCRIPTION",
-      p.description
-    ].join("\n");
-  }
-
   async function submitRequest(){
     const btn = document.getElementById('submitBtn');
+    if(!turnstileToken){
+      setStatus("Please complete the verification first.", true);
+      return;
+    }
+
     const payload = buildPayload();
 
     // Minimal required fields
@@ -215,65 +259,31 @@
       return;
     }
 
-    if(useCF){
-      // Cloudflare mode: POST to serverless function
-      if(!turnstileToken){
-        setStatus("Please complete the verification first.", true);
-        return;
-      }
-      if(btn) btn.disabled = true;
-      setStatus("Sending…", false);
+    if(btn) btn.disabled = true;
+    setStatus("Sending…", false);
 
-      try{
-        const res = await fetch("/api/order", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-        const data = await res.json().catch(()=> ({}));
-        if(!res.ok || !data.ok){
-          throw new Error(data.error || ("Request failed (" + res.status + ")"));
-        }
-        setStatus("Sent! We'll get back to you soon.", false);
-      }catch(err){
-        setStatus(String(err.message || err), true);
-        if(btn) btn.disabled = false;
+    try{
+      const res = await fetch("/api/order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json().catch(()=> ({}));
+
+      if(!res.ok || !data.ok){
+        throw new Error(data.error || ("Request failed (" + res.status + ")"));
       }
-    } else {
-      // GitHub Pages mode: open mailto link
-      var email = (typeof SITE_CONFIG !== "undefined" && SITE_CONFIG.orderEmail)
-        || "info@chainandchisel.art";
-      var subject = encodeURIComponent("Chain & Chisel Order Request");
-      var body = encodeURIComponent(buildMailtoBody(payload));
-      window.location.href = "mailto:" + email + "?subject=" + subject + "&body=" + body;
-      setStatus("Opening your email client…", false);
+
+      setStatus("Sent! We'll get back to you soon.", false);
+    }catch(err){
+      setStatus(String(err.message || err), true);
+      if(btn) btn.disabled = false;
     }
   }
 
   document.addEventListener("DOMContentLoaded", ()=>{
     const btn = document.getElementById('submitBtn');
-    const instructions = document.getElementById('formInstructions');
-    const turnstileWidget = document.getElementById('turnstileWidget');
-
-    if(!useCF){
-      // No Cloudflare: hide Turnstile, enable button immediately
-      if(turnstileWidget) turnstileWidget.style.display = "none";
-      if(btn){
-        btn.disabled = false;
-        btn.setAttribute('aria-disabled', 'false');
-      }
-      if(instructions){
-        instructions.textContent = "Fill out the request details below and click Send Request to open your email client.";
-      }
-    } else {
-      // Load Turnstile script dynamically
-      var s = document.createElement("script");
-      s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
-      s.async = true;
-      s.defer = true;
-      document.head.appendChild(s);
-    }
-
     if(btn){
       btn.addEventListener("click", submitRequest);
     }
@@ -283,6 +293,6 @@
 </div>
 </main>
 </div>
-<script defer="" src="site.js"></script>
+<script defer="" src="site.js?v=2"></script>
 </body>
 </html>

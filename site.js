@@ -1,79 +1,104 @@
-(() => {
-  const root = document.documentElement;
-  const sidebar = document.getElementById('siteSidebar');
-  const inner = document.getElementById('sidebarInner');
-  const hero = document.querySelector('.masterpiece');
+(function(){
+  const MOBILE_MAX = 860;
 
-  // Keep this in sync with CSS
-  const mq = window.matchMedia('(max-width: 860px)');
-
-  const clamp01 = (v) => Math.max(0, Math.min(1, v));
-
-  const setPx = (name, px) => {
-    root.style.setProperty(name, `${Math.max(0, Math.round(px))}px`);
-  };
-
-  const setNum = (name, num) => {
-    root.style.setProperty(name, String(num));
-  };
-
-  function measureExpandedHeight() {
-    // On mobile, we only show the logo area (nav is hidden by CSS).
-    // Measure the natural height of inner content while sidebar is "auto".
-    const prevH = sidebar.style.height;
-    sidebar.style.height = 'auto';
-    // Force layout
-    const expanded = inner.getBoundingClientRect().height;
-    sidebar.style.height = prevH;
-
-    setPx('--mhead-expanded', expanded);
-    return expanded;
+  function isMobile(){
+    return window.matchMedia(`(max-width: ${MOBILE_MAX}px)`).matches;
   }
 
-  function updateMobileHeader() {
-    if (!mq.matches) {
-      document.body.classList.remove('is-mobile');
-      // Clear mobile vars so desktop isn't affected
-      root.style.removeProperty('--mhead-h');
-      root.style.removeProperty('--mhead-scale');
-      root.style.removeProperty('--mhead-opacity');
-      return;
+  function setHeaderHeightVar(){
+    const header = document.getElementById('mobileHeader');
+    if (!header) return;
+    const h = header.getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--mobile-header-h', `${Math.ceil(h)}px`);
+  }
+
+  function buildHeader(){
+    if (!isMobile()) return;
+    if (document.getElementById('mobileHeader')) return;
+
+    const sidebarLogoImg = document.querySelector('.sidebar-logo img');
+    const sidebarNav = document.querySelector('.sidebar-nav');
+    if (!sidebarLogoImg || !sidebarNav) return;
+
+    const header = document.createElement('header');
+    header.className = 'mobile-header';
+    header.id = 'mobileHeader';
+
+    const logoWrap = document.createElement('div');
+    logoWrap.className = 'mobile-logo';
+    const logoImg = sidebarLogoImg.cloneNode(true);
+    logoImg.removeAttribute('style');
+    logoWrap.appendChild(logoImg);
+
+    const nav = document.createElement('nav');
+    nav.className = 'mobile-nav';
+    nav.setAttribute('aria-label', 'Primary');
+
+    const links = Array.from(sidebarNav.querySelectorAll('a')).slice(0,3).map(a => a.cloneNode(true));
+    links.forEach(a => nav.appendChild(a));
+
+    header.appendChild(logoWrap);
+    header.appendChild(nav);
+
+    document.body.prepend(header);
+    document.body.classList.add('has-mobile-header');
+
+    requestAnimationFrame(() => setHeaderHeightVar());
+  }
+
+  let lastY = 0;
+  let ticking = false;
+
+  function onScroll(){
+    if (!isMobile()) return;
+    const header = document.getElementById('mobileHeader');
+    if (!header) return;
+
+    const y = window.scrollY || document.documentElement.scrollTop || 0;
+    const goingDown = y > lastY;
+    const delta = Math.abs(y - lastY);
+
+    if (y > 80) header.classList.add('is-collapsed');
+    else header.classList.remove('is-collapsed');
+
+    if (delta > 10){
+      if (goingDown && y > 200){
+        header.classList.add('is-hidden');
+      } else if (!goingDown) {
+        header.classList.remove('is-hidden');
+      }
     }
 
-    document.body.classList.add('is-mobile');
-
-    const expanded =
-      parseFloat(getComputedStyle(root).getPropertyValue('--mhead-expanded')) ||
-      measureExpandedHeight();
-
-    // Shrink smoothly as you scroll down through the hero.
-    const heroH = hero ? hero.getBoundingClientRect().height : 0;
-    const range = Math.max(1, heroH || expanded);
-
-    const y = window.scrollY || window.pageYOffset || 0;
-    const t = clamp01(y / range);
-
-    const h = expanded * (1 - t);
-
-    setPx('--mhead-h', h);
-    setNum('--mhead-scale', 1 - t);
-    setNum('--mhead-opacity', 1 - t);
+    lastY = y;
+    setHeaderHeightVar();
   }
 
-  function refresh() {
-    if (mq.matches) {
-      measureExpandedHeight();
+  function onResize(){
+    const header = document.getElementById('mobileHeader');
+    if (isMobile()){
+      if (!header) buildHeader();
+      setHeaderHeightVar();
+    } else {
+      if (header) header.remove();
+      document.body.classList.remove('has-mobile-header');
+      document.documentElement.style.removeProperty('--mobile-header-h');
     }
-    updateMobileHeader();
   }
 
-  // Init
-  refresh();
+  document.addEventListener('DOMContentLoaded', () => {
+    buildHeader();
+    lastY = window.scrollY || 0;
 
-  // After images load (logo + hero)
-  window.addEventListener('load', refresh, { passive: true });
-  window.addEventListener('resize', refresh, { passive: true });
-  window.addEventListener('scroll', updateMobileHeader, { passive: true });
+    window.addEventListener('scroll', () => {
+      if (!ticking){
+        window.requestAnimationFrame(() => {
+          onScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
 
-  mq.addEventListener?.('change', refresh);
+    window.addEventListener('resize', onResize);
+  });
 })();
