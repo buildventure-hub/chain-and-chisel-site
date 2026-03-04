@@ -6,8 +6,9 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Order Request | Chain &amp; Chisel</title>
 <link href="styles.css" rel="stylesheet"/>
-<!-- Cloudflare Turnstile widget script -->
-<script async="" defer="" src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+<!-- Site config must load first (synchronous) -->
+<script src="site-config.js"></script>
+<!-- Turnstile script is loaded conditionally by the form script below -->
 <style>
     /* Responsive form sizing */
     .content-card {
@@ -94,11 +95,8 @@
 <main class="page">
 <h1 class="section-title">Order Request</h1>
 <div class="content-card">
-<p>
+<p id=”formInstructions”>
         Fill out the request details below. After you pass the “Are you human” check, the Email button will unlock.
-      </p>
-<p style="opacity:0.85;">
-        Note: Turnstile tokens are meant to be validated server-side for real bot protection. A mailto-only workflow can’t validate the token.
       </p>
 <form id="orderForm" onsubmit="return false;">
 <h3 style="margin-top:0;">Contact</h3>
@@ -133,17 +131,15 @@
 <h3>Project description</h3>
 <label for="description">Description</label><br/>
 <textarea id="description" placeholder="Tell us what you want carved, size, style, deadline, budget range, delivery needs, photos/links, etc." rows="7" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;"></textarea><br/><br/>
-<!-- Turnstile widget -->
-<div class="cf-turnstile" data-callback="onHuman" data-sitekey="YOUR_TURNSTILE_SITE_KEY"></div>
+<!-- Turnstile widget (only visible when Cloudflare is enabled) -->
+<div class="cf-turnstile" data-callback="onHuman" data-sitekey="YOUR_TURNSTILE_SITE_KEY" id="turnstileWidget"></div>
 <br/>
 <button aria-disabled="true" class="side-plank submit-plank" disabled="" id="submitBtn" type="button"><img alt="" class="side-plank-img" src="assets/buttons/plank-button-4.png?v=3"/><span class="side-plank-text">Send Request</span></button>
 <p id="formStatus" style="opacity:0.9; margin-top:10px;"></p>
-<p style="opacity:0.8; margin-top:10px;">
-          Replace <code>YOUR_TURNSTILE_SITE_KEY</code> with your Cloudflare Turnstile site key.
-        </p>
 </form>
 </div>
 <script>
+  const useCF = typeof SITE_CONFIG !== "undefined" && SITE_CONFIG.useCloudflare;
   let turnstileToken = "";
 
   function buildPayload(){
@@ -170,27 +166,43 @@
     el.style.color = isError ? "#ffb3b3" : "#cfe8cf";
   }
 
-  // Turnstile success callback (token provided by Cloudflare)
+  // Turnstile success callback (only called when Cloudflare is enabled)
   function onHuman(token){
     turnstileToken = token || "";
     const btn = document.getElementById('submitBtn');
     if(btn){
       btn.disabled = !turnstileToken;
-    btn.setAttribute('aria-disabled', btn.disabled ? 'true' : 'false');
+      btn.setAttribute('aria-disabled', btn.disabled ? 'true' : 'false');
     }
-  }
     if(turnstileToken){
       setStatus("Verified. You can send your request now.", false);
     }
   }
 
+  function buildMailtoBody(p){
+    return [
+      "CONTACT",
+      "Name: " + (p.firstName + " " + p.lastName).trim(),
+      "Phone: " + p.phone,
+      "",
+      "ADDRESS",
+      "Street: " + p.street,
+      "City: " + p.city,
+      "ZIP: " + p.zip,
+      "",
+      "TREE / MATERIAL",
+      "Species: " + p.species,
+      "Circumference: " + p.circumference,
+      "Dry stump: " + (p.treeDry ? "Yes" : "No"),
+      "Green stump: " + (p.treeGreen ? "Yes" : "No"),
+      "",
+      "DESCRIPTION",
+      p.description
+    ].join("\n");
+  }
+
   async function submitRequest(){
     const btn = document.getElementById('submitBtn');
-    if(!turnstileToken){
-      setStatus("Please complete the verification first.", true);
-      return;
-    }
-
     const payload = buildPayload();
 
     // Minimal required fields
@@ -203,31 +215,65 @@
       return;
     }
 
-    if(btn) btn.disabled = true;
-    setStatus("Sending…", false);
-
-    try{
-      const res = await fetch("/api/order", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-
-      const data = await res.json().catch(()=> ({}));
-
-      if(!res.ok || !data.ok){
-        throw new Error(data.error || ("Request failed (" + res.status + ")"));
+    if(useCF){
+      // Cloudflare mode: POST to serverless function
+      if(!turnstileToken){
+        setStatus("Please complete the verification first.", true);
+        return;
       }
+      if(btn) btn.disabled = true;
+      setStatus("Sending…", false);
 
-      setStatus("Sent! We'll get back to you soon.", false);
-    }catch(err){
-      setStatus(String(err.message || err), true);
-      if(btn) btn.disabled = false;
+      try{
+        const res = await fetch("/api/order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json().catch(()=> ({}));
+        if(!res.ok || !data.ok){
+          throw new Error(data.error || ("Request failed (" + res.status + ")"));
+        }
+        setStatus("Sent! We'll get back to you soon.", false);
+      }catch(err){
+        setStatus(String(err.message || err), true);
+        if(btn) btn.disabled = false;
+      }
+    } else {
+      // GitHub Pages mode: open mailto link
+      var email = (typeof SITE_CONFIG !== "undefined" && SITE_CONFIG.orderEmail)
+        || "info@chainandchisel.art";
+      var subject = encodeURIComponent("Chain & Chisel Order Request");
+      var body = encodeURIComponent(buildMailtoBody(payload));
+      window.location.href = "mailto:" + email + "?subject=" + subject + "&body=" + body;
+      setStatus("Opening your email client…", false);
     }
   }
 
   document.addEventListener("DOMContentLoaded", ()=>{
     const btn = document.getElementById('submitBtn');
+    const instructions = document.getElementById('formInstructions');
+    const turnstileWidget = document.getElementById('turnstileWidget');
+
+    if(!useCF){
+      // No Cloudflare: hide Turnstile, enable button immediately
+      if(turnstileWidget) turnstileWidget.style.display = "none";
+      if(btn){
+        btn.disabled = false;
+        btn.setAttribute('aria-disabled', 'false');
+      }
+      if(instructions){
+        instructions.textContent = "Fill out the request details below and click Send Request to open your email client.";
+      }
+    } else {
+      // Load Turnstile script dynamically
+      var s = document.createElement("script");
+      s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+      s.async = true;
+      s.defer = true;
+      document.head.appendChild(s);
+    }
+
     if(btn){
       btn.addEventListener("click", submitRequest);
     }
