@@ -6,3 +6,10 @@ claude-context/
 
 # Local dev
 *.log
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
