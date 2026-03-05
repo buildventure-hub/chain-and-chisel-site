@@ -1,0 +1,8 @@
+# Claude AI context files — contain sensitive config, never push
+claude-context/
+
+# Mac OS
+.DS_Store
+
+# Local dev
+*.log

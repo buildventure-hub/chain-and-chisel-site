@@ -181,11 +181,11 @@
 <input id="circumference" placeholder="e.g., 48 in (or 122 cm)" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" type="text"/><br/><br/>
 <div class="stump-options">
 <label>
-<input id="treeDry" type="checkbox"/>
+<input id="treeDry" name="treeCondition" type="radio" value="Dry (sitting for years)" style="width:auto!important;"/>
 <span>Tree is dry (sitting for years)</span>
 </label>
 <label>
-<input id="treeGreen" type="checkbox"/>
+<input id="treeGreen" name="treeCondition" type="radio" value="Green (freshly cut)"/>
 <span>Tree is green (freshly cut)</span>
 </label>
 </div>
@@ -204,82 +204,84 @@
 <script>
   let turnstileToken = "";
 
-  function buildPayload(){
-    return {
-      firstName: document.getElementById('firstName').value || "",
-      lastName: document.getElementById('lastName').value || "",
-      email: document.getElementById('email').value || "",
-      phone: document.getElementById('phone').value || "",
-      street: document.getElementById('street').value || "",
-      city: document.getElementById('city').value || "",
-      zip: document.getElementById('zip').value || "",
-      species: document.getElementById('species').value || "",
-      circumference: document.getElementById('circumference').value || "",
-      treeDry: document.getElementById('treeDry').checked,
-      treeGreen: document.getElementById('treeGreen').checked,
-      description: document.getElementById('description').value || "",
-      turnstileToken
-    };
+  const baseStyle = "width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;";
+  const errStyle  = "width:100%; padding:10px; border-radius:10px; border:2px solid #ff6b6b; background:rgba(80,0,0,0.25); color:#fff;";
+
+  function markField(id, isError){
+    const el = document.getElementById(id);
+    if(el) el.style.cssText = isError ? errStyle : baseStyle;
   }
 
   function setStatus(msg, isError=false){
     const el = document.getElementById('formStatus');
     if(!el) return;
     el.textContent = msg;
-    el.style.color = isError ? "#ffb3b3" : "#cfe8cf";
+    el.style.color = isError ? "#ff6b6b" : "#cfe8cf";
   }
 
-  // Turnstile success callback (token provided by Cloudflare)
   function onHuman(token){
     turnstileToken = token || "";
     const btn = document.getElementById('submitBtn');
-    if(btn){
-      btn.disabled = !turnstileToken;
-    }
-    if(turnstileToken){
-      setStatus("Verified. You can send your request now.", false);
-    }
+    if(btn) btn.disabled = !turnstileToken;
+    if(turnstileToken) setStatus("Verified! You can send your request now.");
   }
 
   async function submitRequest(){
+    const fields = ['firstName','lastName','email','phone','description'];
+    fields.forEach(id => markField(id, false));
+
     const btn = document.getElementById('submitBtn');
-    if(!turnstileToken){
-      setStatus("Please complete the verification first.", true);
-      return;
-    }
+    if(!turnstileToken){ setStatus("Please complete the 'I am human' check first.", true); return; }
 
-    const payload = buildPayload();
+    const v = id => document.getElementById(id)?.value.trim() || "";
+    const firstName    = v('firstName');
+    const lastName     = v('lastName');
+    const email        = v('email');
+    const phone        = v('phone');
+    const street       = v('street');
+    const city         = v('city');
+    const zip          = v('zip');
+    const species      = v('species');
+    const circumference= v('circumference');
+    const description  = v('description');
 
-    // Minimal required fields
-    if(!payload.firstName || !payload.lastName || !payload.phone){
-      setStatus("Please fill in First name, Last name, and Phone.", true);
-      return;
-    }
-    if(!payload.description){
-      setStatus("Please add a short description of what you want carved.", true);
-      return;
-    }
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const errors = [];
+    if(!firstName){ markField('firstName', true); errors.push("First name"); }
+    if(!lastName) { markField('lastName',  true); errors.push("Last name");  }
+    if(!email)    { markField('email',     true); errors.push("Email");      }
+    else if(!emailOk){ markField('email',  true); errors.push("Valid email address"); }
+    if(!phone)    { markField('phone',     true); errors.push("Phone");      }
+    if(!description){ markField('description', true); errors.push("Project description"); }
+    if(errors.length){ setStatus("Please fix: " + errors.join(", ") + ".", true); return; }
 
     if(btn) btn.disabled = true;
-    setStatus("Sending…", false);
+    setStatus("Sending…");
+
+    const selectedCondition = document.querySelector('input[name="treeCondition"]:checked');
+    const condition = selectedCondition ? selectedCondition.value : "Not specified";
+
+    const templateParams = {
+        from_name:      firstName + " " + lastName,
+        from_email:     email,
+        phone:          phone,
+        street:         street  || "Not provided",
+        city:           city    || "Not provided",
+        zip:            zip     || "Not provided",
+        species:        species || "Not provided",
+        circumference:  circumference || "Not provided",
+        condition:      condition,
+        message:        description
+      };
 
     try{
-      const condition = [];
-      if(document.getElementById('treeDry').checked) condition.push("Dry (sitting for years)");
-      if(document.getElementById('treeGreen').checked) condition.push("Green (freshly cut)");
-      await emailjs.send("service_z617ptd", "l4woz9a", {
-        from_name:     payload.firstName + " " + payload.lastName,
-        from_email:    payload.email,
-        phone:         payload.phone,
-        street:        payload.street,
-        city:          payload.city,
-        zip:           payload.zip,
-        species:       payload.species,
-        circumference: payload.circumference,
-        condition:     condition.join(", ") || "Not specified",
-        message:       payload.description
-      });
-      setStatus("Sent! We'll get back to you soon.", false);
+      // Send notification to Anthony
+      await emailjs.send("service_z617ptd", "template_h6l2zkj", templateParams);
+
+      // Send auto-reply to customer
+      await emailjs.send("service_z617ptd", "template_nxmi42e", templateParams);
+
+      setStatus("Sent! We'll get back to you soon.");
     }catch(err){
       setStatus("Failed to send: " + (err.text || err.message || String(err)), true);
       if(btn) btn.disabled = false;
@@ -288,9 +290,10 @@
 
   document.addEventListener("DOMContentLoaded", ()=>{
     const btn = document.getElementById('submitBtn');
-    if(btn){
-      btn.addEventListener("click", submitRequest);
-    }
+    if(btn) btn.addEventListener("click", submitRequest);
+    ['firstName','lastName','email','phone','description'].forEach(id => {
+      document.getElementById(id)?.addEventListener('input', () => markField(id, false));
+    });
   });
 </script>
 </main>
