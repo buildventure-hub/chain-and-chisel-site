@@ -163,6 +163,8 @@
 <input autocomplete="given-name" id="firstName" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" type="text"/><br/><br/>
 <label for="lastName">Last name</label><br/>
 <input autocomplete="family-name" id="lastName" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" type="text"/><br/><br/>
+<label for="email">Email</label><br/>
+<input autocomplete="email" id="email" placeholder="you@example.com" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" type="email"/><br/><br/>
 <label for="phone">Phone</label><br/>
 <input autocomplete="tel" id="phone" placeholder="(###) ###-####" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;" type="tel"/><br/><br/>
 <h3>Address</h3>
@@ -206,6 +208,7 @@
     return {
       firstName: document.getElementById('firstName').value || "",
       lastName: document.getElementById('lastName').value || "",
+      email: document.getElementById('email').value || "",
       phone: document.getElementById('phone').value || "",
       street: document.getElementById('street').value || "",
       city: document.getElementById('city').value || "",
@@ -264,8 +267,9 @@
       const condition = [];
       if(document.getElementById('treeDry').checked) condition.push("Dry (sitting for years)");
       if(document.getElementById('treeGreen').checked) condition.push("Green (freshly cut)");
-      await emailjs.send("service_z617ptd", "template_h6l2zkj", {
+      await emailjs.send("service_z617ptd", "l4woz9a", {
         from_name:     payload.firstName + " " + payload.lastName,
+        from_email:    payload.email,
         phone:         payload.phone,
         street:        payload.street,
         city:          payload.city,
