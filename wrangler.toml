@@ -1,0 +1,7 @@
+name = "chain-and-chisel-site"
+main = "worker/send.js"
+compatibility_date = "2024-01-01"
+
+routes = [
+  { pattern = "chainandchisel.art/api/send", zone_name = "chainandchisel.art" }
+]

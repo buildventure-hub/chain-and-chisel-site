@@ -6,3 +6,4 @@ claude-context/
 
 # Local dev
 *.log
+.wrangler/

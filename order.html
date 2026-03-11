@@ -8,9 +8,7 @@
 <link href="styles.css?v=3" rel="stylesheet"/>
 <!-- Cloudflare Turnstile widget script -->
 <script async="" defer="" src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
-<!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>window.addEventListener('load',function(){ emailjs.init("wgTynIVfEl9JwKWO7"); });</script>
+<!-- Email + CRM handled server-side via /api/send (Cloudflare Worker) -->
 <style>
     /* Responsive form sizing */
     .content-card {
@@ -274,16 +272,27 @@
         message:        description
       };
 
+    // --- Send via Cloudflare Worker (Resend emails + Airtable CRM) ---
     try{
-      // Send notification to Anthony
-      await emailjs.send("service_z617ptd", "template_h6l2zkj", templateParams);
+      console.log("[send] Submitting to /api/send…");
+      const res  = await fetch("https://chainandchisel.art/api/send", {
+        method:  "POST",
+        headers: { "Content-Type": "application/json" },
+        body:    JSON.stringify(templateParams),
+      });
+      const data = await res.json().catch(() => ({}));
+      console.log("[send] Response:", data);
 
-      // Send auto-reply to customer
-      await emailjs.send("service_z617ptd", "template_nxmi42e", templateParams);
-
-      setStatus("Sent! We'll get back to you soon.");
+      if(res.ok && data.ok){
+        setStatus("Sent! We'll get back to you soon.");
+      }else{
+        console.error("[send] Worker error:", data.errors);
+        setStatus("Failed to send. Please email us directly at info@chainandchisel.art", true);
+        if(btn) btn.disabled = false;
+      }
     }catch(err){
-      setStatus("Failed to send: " + (err.text || err.message || String(err)), true);
+      console.error("[send] Fetch exception:", err);
+      setStatus("Failed to send. Please email us directly at info@chainandchisel.art", true);
       if(btn) btn.disabled = false;
     }
   }
