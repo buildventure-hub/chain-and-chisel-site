@@ -2,7 +2,8 @@
 // Drop this script on any page to add the floating chat button + panel
 
 (function () {
-  const API = "https://chainandchisel.art/api/chat";
+  const API      = "https://chainandchisel.art/api/chat";
+  const LEAD_API = "https://chainandchisel.art/api/chat-lead";
   const GOLD = "#d4a96a";
   const BG   = "#0f0f10";
   const PANEL = "#171718";
@@ -268,6 +269,8 @@
   const messages = []; // {role, content}
   let isOpen = false;
   let isLoading = false;
+  let leadSubmitted = false; // prevent duplicate submissions
+  const contact = { name: "", email: "", phone: "" }; // populated as bot collects info
 
   const messagesEl = panel.querySelector("#cc-messages");
   const inputEl    = panel.querySelector("#cc-input");
@@ -321,7 +324,28 @@
     setTimeout(() => inputEl.focus(), 200);
   }
 
+  function submitLead() {
+    // Only submit if there have been at least 2 user messages and not already submitted
+    const userMsgCount = messages.filter(m => m.role === "user").length;
+    if (leadSubmitted || userMsgCount < 2) return;
+    leadSubmitted = true;
+
+    // Try to extract contact info from conversation if not already set
+    if (!contact.email || !contact.name) {
+      const fullText = messages.map(m => m.content).join(" ");
+      const emailMatch = fullText.match(/[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/);
+      const phoneMatch = fullText.match(/(\+?1?\s?)?(\(?\d{3}\)?[\s.\-]?\d{3}[\s.\-]?\d{4})/);
+      if (emailMatch && !contact.email) contact.email = emailMatch[0];
+      if (phoneMatch && !contact.phone) contact.phone = phoneMatch[0];
+    }
+
+    navigator.sendBeacon
+      ? navigator.sendBeacon(LEAD_API, new Blob([JSON.stringify({ messages, contact })], { type: "application/json" }))
+      : fetch(LEAD_API, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messages, contact }), keepalive: true }).catch(() => {});
+  }
+
   function closeChat() {
+    submitLead();
     isOpen = false;
     panel.classList.remove("open");
     btn.setAttribute("aria-expanded", "false");
@@ -334,6 +358,10 @@
   document.addEventListener("click", (e) => {
     if (isOpen && !panel.contains(e.target) && e.target !== btn) closeChat();
   });
+
+  // Submit lead if user navigates away mid-conversation
+  window.addEventListener("pagehide", submitLead);
+  window.addEventListener("beforeunload", submitLead);
 
   // ── Send message ───────────────────────────────────────────────────────────
   async function sendMessage() {
@@ -371,6 +399,13 @@
 
       addMessage("bot", data.reply);
       messages.push({ role: "assistant", content: data.reply });
+
+      // Extract contact info from the full conversation as it builds
+      const fullText = messages.map(m => m.content).join(" ");
+      const emailMatch = fullText.match(/[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/);
+      const phoneMatch = fullText.match(/(\+?1?\s?)?(\(?\d{3}\)?[\s.\-]?\d{3}[\s.\-]?\d{4})/);
+      if (emailMatch) contact.email = emailMatch[0];
+      if (phoneMatch) contact.phone = phoneMatch[0];
 
     } catch (e) {
       removeTyping();

@@ -8,6 +8,7 @@ const CORS = {
 };
 
 export async function handleSend(request, env) {
+    const clientIP = request.headers.get("CF-Connecting-IP") || "";
 
     // Preflight
     if (request.method === "OPTIONS") {
@@ -102,6 +103,7 @@ export async function handleSend(request, env) {
               "Condition":      condition.startsWith("Dry") ? "Dry" : condition.startsWith("Green") ? "Green" : "Not specified",
               "Description":    message,
               "Newsletter":     newsletter === true || newsletter === "true",
+              "IP Address":     clientIP,
               "Status":         "Todo",
               "Source":         "Website Form",
               "Date Submitted": new Date().toISOString().split("T")[0],

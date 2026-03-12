@@ -126,6 +126,8 @@ Pricing depends on: wood species, piece size, complexity, detail level, finish, 
 - NEVER promise a specific timeline without noting it depends on current workload
 - If someone asks you to do something completely unrelated (write code, help with homework, discuss news, etc.) — politely redirect: "I'm only here to help with chainsaw art and custom carvings! Got a project in mind?"
 - Keep responses concise — 2–4 sentences max unless someone asks a detailed question
+- When someone is clearly interested in commissioning a piece, naturally ask: "What's the best way for Anthony to reach you? Just drop your name, email or phone and I'll make sure he gets your details."
+- Once they provide contact info, confirm warmly: "Perfect — I've got your info and Anthony will be in touch within 48 hours. You can also fill out the full request form at chainandchisel.art/order.html if you want to include more project details."
 - Always end conversations that are moving toward a commission by asking for their contact info or directing to the form`;
 
 // Simple in-memory rate limiter (resets on worker restart, good enough for this scale)
@@ -234,4 +236,123 @@ export async function handleChat(request, env) {
       console.error("Chat worker error:", e);
       return new Response(JSON.stringify({ error: "Something went wrong. Please try again." }), { status: 500, headers: CORS });
     }
+}
+
+// ── Chat Lead Submission ────────────────────────────────────────────────────
+// Called by the widget on panel close (if 2+ exchanges) or explicit submission
+// Sends full transcript to Anthony + writes Airtable record
+export async function handleChatLead(request, env) {
+
+  if (request.method === "OPTIONS") {
+    return new Response(null, {
+      status: 204,
+      headers: {
+        "Access-Control-Allow-Origin": "https://chainandchisel.art",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
+    });
+  }
+
+  if (request.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), { status: 405, headers: CORS });
+  }
+
+  const clientIP = request.headers.get("CF-Connecting-IP") || "";
+
+  let body;
+  try { body = await request.json(); } catch {
+    return new Response(JSON.stringify({ error: "Invalid JSON" }), { status: 400, headers: CORS });
+  }
+
+  const { messages = [], contact = {} } = body;
+  if (!messages.length) {
+    return new Response(JSON.stringify({ ok: false, error: "No messages" }), { status: 400, headers: CORS });
+  }
+
+  // Build readable transcript
+  const transcript = messages.map(m => {
+    const who = m.role === "user" ? "Visitor" : "Chain & Chisel Bot";
+    return `[${who}]\n${m.content}`;
+  }).join("\n\n");
+
+  const timestamp = new Date().toLocaleString("en-US", { timeZone: "America/Denver" });
+  const from_name  = contact.name  || "Unknown";
+  const from_email = contact.email || "";
+  const phone      = contact.phone || "";
+
+  const results = { email: false, crm: false };
+  const errors  = [];
+
+  // ── Email transcript to Anthony ──────────────────────────────────────────
+  try {
+    const htmlTranscript = transcript
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/\n/g, "<br/>")
+      .replace(/\[Visitor\]/g, `<strong style="color:#d4a96a;">[Visitor]</strong>`)
+      .replace(/\[Chain &amp; Chisel Bot\]/g, `<strong style="color:#bdbdbd;">[Bot]</strong>`);
+
+    const html = `<div style="font-family:system-ui,sans-serif;max-width:640px;margin:0 auto;background:#0f0f10;border:1px solid rgba(255,255,255,0.12);border-radius:8px;overflow:hidden;">
+      <div style="background:#0f0f10;padding:20px 32px;border-bottom:1px solid rgba(255,255,255,0.12);">
+        <p style="margin:0;color:#d4a96a;font-size:18px;font-weight:700;">Chat Conversation — chainandchisel.art</p>
+        <p style="margin:4px 0 0;color:#bdbdbd;font-size:13px;">${timestamp} · IP: ${clientIP}</p>
+      </div>
+      ${from_name !== "Unknown" || from_email || phone ? `
+      <div style="background:#171718;padding:16px 32px;border-bottom:1px solid rgba(255,255,255,0.12);">
+        <p style="margin:0;color:#f3f3f3;font-size:14px;">
+          ${from_name !== "Unknown" ? `<strong>Name:</strong> ${from_name} &nbsp;` : ""}
+          ${from_email ? `<strong>Email:</strong> <a href="mailto:${from_email}" style="color:#d4a96a;">${from_email}</a> &nbsp;` : ""}
+          ${phone ? `<strong>Phone:</strong> ${phone}` : ""}
+        </p>
+      </div>` : ""}
+      <div style="background:#171718;padding:24px 32px;color:#f3f3f3;font-size:14px;line-height:1.8;">
+        ${htmlTranscript}
+      </div>
+    </div>`;
+
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { "Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from:    "Chain & Chisel Chatbot <noreply@chainandchisel.art>",
+        to:      ["admin@chainandchisel.art"],
+        subject: from_name !== "Unknown"
+          ? `Chat Conversation — ${from_name} (${timestamp})`
+          : `Chat Conversation — ${timestamp}`,
+        html,
+      }),
+    });
+    if (res.ok) { results.email = true; }
+    else { errors.push(`email: ${await res.text()}`); }
+  } catch (e) { errors.push(`email: ${e.message}`); }
+
+  // ── Airtable CRM record ──────────────────────────────────────────────────
+  try {
+    const fields = {
+      "IP Address":       clientIP,
+      "Chat Transcript":  transcript,
+      "Source":           "Chatbot",
+      "Date Submitted":   new Date().toISOString().split("T")[0],
+      "Status":           "Todo",
+    };
+    if (from_name  !== "Unknown") fields["Full Name"] = from_name;
+    if (from_email) fields["Email"] = from_email;
+    if (phone)      fields["Phone"] = phone;
+
+    const res = await fetch(
+      `https://api.airtable.com/v0/${env.AIRTABLE_BASE_ID}/${encodeURIComponent("Commissions")}`,
+      {
+        method: "POST",
+        headers: { "Authorization": `Bearer ${env.AIRTABLE_TOKEN}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ fields }),
+      }
+    );
+    if (res.ok) { results.crm = true; }
+    else { errors.push(`crm: ${await res.text()}`); }
+  } catch (e) { errors.push(`crm: ${e.message}`); }
+
+  return new Response(
+    JSON.stringify({ ok: results.email || results.crm, results, errors: errors.length ? errors : undefined }),
+    { status: 200, headers: CORS }
+  );
 }
