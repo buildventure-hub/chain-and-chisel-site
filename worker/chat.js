@@ -130,28 +130,45 @@ Pricing depends on: wood species, piece size, complexity, detail level, finish, 
 - Once they provide contact info, confirm warmly: "Perfect — I've got your info and Anthony will be in touch within 48 hours. You can also fill out the full request form at chainandchisel.art/order.html if you want to include more project details."
 - Always end conversations that are moving toward a commission by asking for their contact info or directing to the form`;
 
-// Simple in-memory rate limiter (resets on worker restart, good enough for this scale)
+// Rate limiter + abuse tracker
 const rateLimiter = new Map();
+const blockedIPs  = new Set();
 
 function checkRateLimit(ip) {
+  if (blockedIPs.has(ip)) return { allowed: false, blocked: true };
+
   const now = Date.now();
-  const windowMs = 60 * 60 * 1000; // 1 hour
-  const maxRequests = 30;
+  const windowMs   = 60 * 60 * 1000; // 1 hour window
+  const softLimit  = 30;  // warn at 30
+  const hardLimit  = 50;  // block session at 50
 
   if (!rateLimiter.has(ip)) {
-    rateLimiter.set(ip, { count: 1, resetAt: now + windowMs });
-    return true;
+    rateLimiter.set(ip, { count: 1, resetAt: now + windowMs, lastMsgs: [] });
+    return { allowed: true, blocked: false };
   }
 
   const entry = rateLimiter.get(ip);
   if (now > entry.resetAt) {
-    rateLimiter.set(ip, { count: 1, resetAt: now + windowMs });
-    return true;
+    rateLimiter.set(ip, { count: 1, resetAt: now + windowMs, lastMsgs: [] });
+    return { allowed: true, blocked: false };
   }
 
-  if (entry.count >= maxRequests) return false;
   entry.count++;
-  return true;
+  if (entry.count >= hardLimit) {
+    blockedIPs.add(ip);
+    return { allowed: false, blocked: true };
+  }
+  if (entry.count >= softLimit) return { allowed: false, blocked: false };
+  return { allowed: true, blocked: false };
+}
+
+function checkRepetition(ip, message) {
+  const entry = rateLimiter.get(ip);
+  if (!entry) return false;
+  entry.lastMsgs = [...(entry.lastMsgs || []).slice(-4), message];
+  const dupes = entry.lastMsgs.filter(m => m === message).length;
+  if (dupes >= 3) { blockedIPs.add(ip); return true; }
+  return false;
 }
 
 export async function handleChat(request, env) {
@@ -172,10 +189,14 @@ export async function handleChat(request, env) {
       return new Response(JSON.stringify({ error: "Method not allowed" }), { status: 405, headers: CORS });
     }
 
-    // Rate limiting by IP
+    // Rate limiting + abuse detection by IP
     const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-    if (!checkRateLimit(ip)) {
-      return new Response(JSON.stringify({ error: "Too many messages. Please try again later." }), { status: 429, headers: CORS });
+    const rateCheck = checkRateLimit(ip);
+    if (!rateCheck.allowed) {
+      const msg = rateCheck.blocked
+        ? "This session has been blocked due to unusual activity."
+        : "Too many messages. Please try again later or reach us directly at (720) 334-6313.";
+      return new Response(JSON.stringify({ error: msg }), { status: 429, headers: CORS });
     }
 
     let body;
@@ -188,6 +209,12 @@ export async function handleChat(request, env) {
     const { messages } = body;
     if (!Array.isArray(messages) || messages.length === 0) {
       return new Response(JSON.stringify({ error: "messages array required" }), { status: 400, headers: CORS });
+    }
+
+    // Repetition / spam detection
+    const lastUserMsg = [...messages].reverse().find(m => m.role === "user")?.content || "";
+    if (checkRepetition(ip, lastUserMsg)) {
+      return new Response(JSON.stringify({ error: "This session has been blocked due to unusual activity." }), { status: 429, headers: CORS });
     }
 
     // Cap history to last 10 messages to control costs
@@ -239,8 +266,8 @@ export async function handleChat(request, env) {
 }
 
 // ── Chat Lead Submission ────────────────────────────────────────────────────
-// Called by the widget on panel close (if 2+ exchanges) or explicit submission
-// Sends full transcript to Anthony + writes Airtable record
+// Called by the widget on any close after at least 1 real user message
+// Uses Claude Haiku to extract contact info + classify lead quality
 export async function handleChatLead(request, env) {
 
   if (request.method === "OPTIONS") {
@@ -260,13 +287,19 @@ export async function handleChatLead(request, env) {
 
   const clientIP = request.headers.get("CF-Connecting-IP") || "";
 
+  // Block flagged IPs from submitting leads too
+  if (blockedIPs.has(clientIP)) {
+    return new Response(JSON.stringify({ ok: false }), { status: 429, headers: CORS });
+  }
+
   let body;
   try { body = await request.json(); } catch {
     return new Response(JSON.stringify({ error: "Invalid JSON" }), { status: 400, headers: CORS });
   }
 
-  const { messages = [], contact = {} } = body;
-  if (!messages.length) {
+  const { messages = [] } = body;
+  const userMessages = messages.filter(m => m.role === "user");
+  if (!userMessages.length) {
     return new Response(JSON.stringify({ ok: false, error: "No messages" }), { status: 400, headers: CORS });
   }
 
@@ -277,67 +310,124 @@ export async function handleChatLead(request, env) {
   }).join("\n\n");
 
   const timestamp = new Date().toLocaleString("en-US", { timeZone: "America/Denver" });
-  const from_name  = contact.name  || "Unknown";
-  const from_email = contact.email || "";
-  const phone      = contact.phone || "";
+
+  // ── Claude extraction: contact info + lead quality ───────────────────────
+  let extracted = { name: "", email: "", phone: "", project: "", quality: "Inquiry" };
+  try {
+    const extractRes = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "x-api-key": env.ANTHROPIC_API_KEY,
+        "anthropic-version": "2023-06-01",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "claude-haiku-4-5-20251001",
+        max_tokens: 300,
+        system: "You extract structured data from chat transcripts. Return ONLY valid JSON, no explanation.",
+        messages: [{
+          role: "user",
+          content: `Extract from this chat transcript and return JSON:
+{
+  "name": "full name or empty string",
+  "email": "email address or empty string",
+  "phone": "phone number or empty string",
+  "project": "brief description of what they want carved, or empty string",
+  "quality": "Lead" | "Inquiry" | "Junk"
+}
+
+Quality guide:
+- "Lead": has contact info (email or phone) AND project intent
+- "Inquiry": genuine questions about carving/pricing but no contact info
+- "Junk": test messages, nonsense, spam, single words, clearly not a real customer
+
+Transcript:
+${transcript}`
+        }],
+      }),
+    });
+    if (extractRes.ok) {
+      const extractData = await extractRes.json();
+      const raw = extractData.content?.[0]?.text || "{}";
+      const jsonMatch = raw.match(/\{[\s\S]*\}/);
+      if (jsonMatch) extracted = { ...extracted, ...JSON.parse(jsonMatch[0]) };
+    }
+  } catch (e) { /* extraction failed — proceed with empty fields */ }
+
+  // Mark as Spam if IP is in blocked list
+  if (blockedIPs.has(clientIP)) extracted.quality = "Spam";
 
   const results = { email: false, crm: false };
   const errors  = [];
 
-  // ── Email transcript to Anthony ──────────────────────────────────────────
-  try {
-    const htmlTranscript = transcript
-      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
-      .replace(/\n/g, "<br/>")
-      .replace(/\[Visitor\]/g, `<strong style="color:#d4a96a;">[Visitor]</strong>`)
-      .replace(/\[Chain &amp; Chisel Bot\]/g, `<strong style="color:#bdbdbd;">[Bot]</strong>`);
+  // ── Email transcript to Anthony (skip Junk) ──────────────────────────────
+  if (extracted.quality !== "Junk") {
+    try {
+      const qualityBadge = extracted.quality === "Lead"
+        ? `<span style="background:#27ae60;color:#fff;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">LEAD</span>`
+        : extracted.quality === "Spam"
+        ? `<span style="background:#e74c3c;color:#fff;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">SPAM</span>`
+        : `<span style="background:#f39c12;color:#fff;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">INQUIRY</span>`;
 
-    const html = `<div style="font-family:system-ui,sans-serif;max-width:640px;margin:0 auto;background:#0f0f10;border:1px solid rgba(255,255,255,0.12);border-radius:8px;overflow:hidden;">
-      <div style="background:#0f0f10;padding:20px 32px;border-bottom:1px solid rgba(255,255,255,0.12);">
-        <p style="margin:0;color:#d4a96a;font-size:18px;font-weight:700;">Chat Conversation — chainandchisel.art</p>
-        <p style="margin:4px 0 0;color:#bdbdbd;font-size:13px;">${timestamp} · IP: ${clientIP}</p>
-      </div>
-      ${from_name !== "Unknown" || from_email || phone ? `
-      <div style="background:#171718;padding:16px 32px;border-bottom:1px solid rgba(255,255,255,0.12);">
-        <p style="margin:0;color:#f3f3f3;font-size:14px;">
-          ${from_name !== "Unknown" ? `<strong>Name:</strong> ${from_name} &nbsp;` : ""}
-          ${from_email ? `<strong>Email:</strong> <a href="mailto:${from_email}" style="color:#d4a96a;">${from_email}</a> &nbsp;` : ""}
-          ${phone ? `<strong>Phone:</strong> ${phone}` : ""}
-        </p>
-      </div>` : ""}
-      <div style="background:#171718;padding:24px 32px;color:#f3f3f3;font-size:14px;line-height:1.8;">
-        ${htmlTranscript}
-      </div>
-    </div>`;
+      const htmlTranscript = transcript
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+        .replace(/\n/g, "<br/>")
+        .replace(/\[Visitor\]/g, `<strong style="color:#d4a96a;">[Visitor]</strong>`)
+        .replace(/\[Chain &amp; Chisel Bot\]/g, `<strong style="color:#bdbdbd;">[Bot]</strong>`);
 
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: { "Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from:    "Chain & Chisel Chatbot <noreply@chainandchisel.art>",
-        to:      ["admin@chainandchisel.art"],
-        subject: from_name !== "Unknown"
-          ? `Chat Conversation — ${from_name} (${timestamp})`
-          : `Chat Conversation — ${timestamp}`,
-        html,
-      }),
-    });
-    if (res.ok) { results.email = true; }
-    else { errors.push(`email: ${await res.text()}`); }
-  } catch (e) { errors.push(`email: ${e.message}`); }
+      const hasContact = extracted.name || extracted.email || extracted.phone;
+      const html = `<div style="font-family:system-ui,sans-serif;max-width:640px;margin:0 auto;background:#0f0f10;border:1px solid rgba(255,255,255,0.12);border-radius:8px;overflow:hidden;">
+        <div style="background:#0f0f10;padding:20px 32px;border-bottom:1px solid rgba(255,255,255,0.12);">
+          <p style="margin:0 0 8px;color:#d4a96a;font-size:18px;font-weight:700;">Chat Conversation — chainandchisel.art &nbsp;${qualityBadge}</p>
+          <p style="margin:0;color:#bdbdbd;font-size:13px;">${timestamp} · IP: ${clientIP}</p>
+        </div>
+        ${hasContact ? `
+        <div style="background:#171718;padding:16px 32px;border-bottom:1px solid rgba(255,255,255,0.12);">
+          <p style="margin:0;color:#f3f3f3;font-size:14px;">
+            ${extracted.name  ? `<strong>Name:</strong> ${extracted.name} &nbsp;` : ""}
+            ${extracted.email ? `<strong>Email:</strong> <a href="mailto:${extracted.email}" style="color:#d4a96a;">${extracted.email}</a> &nbsp;` : ""}
+            ${extracted.phone ? `<strong>Phone:</strong> ${extracted.phone} &nbsp;` : ""}
+            ${extracted.project ? `<br/><strong>Project:</strong> ${extracted.project}` : ""}
+          </p>
+        </div>` : ""}
+        <div style="background:#171718;padding:24px 32px;color:#f3f3f3;font-size:14px;line-height:1.8;">
+          ${htmlTranscript}
+        </div>
+      </div>`;
 
-  // ── Airtable CRM record ──────────────────────────────────────────────────
+      const subject = extracted.quality === "Lead" && extracted.name
+        ? `🔥 New Lead — ${extracted.name} (${timestamp})`
+        : `Chat ${extracted.quality} — ${timestamp}`;
+
+      const res = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: { "Authorization": `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          from: "Chain & Chisel Chatbot <noreply@chainandchisel.art>",
+          to:   ["admin@chainandchisel.art"],
+          subject,
+          html,
+        }),
+      });
+      if (res.ok) { results.email = true; }
+      else { errors.push(`email: ${await res.text()}`); }
+    } catch (e) { errors.push(`email: ${e.message}`); }
+  }
+
+  // ── Airtable CRM record (all conversations including Junk for analytics) ─
   try {
     const fields = {
       "IP Address":       clientIP,
       "Chat Transcript":  transcript,
+      "Lead Quality":     extracted.quality,
       "Source":           "Chatbot",
       "Date Submitted":   new Date().toISOString().split("T")[0],
-      "Status":           "Todo",
+      "Status":           extracted.quality === "Lead" ? "Todo" : "Todo",
     };
-    if (from_name  !== "Unknown") fields["Full Name"] = from_name;
-    if (from_email) fields["Email"] = from_email;
-    if (phone)      fields["Phone"] = phone;
+    if (extracted.name)    fields["Full Name"]    = extracted.name;
+    if (extracted.email)   fields["Email"]        = extracted.email;
+    if (extracted.phone)   fields["Phone"]        = extracted.phone;
+    if (extracted.project) fields["Description"]  = extracted.project;
 
     const res = await fetch(
       `https://api.airtable.com/v0/${env.AIRTABLE_BASE_ID}/${encodeURIComponent("Commissions")}`,

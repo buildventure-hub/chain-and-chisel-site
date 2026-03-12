@@ -325,9 +325,9 @@
   }
 
   function submitLead() {
-    // Only submit if there have been at least 2 user messages and not already submitted
+    // Submit any real conversation — even a single message can be a complete lead
     const userMsgCount = messages.filter(m => m.role === "user").length;
-    if (leadSubmitted || userMsgCount < 2) return;
+    if (leadSubmitted || userMsgCount < 1) return;
     leadSubmitted = true;
 
     // Try to extract contact info from conversation if not already set
