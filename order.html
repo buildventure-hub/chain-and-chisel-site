@@ -6,8 +6,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Contact | Chain &amp; Chisel</title>
 <link href="styles.css?v=3" rel="stylesheet"/>
-<!-- Cloudflare Turnstile widget script -->
-<script async="" defer="" src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
 <!-- Email + CRM handled server-side via /api/send (Cloudflare Worker) -->
 <style>
     /* Responsive form sizing */
@@ -190,18 +188,13 @@
 <h3>Project description</h3>
 <label for="description">Description</label><br/>
 <textarea id="description" placeholder="Tell us what you want carved, size, style, deadline, budget range, delivery needs, photos/links, etc." rows="7" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;"></textarea><br/><br/>
-<!-- Turnstile widget -->
-<div class="cf-turnstile" data-callback="onHuman" data-sitekey="0x4AAAAAACjp72zfI1VMydXX"></div>
-<br/>
-<button aria-disabled="true" class="side-plank submit-plank" disabled="" id="submitBtn" type="button"><img alt="" class="side-plank-img" src="assets/buttons/plank-button-1.png?v=3"/><span class="side-plank-text">Submit Request</span></button>
+<button class="side-plank submit-plank" id="submitBtn" type="button"><img alt="" class="side-plank-img" src="assets/buttons/plank-button-1.png?v=3"/><span class="side-plank-text">Submit Request</span></button>
 <p id="formStatus" style="opacity:0.9; margin-top:10px;"></p>
 <p style="opacity:0.8; margin-top:10px;">
         </p>
 </form>
 </div>
 <script>
-  let turnstileToken = "";
-
   const baseStyle = "width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;";
   const errStyle  = "width:100%; padding:10px; border-radius:10px; border:2px solid #ff6b6b; background:rgba(80,0,0,0.25); color:#fff;";
 
@@ -217,19 +210,11 @@
     el.style.color = isError ? "#ff6b6b" : "#cfe8cf";
   }
 
-  function onHuman(token){
-    turnstileToken = token || "";
-    const btn = document.getElementById('submitBtn');
-    if(btn) btn.disabled = !turnstileToken;
-    if(turnstileToken) setStatus("Verified! You can send your request now.");
-  }
-
   async function submitRequest(){
     const fields = ['firstName','lastName','email','phone','description'];
     fields.forEach(id => markField(id, false));
 
     const btn = document.getElementById('submitBtn');
-    if(!turnstileToken){ setStatus("Please complete the 'I am human' check first.", true); return; }
 
     const v = id => document.getElementById(id)?.value.trim() || "";
     const firstName    = v('firstName');
