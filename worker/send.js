@@ -44,6 +44,7 @@ export default {
       circumference = "",
       condition     = "Not specified",
       message       = "",
+      newsletter    = false,
     } = body;
 
     const results = { email_notify: false, email_reply: false, crm: false };
@@ -59,7 +60,7 @@ export default {
           to:       ["admin@chainandchisel.art"],
           reply_to: from_email,
           subject:  `New Commission Request — ${from_name}`,
-          html:     buildNotificationEmail({ from_name, from_email, phone, street, city, zip, species, circumference, condition, message }),
+          html:     buildNotificationEmail({ from_name, from_email, phone, street, city, zip, species, circumference, condition, message, newsletter }),
         }),
       });
       if (res.ok) { results.email_notify = true; }
@@ -101,6 +102,7 @@ export default {
               "Circumference":  circumference,
               "Condition":      condition.startsWith("Dry") ? "Dry" : condition.startsWith("Green") ? "Green" : "Not specified",
               "Description":    message,
+              "Newsletter":     newsletter === true || newsletter === "true",
               "Status":         "Todo",
               "Source":         "Website Form",
               "Date Submitted": new Date().toISOString().split("T")[0],
@@ -126,7 +128,7 @@ function esc(s) {
   return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 }
 
-function buildNotificationEmail({ from_name, from_email, phone, street, city, zip, species, circumference, condition, message }) {
+function buildNotificationEmail({ from_name, from_email, phone, street, city, zip, species, circumference, condition, message, newsletter }) {
   const addr = [street, city, zip].filter(s => s && s !== "Not provided").join(", ") || "Not provided";
   return `<div style="font-family:system-ui,Helvetica,Arial,sans-serif;max-width:600px;margin:0 auto;background:#0f0f10;border:1px solid rgba(255,255,255,0.12);border-radius:8px;overflow:hidden;">
   <div style="background:#0f0f10;padding:20px 32px;border-bottom:1px solid rgba(255,255,255,0.12);">
@@ -143,6 +145,7 @@ function buildNotificationEmail({ from_name, from_email, phone, street, city, zi
       <tr><td style="color:#bdbdbd;padding:6px 12px 6px 0;font-weight:700;vertical-align:top;">Circumference</td><td style="padding:6px 0;">${esc(circumference || "Not provided")}</td></tr>
       <tr><td style="color:#bdbdbd;padding:6px 12px 6px 0;font-weight:700;vertical-align:top;">Condition</td><td style="padding:6px 0;">${esc(condition)}</td></tr>
       <tr><td style="color:#bdbdbd;padding:6px 12px 6px 0;font-weight:700;vertical-align:top;border-top:1px solid rgba(255,255,255,0.08);">Project</td><td style="padding:6px 0;border-top:1px solid rgba(255,255,255,0.08);">${esc(message)}</td></tr>
+      <tr><td style="color:#bdbdbd;padding:6px 12px 6px 0;font-weight:700;vertical-align:top;">Newsletter</td><td style="padding:6px 0;">${newsletter ? "✅ Opted in" : "No"}</td></tr>
     </table>
     <p style="margin:24px 0 0;color:#bdbdbd;font-size:13px;">Reply to this email to respond directly to ${esc(from_name)}.</p>
   </div>

@@ -188,6 +188,13 @@
 <h3>Project description</h3>
 <label for="description">Description</label><br/>
 <textarea id="description" placeholder="Tell us what you want carved, size, style, deadline, budget range, delivery needs, photos/links, etc." rows="7" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:rgba(0,0,0,0.25); color:#fff;"></textarea><br/><br/>
+<label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;margin-bottom:18px;">
+  <input id="newsletterOptIn" name="newsletter" type="checkbox" style="width:auto!important;margin-top:3px;accent-color:#d4a96a;"/>
+  <span style="color:#f3f3f3;font-size:14px;line-height:1.5;">Keep me posted — I'd love to hear about new work, seasonal specials, and what's coming off the saw.</span>
+</label>
+<p style="font-size:12px;color:#bdbdbd;line-height:1.6;margin:0 0 20px 0;padding:12px 16px;background:rgba(255,255,255,0.04);border-left:3px solid rgba(212,169,106,0.4);border-radius:4px;">
+  🔒 Your information is completely private. It will never be bought, sold, traded, or published — ever. Full stop.
+</p>
 <button class="side-plank submit-plank" id="submitBtn" type="button"><img alt="" class="side-plank-img" src="assets/buttons/plank-button-1.png?v=3"/><span class="side-plank-text">Submit Request</span></button>
 <p id="formStatus" style="opacity:0.9; margin-top:10px;"></p>
 <p style="opacity:0.8; margin-top:10px;">
@@ -244,6 +251,8 @@
     const selectedCondition = document.querySelector('input[name="treeCondition"]:checked');
     const condition = selectedCondition ? selectedCondition.value : "Not specified";
 
+    const newsletter = document.getElementById('newsletterOptIn')?.checked || false;
+
     const templateParams = {
         from_name:      firstName + " " + lastName,
         from_email:     email,
@@ -254,7 +263,8 @@
         species:        species || "Not provided",
         circumference:  circumference || "Not provided",
         condition:      condition,
-        message:        description
+        message:        description,
+        newsletter:     newsletter
       };
 
     // --- Send via Cloudflare Worker (Resend emails + Airtable CRM) ---
