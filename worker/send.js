@@ -7,8 +7,7 @@ const CORS = {
   "Content-Type": "application/json",
 };
 
-export default {
-  async fetch(request, env) {
+export async function handleSend(request, env) {
 
     // Preflight
     if (request.method === "OPTIONS") {
@@ -120,8 +119,7 @@ export default {
       JSON.stringify({ ok: emailOk, results, errors: errors.length ? errors : undefined }),
       { status: emailOk ? 200 : 500, headers: CORS }
     );
-  }
-};
+}
 
 // ── Email templates ────────────────────────────────────────────────────────
 function esc(s) {
