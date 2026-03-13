@@ -25,8 +25,8 @@
       box-shadow: 0 4px 16px rgba(0,0,0,0.5);
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 22px 12px 16px;
+      gap: 6px;
+      padding: 12px 18px 12px 6px;
       transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
     }
     #cc-chat-btn:hover {
@@ -34,27 +34,27 @@
       filter: brightness(1.1);
       box-shadow: 0 6px 24px rgba(0,0,0,0.6);
     }
-    #cc-chat-btn svg { display: block; flex-shrink: 0; opacity: 0.45; }
-    #cc-chat-btn .cc-btn-text { text-align: left; }
+    #cc-chat-btn svg { display: block; flex-shrink: 0; opacity: 0.5; margin-left: 2px; }
+    #cc-chat-btn .cc-btn-text { text-align: center; flex: 1; }
     #cc-chat-btn .cc-btn-text strong {
       display: block;
       font-size: 14px;
       font-weight: 800;
-      color: #fff;
+      color: #1a1209;
       font-family: system-ui, sans-serif;
       line-height: 1.2;
       white-space: nowrap;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+      text-shadow: 0 1px 2px rgba(255,255,255,0.25);
     }
     #cc-chat-btn .cc-btn-text span {
       display: block;
       font-size: 12px;
       font-weight: 700;
-      color: rgba(255,255,255,0.9);
+      color: #2a1a08;
       font-family: system-ui, sans-serif;
       line-height: 1.2;
       white-space: nowrap;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+      text-shadow: 0 1px 2px rgba(255,255,255,0.25);
     }
 
     #cc-chat-panel {
@@ -250,8 +250,8 @@
   const btn = document.createElement("button");
   btn.id = "cc-chat-btn";
   btn.setAttribute("aria-label", "Chat with us");
-  btn.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="#ffffff"/>
+  btn.innerHTML = `<svg width="27" height="27" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="#1a1209"/>
   </svg>
   <div class="cc-btn-text">
     <strong>Chat is open!</strong>
