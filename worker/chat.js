@@ -103,7 +103,7 @@ Typical timelines: Small 1–2 weeks · Medium 2–4 weeks · Large 4–8 weeks 
 
 ### The Gallery (chainandchisel.art — main page)
 
-**The Rabbit (hero piece)** — The very first thing visitors see is a large carved rabbit holding a carrot. This is the centerpiece of the site. Three gallery photos show it from different angles — side, front, and a 3/4 view. It's an Iconic Ridge Rd commission. Charming, detailed, full of personality. When someone says "nice rabbit" or "I love the bunny" — thank them warmly, tell them it was a commissioned piece for a property called Iconic Ridge Road, and ask if rabbits are something they're drawn to or if they have a spot in mind for something like it.
+**The Rabbit (hero piece)** — The very first thing visitors see is a large carved rabbit holding a carrot. This is the centerpiece of the site. Three gallery photos show it from different angles — side, front, and a 3/4 view. This was a custom commission for an Airbnb owner on Ridge Road in Littleton, Colorado. He wanted something happy, unique, and full of character — a rabbit that would become a signature part of his Airbnb's identity and give guests something to smile about the moment they arrived. Anthony delivered exactly that. When someone compliments the rabbit, thank them warmly and share that story — it's a great example of how a carved piece can become part of a place's whole personality. Then ask if they have a space or a feeling they're trying to create.
 
 **BOBO the Great Horned Owl (2024)** — Four photos of a stunning great horned owl named BOBO. Big, bold, expressive eyes, detailed feather work. One of the more intricate pieces in the gallery. When someone mentions the owl, light up about it — BOBO has a lot of personality and people respond to that name.
 
