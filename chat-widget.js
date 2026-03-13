@@ -17,23 +17,41 @@
       bottom: 24px;
       right: 24px;
       z-index: 9999;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
+      height: auto;
+      border-radius: 32px;
       background: ${GOLD};
       border: none;
       cursor: pointer;
       box-shadow: 0 4px 20px rgba(212,169,106,0.45);
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 10px;
+      padding: 10px 18px 10px 14px;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
     #cc-chat-btn:hover {
-      transform: scale(1.08);
+      transform: scale(1.04);
       box-shadow: 0 6px 28px rgba(212,169,106,0.6);
     }
-    #cc-chat-btn svg { display: block; }
+    #cc-chat-btn svg { display: block; flex-shrink: 0; }
+    #cc-chat-btn .cc-btn-text { text-align: left; }
+    #cc-chat-btn .cc-btn-text strong {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #1a1a1a;
+      font-family: system-ui, sans-serif;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    #cc-chat-btn .cc-btn-text span {
+      display: block;
+      font-size: 10.5px;
+      color: rgba(26,26,26,0.7);
+      font-family: system-ui, sans-serif;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
 
     #cc-chat-panel {
       position: fixed;
@@ -228,9 +246,13 @@
   const btn = document.createElement("button");
   btn.id = "cc-chat-btn";
   btn.setAttribute("aria-label", "Chat with us");
-  btn.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  btn.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="#1a1a1a"/>
-  </svg>`;
+  </svg>
+  <div class="cc-btn-text">
+    <strong>Chat is open!</strong>
+    <span>Let's carve it out</span>
+  </div>`;
 
   // Panel
   const panel = document.createElement("div");
