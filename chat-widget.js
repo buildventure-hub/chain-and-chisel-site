@@ -378,7 +378,7 @@
 
   // Close on outside click
   document.addEventListener("click", (e) => {
-    if (isOpen && !panel.contains(e.target) && e.target !== btn) closeChat();
+    if (isOpen && !panel.contains(e.target) && !btn.contains(e.target)) closeChat();
   });
 
   // Submit lead if user navigates away mid-conversation
