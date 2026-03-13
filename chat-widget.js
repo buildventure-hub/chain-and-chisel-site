@@ -375,9 +375,11 @@
       if (phoneMatch && !contact.phone) contact.phone = phoneMatch[0];
     }
 
+    // Trim to last 40 messages to stay well under sendBeacon's ~64KB limit
+    const payload = JSON.stringify({ messages: messages.slice(-40), contact });
     navigator.sendBeacon
-      ? navigator.sendBeacon(LEAD_API, new Blob([JSON.stringify({ messages, contact })], { type: "application/json" }))
-      : fetch(LEAD_API, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messages, contact }), keepalive: true }).catch(() => {});
+      ? navigator.sendBeacon(LEAD_API, new Blob([payload], { type: "application/json" }))
+      : fetch(LEAD_API, { method: "POST", headers: { "Content-Type": "application/json" }, body: payload, keepalive: true }).catch(() => {});
   }
 
   function closeChat() {

@@ -494,7 +494,13 @@ ${transcript}`
         ? `<span style="background:#e74c3c;color:#fff;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">SPAM</span>`
         : `<span style="background:#f39c12;color:#fff;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;">INQUIRY</span>`;
 
-      const htmlTranscript = transcript
+      // Cap email transcript to ~6000 chars to prevent Gmail clipping (~102KB limit)
+      const EMAIL_TRANSCRIPT_LIMIT = 6000;
+      const transcriptTrimmed = transcript.length > EMAIL_TRANSCRIPT_LIMIT
+        ? transcript.slice(0, EMAIL_TRANSCRIPT_LIMIT) + "\n\n... [transcript truncated — full version in Airtable CRM]"
+        : transcript;
+
+      const htmlTranscript = transcriptTrimmed
         .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
         .replace(/\n/g, "<br/>")
         .replace(/\[Visitor\]/g, `<strong style="color:#d4a96a;">[Visitor]</strong>`)
