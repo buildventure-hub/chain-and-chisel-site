@@ -13,8 +13,8 @@
   const style = document.createElement("style");
   style.textContent = `
     @keyframes cc-pulse {
-      0%, 100% { box-shadow: 0 4px 16px rgba(0,0,0,0.5), 0 0 8px rgba(212,169,106,0.2); }
-      50%       { box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 28px rgba(212,169,106,0.75), 0 0 48px rgba(212,169,106,0.3); }
+      0%, 100% { filter: drop-shadow(0 0 4px rgba(212,169,106,0.25)); }
+      50%       { filter: drop-shadow(0 0 14px rgba(212,169,106,0.9)) drop-shadow(0 0 28px rgba(212,169,106,0.45)); }
     }
     #cc-chat-btn {
       position: fixed;
@@ -31,13 +31,12 @@
       justify-content: center;
       padding: 14px 40px;
       animation: cc-pulse 3s ease-in-out infinite;
-      transition: transform 0.15s ease, filter 0.15s ease;
+      transition: transform 0.15s ease;
     }
     #cc-chat-btn:hover {
       transform: scale(1.04);
-      filter: brightness(1.1);
       animation-play-state: paused;
-      box-shadow: 0 6px 28px rgba(212,169,106,0.8), 0 4px 16px rgba(0,0,0,0.5);
+      filter: brightness(1.1) drop-shadow(0 0 16px rgba(212,169,106,0.9));
     }
     #cc-chat-btn .cc-btn-text { text-align: center; }
     #cc-chat-btn .cc-btn-text strong {
