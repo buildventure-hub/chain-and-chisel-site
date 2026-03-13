@@ -307,11 +307,38 @@
   function addMessage(role, text) {
     const div = document.createElement("div");
     div.className = `cc-msg ${role}`;
-    // Simple link detection
     div.innerHTML = text
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
     messagesEl.appendChild(div);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return div;
+  }
+
+  // Typewriter effect for bot messages — random human-like speed
+  async function typeMessage(text) {
+    const div = document.createElement("div");
+    div.className = "cc-msg bot";
+    messagesEl.appendChild(div);
+
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      div.textContent = text.slice(0, i + 1);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+
+      let delay;
+      if (ch === "." || ch === "!" || ch === "?") delay = 60 + Math.random() * 100;
+      else if (ch === "," || ch === ";")           delay = 30 + Math.random() * 50;
+      else if (ch === " ")                         delay = 10 + Math.random() * 20;
+      else                                         delay = 12 + Math.random() * 22;
+
+      await new Promise(r => setTimeout(r, delay));
+    }
+
+    // Apply link formatting once typing is done
+    div.innerHTML = text
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
     messagesEl.scrollTop = messagesEl.scrollHeight;
     return div;
   }
@@ -354,7 +381,7 @@
         "Welcome to Chain & Chisel! I'm here to help you explore what Anthony can create for you. What's your name?",
       ];
       const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-      addMessage("bot", greeting);
+      typeMessage(greeting);
       messages.push({ role: "assistant", content: greeting });
     }
     setTimeout(() => inputEl.focus(), 200);
@@ -424,18 +451,18 @@
       removeTyping();
 
       if (res.status === 429) {
-        addMessage("bot", "You've sent a lot of messages! Take a breather and try again in a bit, or reach out directly at (720) 334-6313.");
+        await typeMessage("You've sent a lot of messages! Take a breather and try again in a bit, or reach out directly at (720) 334-6313.");
         return;
       }
 
       const data = await res.json();
 
       if (!res.ok || data.error) {
-        addMessage("bot", "Something hiccupped on my end. You can reach Anthony directly at (720) 334-6313 or admin@chainandchisel.art.");
+        await typeMessage("Something hiccupped on my end. You can reach Anthony directly at (720) 334-6313 or admin@chainandchisel.art.");
         return;
       }
 
-      addMessage("bot", data.reply);
+      await typeMessage(data.reply);
       messages.push({ role: "assistant", content: data.reply });
 
       // Extract contact info from the full conversation as it builds
