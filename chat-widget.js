@@ -43,7 +43,7 @@
       font-family: system-ui, sans-serif;
       line-height: 1.2;
       white-space: nowrap;
-      text-shadow: 0 1px 2px rgba(255,255,255,0.25);
+      text-shadow: 0 0 8px rgba(224,192,128,0.95), 0 1px 3px rgba(224,192,128,0.8);
     }
     #cc-chat-btn .cc-btn-text span {
       display: block;
@@ -53,7 +53,7 @@
       font-family: system-ui, sans-serif;
       line-height: 1.2;
       white-space: nowrap;
-      text-shadow: 0 1px 2px rgba(255,255,255,0.25);
+      text-shadow: 0 0 8px rgba(224,192,128,0.95), 0 1px 3px rgba(224,192,128,0.8);
     }
 
     #cc-chat-panel {
