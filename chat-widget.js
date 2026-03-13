@@ -37,7 +37,7 @@
     #cc-chat-btn .cc-btn-text { text-align: center; }
     #cc-chat-btn .cc-btn-text strong {
       display: block;
-      font-size: 16px;
+      font-size: 19px;
       font-weight: 800;
       color: #1a1209;
       font-family: system-ui, sans-serif;
@@ -47,7 +47,7 @@
     }
     #cc-chat-btn .cc-btn-text span {
       display: block;
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 700;
       color: #2a1a08;
       font-family: system-ui, sans-serif;
@@ -251,7 +251,7 @@
   btn.setAttribute("aria-label", "Chat with us");
   btn.innerHTML = `<div class="cc-btn-text">
     <strong>Chat is open!</strong>
-    <span>Let's carve it out</span>
+    <span>Let's carve it out!</span>
   </div>`;
 
   // Panel
