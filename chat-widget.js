@@ -343,7 +343,17 @@
     btn.setAttribute("aria-expanded", "true");
     if (messages.length === 0) {
       // Greeting
-      const greeting = "Hey there! I'm here to help you explore custom chainsaw carving with Anthony. Whether you have a specific piece in mind or just want to get an idea of what's possible — ask away! What are you thinking about?";
+      const greetings = [
+        "Hey! Welcome to Chain & Chisel — I'm here to help you find the perfect custom carving. First things first, what's your name?",
+        "Hi there! Great to see you. I'm here to help bring your vision to life with Anthony's custom chainsaw art. What can I call you?",
+        "Welcome! You've come to the right place for one-of-a-kind hand-carved art. I'd love to help — what's your name?",
+        "Hey, welcome! Whether you've got a specific idea or you're just exploring, I'm here to help. What's your name?",
+        "Hi! Glad you stopped by. Anthony carves some incredible custom pieces — let's figure out what's perfect for you. What do I call you?",
+        "Hello! Custom chainsaw carving is what we do best around here. I'd love to chat — mind sharing your name first?",
+        "Hey there! You're in the right spot for something truly one-of-a-kind. What's your name so I can make this feel a little less like talking to a robot?",
+        "Welcome to Chain & Chisel! I'm here to help you explore what Anthony can create for you. What's your name?",
+      ];
+      const greeting = greetings[Math.floor(Math.random() * greetings.length)];
       addMessage("bot", greeting);
       messages.push({ role: "assistant", content: greeting });
     }
