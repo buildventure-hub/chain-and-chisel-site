@@ -79,11 +79,14 @@
       Array.from(sidebarSocial.querySelectorAll('a')).forEach(a => social.appendChild(a.cloneNode(true)));
 
       const guildLink = document.createElement('a');
-      guildLink.className = 'mobile-guild-link';
+      guildLink.className = 'side-plank mobile-guild-plank';
       guildLink.href = GUILD_URL;
       guildLink.target = '_blank';
       guildLink.rel = 'noopener';
-      guildLink.textContent = 'Visit ccaguild.com';
+      guildLink.innerHTML = `
+        <img alt="" class="side-plank-img" src="assets/buttons/plank-button-3.png?v=3"/>
+        <span class="side-plank-text">Visit the Guild</span>
+      `;
 
       utility.appendChild(social);
       utility.appendChild(guildLink);

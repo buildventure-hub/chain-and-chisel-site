@@ -631,24 +631,22 @@ height: auto;
   gap: 10px;
 }
 
-.mobile-guild-link{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 42px;
+.mobile-guild-plank{
+  display: block;
+  width: min(320px, 100%);
   margin-top: 10px;
-  padding: 0 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(212,169,106,0.45);
-  background: rgba(212,169,106,0.12);
-  color: #f3f3f3;
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.mobile-guild-link:hover{
-  background: rgba(212,169,106,0.2);
+.mobile-guild-plank .side-plank-img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mobile-guild-plank .side-plank-text{
+  font-size: clamp(13px, 3.4vw, 16px);
 }
 
 /* Ensure planks don't explode in height */
