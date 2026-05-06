@@ -1,5 +1,23 @@
 (function(){
   const MOBILE_MAX = 860;
+  const GUILD_URL = 'https://ccaguild.com';
+
+  function ensureGuildButton(){
+    const sidebarNav = document.querySelector('.sidebar-nav');
+    if (!sidebarNav) return;
+    if (sidebarNav.querySelector('.ccag-link')) return;
+
+    const link = document.createElement('a');
+    link.className = 'side-plank ccag-link';
+    link.href = GUILD_URL;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.innerHTML = `
+      <img alt="" class="side-plank-img" src="assets/buttons/plank-button-3.png?v=3"/>
+      <span class="side-plank-text">Visit the Guild</span>
+    `;
+    sidebarNav.appendChild(link);
+  }
 
   function isMobile(){
     return window.matchMedia(`(max-width: ${MOBILE_MAX}px)`).matches;
@@ -18,6 +36,7 @@
 
     const sidebarLogoImg = document.querySelector('.sidebar-logo img');
     const sidebarNav = document.querySelector('.sidebar-nav');
+    const sidebarSocial = document.querySelector('.sidebar-social .social-links');
     if (!sidebarLogoImg || !sidebarNav) return;
 
     const header = document.createElement('header');
@@ -34,12 +53,34 @@
     nav.className = 'mobile-nav';
     nav.setAttribute('aria-label', 'Primary');
 
-    const links = Array.from(sidebarNav.querySelectorAll('a')).map(a => a.cloneNode(true));
+    const links = Array.from(sidebarNav.querySelectorAll('a'))
+      .filter(a => !a.classList.contains('ccag-link'))
+      .map(a => a.cloneNode(true));
     links.forEach(a => nav.appendChild(a));
     nav.style.setProperty('--mobile-nav-cols', links.length > 3 ? '2' : String(Math.max(links.length, 1)));
 
     header.appendChild(logoWrap);
     header.appendChild(nav);
+
+    if (sidebarSocial) {
+      const utility = document.createElement('div');
+      utility.className = 'mobile-utility';
+
+      const social = document.createElement('div');
+      social.className = 'mobile-social-links';
+      Array.from(sidebarSocial.querySelectorAll('a')).forEach(a => social.appendChild(a.cloneNode(true)));
+
+      const guildLink = document.createElement('a');
+      guildLink.className = 'mobile-guild-link';
+      guildLink.href = GUILD_URL;
+      guildLink.target = '_blank';
+      guildLink.rel = 'noopener';
+      guildLink.textContent = 'Visit ccaguild.com';
+
+      utility.appendChild(social);
+      utility.appendChild(guildLink);
+      header.appendChild(utility);
+    }
 
     document.body.prepend(header);
     document.body.classList.add('has-mobile-header');
@@ -87,6 +128,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+    ensureGuildButton();
     buildHeader();
     lastY = window.scrollY || 0;
 

@@ -428,15 +428,19 @@
   }
 
   function isLightboxActive() {
-    if (!location.hash) return false;
-    const id = location.hash.slice(1);
-    if (!id) return false;
-    const target = document.getElementById(id);
-    return !!(target && target.classList && target.classList.contains("lightbox"));
+    return !!document.querySelector(".lightbox:target");
+  }
+
+  function isNearPageBottom() {
+    const scrollBottom = window.scrollY + window.innerHeight;
+    const threshold = 180;
+    const pageHeight = document.documentElement.scrollHeight;
+    const hasScrollableDepth = (pageHeight - window.innerHeight) > 240;
+    return hasScrollableDepth && window.scrollY > 80 && scrollBottom >= (pageHeight - threshold);
   }
 
   function syncChatSuppression() {
-    const suppress = isLightboxActive();
+    const suppress = isLightboxActive() || isNearPageBottom();
     btn.classList.toggle("cc-hidden", suppress);
     panel.classList.toggle("cc-hidden", suppress);
     if (suppress && isOpen) closeChat();
@@ -445,6 +449,9 @@
   btn.addEventListener("click", () => isOpen ? closeChat() : openChat());
   closeBtn.addEventListener("click", closeChat);
   window.addEventListener("hashchange", syncChatSuppression);
+  window.addEventListener("scroll", syncChatSuppression, { passive: true });
+  window.addEventListener("resize", syncChatSuppression);
+  document.addEventListener("DOMContentLoaded", syncChatSuppression);
   syncChatSuppression();
 
   // Close on outside click

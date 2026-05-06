@@ -618,6 +618,39 @@ height: auto;
   align-items: stretch;
 }
 
+.mobile-utility{
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.mobile-social-links{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.mobile-guild-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  margin-top: 10px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(212,169,106,0.45);
+  background: rgba(212,169,106,0.12);
+  color: #f3f3f3;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.mobile-guild-link:hover{
+  background: rgba(212,169,106,0.2);
+}
+
 /* Ensure planks don't explode in height */
 .mobile-header .mobile-nav .side-plank{
   width: 100%;
