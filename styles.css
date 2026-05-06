@@ -750,6 +750,14 @@ height: auto;
   max-width: 190px;
 }
 
+.lb-btn.lb-next{
+  background: url("assets/buttons/plank-button-2.png?v=3") center / 100% 100% no-repeat;
+}
+
+.lb-btn.lb-next .lb-plank{
+  opacity: 0;
+}
+
 .lb-plank{
   width: 100%;
   height: auto;
