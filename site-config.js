@@ -10,5 +10,5 @@ const SITE_CONFIG = {
   useCloudflare: false,        // toggle Turnstile CAPTCHA + /api/order endpoint
 
   // Fallback mailto address used when Cloudflare is off
-  orderEmail: "info@chainandchisel.art",
+  orderEmail: "admin@chainandchisel.art",
 };

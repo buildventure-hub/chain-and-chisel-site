@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png?v=3">
 <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png?v=3">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Contact | Chain &amp; Chisel</title>
+<title>Request a Carving | Chain &amp; Chisel</title>
 <link href="styles.css?v=4" rel="stylesheet"/>
 <!-- Email + CRM handled server-side via /api/send (Cloudflare Worker) -->
 <style>
@@ -123,13 +123,17 @@
 <img alt="" class="side-plank-img" src="assets/buttons/plank-button-1.png?v=3"/>
 <span class="side-plank-text">Gallery</span>
 </a>
-<a class="side-plank" href="faq.html">
+<a class="side-plank" href="about.html">
 <img alt="" class="side-plank-img" src="assets/buttons/plank-button-2.png?v=3"/>
+<span class="side-plank-text">About</span>
+</a>
+<a class="side-plank" href="faq.html">
+<img alt="" class="side-plank-img" src="assets/buttons/plank-button-3.png?v=3"/>
 <span class="side-plank-text">FAQ</span>
 </a>
-<a class="side-plank" href="about.html">
-<img alt="" class="side-plank-img" src="assets/buttons/plank-button-1.png?v=3"/>
-<span class="side-plank-text">About</span>
+<a class="side-plank" href="order.html">
+<img alt="" class="side-plank-img" src="assets/buttons/plank-button-4.png?v=3"/>
+<span class="side-plank-text">Contact</span>
 </a> </nav>
 <div class="sidebar-social" aria-label="Social links">
   <div class="social-links">
@@ -151,14 +155,23 @@
 </aside>
 <main class="content" id="siteContent">
 <div class="content-inner">
-<main class="page">
-<h1 class="section-title">Contact</h1>
+<div class="page">
+<section class="page-intro">
+<p class="eyebrow">Request a Carving</p>
+<h1 class="page-title">Send the details here, or reach out directly first.</h1>
+<p class="section-lead">Use this form for a custom carving request, a question, a review, or a general comment. If you would rather talk first, call, text, or email Anthony directly and come back to the form later.</p>
+</section>
 <div class="content-card">
-<p>
-        Use this form to submit a request, leave a review, or share a comment. After the quick “Are you human” check, the Email button will unlock.
-      </p>
-<p style="opacity:0.85;">
-      </p>
+<div class="contact-shortcuts" style="margin-bottom:24px;">
+<a class="contact-shortcut" href="tel:+17203346313">
+<strong>Call or Text</strong>
+<span>(720) 334-6313</span>
+</a>
+<a class="contact-shortcut" href="mailto:admin@chainandchisel.art">
+<strong>Email Anthony</strong>
+<span>admin@chainandchisel.art</span>
+</a>
+</div>
 <form id="orderForm" onsubmit="return false;">
 <h3 style="margin-top:0;">Contact</h3>
 <label for="firstName">First name</label><br/>
@@ -288,12 +301,12 @@
         setStatus("Sent! We'll get back to you soon.");
       }else{
         console.error("[send] Worker error:", data.errors);
-        setStatus("Failed to send. Please email us directly at info@chainandchisel.art", true);
+        setStatus("Failed to send. Please email us directly at admin@chainandchisel.art", true);
         if(btn) btn.disabled = false;
       }
     }catch(err){
       console.error("[send] Fetch exception:", err);
-      setStatus("Failed to send. Please email us directly at info@chainandchisel.art", true);
+      setStatus("Failed to send. Please email us directly at admin@chainandchisel.art", true);
       if(btn) btn.disabled = false;
     }
   }
@@ -306,7 +319,7 @@
     });
   });
 </script>
-</main>
+</div>
 </div>
 </main>
 </div>

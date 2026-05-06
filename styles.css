@@ -157,6 +157,197 @@ body{
   padding-bottom: 40px;
 }
 
+.content-inner{
+  width: 100%;
+}
+
+.page-intro,
+.content-card,
+.homepage-intro,
+.cta-strip{
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-card,
+.homepage-intro,
+.cta-strip{
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.18);
+}
+
+.content-card{
+  padding: clamp(20px, 3vw, 32px);
+}
+
+.homepage-intro{
+  padding: clamp(22px, 3vw, 34px);
+  margin-bottom: 28px;
+}
+
+.intro-grid{
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.9fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.eyebrow{
+  margin: 0 0 10px;
+  color: #d4a96a;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-title{
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  line-height: 1.05;
+}
+
+.section-title{
+  margin: 22px 0 12px;
+  font-size: 1.35rem;
+  letter-spacing: .3px;
+}
+
+.section-lead{
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  max-width: 70ch;
+}
+
+.intro-list{
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.intro-list li + li{
+  margin-top: 6px;
+}
+
+.lead-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.lead-action{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.lead-action:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.22);
+}
+
+.lead-action.primary{
+  background: #d4a96a;
+  border-color: #d4a96a;
+  color: #16110a;
+}
+
+.lead-action.primary:hover{
+  background: #dfb779;
+  border-color: #dfb779;
+}
+
+.contact-shortcuts{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.contact-shortcut{
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.contact-shortcut:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.contact-shortcut strong{
+  display: block;
+  margin-bottom: 4px;
+}
+
+.contact-shortcut span{
+  display: block;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.faq-section{
+  display: grid;
+  gap: 16px;
+}
+
+.faq-item{
+  padding: 18px 18px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+}
+
+.faq-item h3{
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+.faq-item p{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.cta-strip{
+  margin-top: 28px;
+  padding: clamp(20px, 3vw, 28px);
+}
+
+.cta-strip h2{
+  margin: 0 0 10px;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.cta-strip p{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 /* Masterpiece */
 .masterpiece{
   display:flex;
@@ -167,13 +358,6 @@ body{
   width: min(720px, 90vw);
   height:auto;
   display:block;
-}
-
-/* Gallery */
-.section-title{
-  margin: 22px 0 12px;
-  font-size: 1.35rem;
-  letter-spacing: .3px;
 }
 
 .gallery-row{
@@ -251,6 +435,11 @@ body{
   .page{
     padding-left: 14px;
     padding-right: 14px;
+  }
+
+  .intro-grid,
+  .contact-shortcuts{
+    grid-template-columns: 1fr;
   }
 
   .gallery-row img{
@@ -424,7 +613,7 @@ height: auto;
 .mobile-header .mobile-nav{
   display: grid;
   margin-top: 6px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(var(--mobile-nav-cols, 3), minmax(0, 1fr));
   gap: 10px;
   align-items: stretch;
 }

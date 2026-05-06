@@ -36,7 +36,7 @@ Condition:     ' + treeCondition + '
 PROJECT DESCRIPTION
 -------------------
 ' + description;
-  const emailRes = await fetch('https://api.mailchannels.net/tx/v1/send', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ personalizations: [{ to: [{ email: 'info@chainandchisel.art', name: 'Chain & Chisel' }] }], from: { email: 'noreply@chainandchisel.art', name: 'Chain & Chisel Website' }, subject: 'New Carving Request from ' + firstName + ' ' + lastName, content: [{ type: 'text/plain', value: emailText }] }) });
+  const emailRes = await fetch('https://api.mailchannels.net/tx/v1/send', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ personalizations: [{ to: [{ email: 'admin@chainandchisel.art', name: 'Chain & Chisel' }] }], from: { email: 'noreply@chainandchisel.art', name: 'Chain & Chisel Website' }, subject: 'New Carving Request from ' + firstName + ' ' + lastName, content: [{ type: 'text/plain', value: emailText }] }) });
   if (!emailRes.ok && emailRes.status !== 202) { return new Response(JSON.stringify({ ok: false, error: 'Failed to send email.' }), { status: 500, headers: corsHeaders }); }
   return new Response(JSON.stringify({ ok: true }), { status: 200, headers: corsHeaders });
 }

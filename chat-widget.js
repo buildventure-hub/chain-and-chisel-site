@@ -38,6 +38,11 @@
       animation-play-state: paused;
       filter: brightness(1.1) drop-shadow(0 0 16px rgba(212,169,106,0.9));
     }
+    #cc-chat-btn.cc-hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px) scale(0.96);
+    }
     #cc-chat-btn .cc-btn-text { text-align: center; }
     #cc-chat-btn .cc-btn-text strong {
       display: block;
@@ -85,6 +90,12 @@
       transform: scale(1) translateY(0);
       opacity: 1;
       pointer-events: all;
+    }
+    #cc-chat-panel.cc-hidden,
+    #cc-chat-panel.cc-hidden.open {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.96) translateY(16px);
     }
 
     #cc-chat-header {
@@ -416,8 +427,25 @@
     btn.setAttribute("aria-expanded", "false");
   }
 
+  function isLightboxActive() {
+    if (!location.hash) return false;
+    const id = location.hash.slice(1);
+    if (!id) return false;
+    const target = document.getElementById(id);
+    return !!(target && target.classList && target.classList.contains("lightbox"));
+  }
+
+  function syncChatSuppression() {
+    const suppress = isLightboxActive();
+    btn.classList.toggle("cc-hidden", suppress);
+    panel.classList.toggle("cc-hidden", suppress);
+    if (suppress && isOpen) closeChat();
+  }
+
   btn.addEventListener("click", () => isOpen ? closeChat() : openChat());
   closeBtn.addEventListener("click", closeChat);
+  window.addEventListener("hashchange", syncChatSuppression);
+  syncChatSuppression();
 
   // Close on outside click
   document.addEventListener("click", (e) => {

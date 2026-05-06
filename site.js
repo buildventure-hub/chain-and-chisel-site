@@ -34,8 +34,9 @@
     nav.className = 'mobile-nav';
     nav.setAttribute('aria-label', 'Primary');
 
-    const links = Array.from(sidebarNav.querySelectorAll('a')).slice(0,3).map(a => a.cloneNode(true));
+    const links = Array.from(sidebarNav.querySelectorAll('a')).map(a => a.cloneNode(true));
     links.forEach(a => nav.appendChild(a));
+    nav.style.setProperty('--mobile-nav-cols', links.length > 3 ? '2' : String(Math.max(links.length, 1)));
 
     header.appendChild(logoWrap);
     header.appendChild(nav);
