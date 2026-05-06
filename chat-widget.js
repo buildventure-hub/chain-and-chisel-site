@@ -40,6 +40,7 @@
     }
     #cc-chat-btn.cc-hidden {
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
       transform: translateY(10px) scale(0.96);
     }
@@ -94,6 +95,7 @@
     #cc-chat-panel.cc-hidden,
     #cc-chat-panel.cc-hidden.open {
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
       transform: scale(0.96) translateY(16px);
     }
