@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carving Model Repository | Chain &amp; Chisel</title>
+  <meta name="description" content="Upload, organize, and download carving model series, reference image folders, and ZIP bundles for Chain &amp; Chisel."/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png?v=3">
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png?v=3">
+  <link rel="stylesheet" href="styles.css?v=6"/>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js" defer></script>
+  <script>
+    window.MODEL_REPO_PAGE_CONFIG = {
+      managerMode: "key",
+      managerKeyStorage: "chainandchisel-model-repo-key",
+      apiBase: "/api/model-repository",
+      uploadEndpoint: "/api/model-repository-upload",
+      siteLabel: "Chain & Chisel Repository"
+    };
+  </script>
+  <script src="site.js?v=6" defer></script>
+  <script src="model-repository.js?v=1" defer></script>
+  <style>
+    .mr-page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 34px 0 72px;
+      display: grid;
+      gap: 18px;
+    }
+    .mr-hero,
+    .mr-manager,
+    .mr-series-card,
+    .mr-empty {
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(9,9,10,0.68);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.22);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 22px;
+    }
+    .mr-eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(212,169,106,0.12);
+      border: 1px solid rgba(212,169,106,0.28);
+      color: #f0d29d;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .mr-title {
+      margin: 12px 0 10px;
+      color: #f7ecda;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.02;
+    }
+    .mr-lead,
+    .mr-copy,
+    .mr-note,
+    .mr-series-description {
+      color: #c9c4bd;
+      line-height: 1.75;
+    }
+    .mr-hero-actions,
+    .mr-manager-actions,
+    .mr-series-actions,
+    .mr-asset-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .mr-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 10px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(212,169,106,0.28);
+      background: rgba(212,169,106,0.14);
+      color: #fff0cf;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .mr-btn.secondary {
+      border-color: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      color: #f0efed;
+    }
+    .mr-btn.ghost {
+      border-color: rgba(255,255,255,0.08);
+      background: transparent;
+      color: #c9c4bd;
+    }
+    .mr-btn.danger {
+      border-color: rgba(224,131,111,0.34);
+      background: rgba(224,131,111,0.12);
+      color: #ffd4cb;
+    }
+    .mr-btn:disabled { opacity: 0.56; cursor: wait; }
+    .mr-form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .mr-field { display: grid; gap: 7px; }
+    .mr-field-span { grid-column: 1 / -1; }
+    .mr-field label {
+      color: #ece2d0;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .mr-input,
+    .mr-textarea {
+      width: 100%;
+      min-height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.22);
+      color: #fff;
+      padding: 12px 14px;
+      font: 500 14px/1.4 Georgia, "Times New Roman", serif;
+    }
+    .mr-textarea { min-height: 110px; resize: vertical; }
+    .mr-status { min-height: 20px; font-size: 12px; margin-top: 10px; color: #c8c0b4; }
+    .mr-status.ok { color: #74c486; }
+    .mr-status.err { color: #ff9f8f; }
+    .mr-status.info { color: #e9d19f; }
+    .mr-series-list { display: grid; gap: 18px; }
+    .mr-series-card { display: grid; gap: 18px; }
+    .mr-series-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .mr-series-meta { display: grid; gap: 8px; min-width: 0; }
+    .mr-series-title { margin: 0; color: #f6ecda; font-size: 24px; }
+    .mr-series-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .mr-stat {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #ece2d0;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .mr-series-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 350px);
+      gap: 18px;
+      align-items: start;
+    }
+    .mr-assets-block,
+    .mr-downloads-block { display: grid; gap: 14px; }
+    .mr-block-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .mr-block-head h3 { margin: 0; color: #f1e7d4; font-size: 16px; }
+    .mr-image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .mr-image-card,
+    .mr-archive-card {
+      display: grid;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+    .mr-image-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      aspect-ratio: 1 / 1;
+      background: rgba(0,0,0,0.38);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .mr-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      user-select: none;
+      -webkit-user-drag: none;
+      touch-action: none;
+      cursor: move;
+    }
+    .mr-image-frame img.adjusting {
+      box-shadow: inset 0 0 0 2px rgba(212,169,106,0.38);
+    }
+    .mr-image-hint {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.58);
+      color: #d7d7d9;
+      font-size: 11px;
+      pointer-events: none;
+    }
+    .mr-zoom-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 10px;
+      align-items: center;
+    }
+    .mr-zoom-row label,
+    .mr-zoom-value {
+      font-size: 12px;
+      color: #e9d19f;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .mr-zoom-row input[type="range"] { width: 100%; accent-color: #d4a96a; }
+    .mr-empty { text-align: center; }
+    @media (max-width: 920px) {
+      .mr-form-grid,
+      .mr-series-grid { grid-template-columns: 1fr; }
+      .mr-series-head { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside aria-label="Site navigation" class="sidebar" id="siteSidebar">
+    <div class="sidebar-inner" id="sidebarInner">
+      <div class="sidebar-logo" id="sidebarLogo">
+        <img alt="Chain &amp; Chisel Logo" src="assets/brand/chain-and-chisel-logo.png?v=1"/>
+      </div>
+      <nav aria-label="Primary" class="sidebar-nav" id="sidebarNav">
+        <a class="side-plank" href="index.html#gallery">
+          <img alt="" class="side-plank-img" src="assets/buttons/plank-button-1.png?v=3"/>
+          <span class="side-plank-text">Gallery</span>
+        </a>
+        <a class="side-plank" href="about.html">
+          <img alt="" class="side-plank-img" src="assets/buttons/plank-button-2.png?v=3"/>
+          <span class="side-plank-text">About</span>
+        </a>
+        <a class="side-plank" data-mobile-plank-src="assets/buttons/plank-button-1.png?v=3" href="faq.html">
+          <img alt="" class="side-plank-img" src="assets/buttons/plank-button-3.png?v=3"/>
+          <span class="side-plank-text">FAQ</span>
+        </a>
+        <a class="side-plank" data-mobile-plank-src="assets/buttons/plank-button-2.png?v=3" href="order.html">
+          <img alt="" class="side-plank-img" src="assets/buttons/plank-button-4.png?v=3"/>
+          <span class="side-plank-text">Contact</span>
+        </a>
+      </nav>
+      <div class="sidebar-social" aria-label="Social links">
+        <div class="social-links">
+          <a class="social-icon" href="https://www.facebook.com/share/1SCfxkUz5P/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V9.1c0-.9.3-1.6 1.7-1.6h1.5V4.8c-.3 0-1.4-.1-2.7-.1-2.6 0-4.4 1.6-4.4 4.6V11H7v3h2.1v8h4.4z"/></svg></a>
+          <a class="social-icon" href="https://www.instagram.com/chainandchiselart/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.2A3.8 3.8 0 1 1 8.2 12 3.8 3.8 0 0 1 12 8.2zm0 2A1.8 1.8 0 1 0 13.8 12 1.8 1.8 0 0 0 12 10.2zM17.6 6.6a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg></a>
+          <a class="social-icon" href="https://www.tiktok.com/@chainchiselart" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2v11.2a3.6 3.6 0 1 1-3.1-3.6V6.6c-.6-.1-1.2-.1-1.8 0A6.2 6.2 0 1 0 16 12.2V7.3c1.3 1.1 2.9 1.7 4.6 1.7V6.2c-2.2 0-4-1.8-4-4.2H14z"/></svg></a>
+          <a class="social-icon" href="https://whatsapp.com/channel/0029VbCQMMyJENy9mtNleL1d" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.6-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1s-.6.8-.7 1c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.7-1.1-.6-.6-1.1-1.3-1.2-1.5-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2.1-.4 0-.6s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.2s.9 2.6 1 2.8c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.1.1 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <main class="content" id="siteContent">
+    <div class="content-inner">
+      <div class="mr-page">
+        <section class="mr-hero">
+          <span class="mr-eyebrow">Carving Model Repository</span>
+          <h1 class="mr-title">Keep each reference model series organized and downloadable.</h1>
+          <p class="mr-lead">Upload single images, whole reference folders, and ZIP packs for each model series. The image cards use the same drag-to-frame and zoom behavior as the Guild gallery, so thumbnails can be adjusted without inventing a second editor.</p>
+          <div class="mr-hero-actions">
+            <a class="mr-btn" href="#mr-series-list">Browse Series</a>
+            <button type="button" class="mr-btn secondary" id="mr-scroll-manager">Manager Panel</button>
+            <a class="mr-btn secondary" href="https://ccaguild.com/model-repository.html" rel="noopener" target="_blank">Open Guild Version</a>
+          </div>
+        </section>
+
+        <section class="mr-manager" id="mr-manager">
+          <div>
+            <h2 class="mr-title" style="font-size:26px; margin-top:0;">Series Manager</h2>
+            <p class="mr-copy">Downloads stay public. Uploads and edits are protected by a manager key on this site, so the repository is usable without opening the upload endpoint to everyone.</p>
+          </div>
+          <div class="mr-form-grid">
+            <div class="mr-field">
+              <label for="mr-manager-key">Manager Key</label>
+              <input id="mr-manager-key" class="mr-input" type="password" placeholder="Enter manager key to unlock uploads" />
+            </div>
+            <div class="mr-field">
+              <label for="mr-series-title">Series Title</label>
+              <input id="mr-series-title" class="mr-input" type="text" maxlength="120" placeholder="Ex: Eagle Head Pattern Study" />
+            </div>
+            <div class="mr-field">
+              <label for="mr-series-slug">Series Slug</label>
+              <input id="mr-series-slug" class="mr-input" type="text" maxlength="80" placeholder="Optional custom slug" />
+            </div>
+            <div class="mr-field mr-field-span">
+              <label for="mr-series-description">Series Description</label>
+              <textarea id="mr-series-description" class="mr-textarea" maxlength="1600" placeholder="What this model set contains and how the files should be used."></textarea>
+            </div>
+          </div>
+          <div class="mr-manager-actions">
+            <button type="button" class="mr-btn" id="mr-unlock-manager">Unlock Uploads</button>
+            <button type="button" class="mr-btn secondary" id="mr-clear-manager">Clear Key</button>
+            <button type="button" class="mr-btn" id="mr-create-series">Create Series</button>
+            <button type="button" class="mr-btn secondary" id="mr-refresh-repo">Refresh</button>
+          </div>
+          <div class="mr-status" id="mr-status">Loading repository…</div>
+        </section>
+
+        <section class="mr-series-list" id="mr-series-list" aria-live="polite"></section>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

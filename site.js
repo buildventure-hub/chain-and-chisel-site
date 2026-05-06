@@ -1,6 +1,7 @@
 (function(){
   const MOBILE_MAX = 860;
   const GUILD_URL = 'https://ccaguild.com';
+  const MODEL_REPOSITORY_URL = 'model-repository.html';
 
   function ensureGuildButton(){
     const sidebarNav = document.querySelector('.sidebar-nav');
@@ -17,6 +18,27 @@
       <span class="side-plank-text">Visit the Guild</span>
     `;
     sidebarNav.appendChild(link);
+  }
+
+  function ensureModelRepositoryButton(){
+    const sidebarNav = document.querySelector('.sidebar-nav');
+    if (!sidebarNav) return;
+    if (sidebarNav.querySelector('.model-repository-link')) return;
+
+    const link = document.createElement('a');
+    link.className = 'side-plank model-repository-link';
+    link.href = MODEL_REPOSITORY_URL;
+    link.innerHTML = `
+      <img alt="" class="side-plank-img" src="assets/buttons/plank-button-4.png?v=3"/>
+      <span class="side-plank-text">Models</span>
+    `;
+
+    const guildLink = sidebarNav.querySelector('.ccag-link');
+    if (guildLink && guildLink.parentNode === sidebarNav) {
+      sidebarNav.insertBefore(link, guildLink);
+    } else {
+      sidebarNav.appendChild(link);
+    }
   }
 
   function isMobile(){
@@ -139,6 +161,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+    ensureModelRepositoryButton();
     ensureGuildButton();
     buildHeader();
     lastY = window.scrollY || 0;
