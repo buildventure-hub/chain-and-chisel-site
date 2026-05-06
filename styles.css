@@ -709,17 +709,17 @@ height: auto;
 
 @media (min-width: 861px){
   .lightbox{
-    padding: 34px 28px 118px;
+    padding: 40px 34px 124px;
   }
 
   .lightbox-inner{
-    max-width: min(82vw, calc(100vw - var(--sidebar-w) - 96px), 980px);
-    max-height: calc(100vh - 172px);
+    max-width: min(72vw, calc(100vw - var(--sidebar-w) - 140px), 820px);
+    max-height: calc(100vh - 210px);
   }
 
   .lightbox-inner img{
-    max-width: min(82vw, calc(100vw - var(--sidebar-w) - 96px), 980px);
-    max-height: calc(100vh - 172px);
+    max-width: min(72vw, calc(100vw - var(--sidebar-w) - 140px), 820px);
+    max-height: calc(100vh - 210px);
   }
 }
 
