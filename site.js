@@ -56,6 +56,18 @@
     const links = Array.from(sidebarNav.querySelectorAll('a'))
       .filter(a => !a.classList.contains('ccag-link'))
       .map(a => a.cloneNode(true));
+
+    const galleryImgSrc = links[0]?.querySelector('.side-plank-img')?.getAttribute('src') || null;
+    if (galleryImgSrc) {
+      links.forEach((link) => {
+        const text = (link.querySelector('.side-plank-text')?.textContent || '').trim().toLowerCase();
+        if (text === 'faq') {
+          const img = link.querySelector('.side-plank-img');
+          if (img) img.setAttribute('src', galleryImgSrc);
+        }
+      });
+    }
+
     links.forEach(a => nav.appendChild(a));
     nav.style.setProperty('--mobile-nav-cols', links.length > 3 ? '2' : String(Math.max(links.length, 1)));
 
