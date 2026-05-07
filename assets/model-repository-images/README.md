@@ -1,5 +1,9 @@
-Carving model repository placeholder folder.
+Carving model repository source images.
 
 Uploads for the live model repository are stored remotely.
-This folder gives the site a stable local home for any future seed images,
-static exports, or fallback model-series artwork.
+This folder is the local home for seed images, static exports, and fallback
+model-series artwork.
+
+The imported model references in this folder have been reorganized into
+subject-based series folders and renamed from timestamp-based filenames to
+descriptive series names.
