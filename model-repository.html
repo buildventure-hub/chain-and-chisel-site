@@ -24,7 +24,7 @@
     };
   </script>
   <script src="site.js?v=6" defer></script>
-  <script src="model-repository.js?v=2" defer></script>
+  <script src="model-repository.js?v=3" defer></script>
   <style>
     .mr-page {
       max-width: 1120px;
@@ -35,6 +35,7 @@
     }
     .mr-hero,
     .mr-manager,
+    .mr-theme-block,
     .mr-series-card,
     .mr-empty {
       border-radius: 24px;
@@ -143,7 +144,23 @@
     .mr-status.ok { color: #74c486; }
     .mr-status.err { color: #ff9f8f; }
     .mr-status.info { color: #e9d19f; }
+    .mr-theme-list,
     .mr-series-list { display: grid; gap: 18px; }
+    .mr-theme-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .mr-theme-card {
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+    }
+    .mr-theme-title { font-size: 16px; color: #f6ecda; }
     .mr-series-card { display: grid; gap: 18px; }
     .mr-series-head {
       display: flex;
@@ -335,6 +352,7 @@
           <div class="mr-status" id="mr-status">Loading repository…</div>
         </section>
 
+        <section class="mr-theme-list" id="mr-theme-list" aria-live="polite" hidden></section>
         <section class="mr-series-list" id="mr-series-list" aria-live="polite"></section>
       </div>
     </div>

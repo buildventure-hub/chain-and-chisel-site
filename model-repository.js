@@ -9,7 +9,7 @@
     managerEnabled: false,
     canManage: false,
     managerKey: "",
-    manifest: { version: 1, updated_at: "", series: [] },
+    manifest: { version: 1, updated_at: "", series: [], theme_archives: [] },
     showingSeed: false,
     crop: null,
   };
@@ -18,6 +18,7 @@
 
   function init() {
     els.status = document.getElementById("mr-status");
+    els.themeList = document.getElementById("mr-theme-list");
     els.seriesList = document.getElementById("mr-series-list");
     els.seriesTitle = document.getElementById("mr-series-title");
     els.seriesSlug = document.getElementById("mr-series-slug");
@@ -135,7 +136,26 @@
 
   function render() {
     renderManagerState();
+    renderThemeList();
     renderSeriesList();
+  }
+
+  function renderThemeList() {
+    if (!els.themeList) return;
+    var themes = Array.isArray(state.manifest.theme_archives) ? state.manifest.theme_archives : [];
+    if (!themes.length) {
+      els.themeList.innerHTML = "";
+      els.themeList.hidden = true;
+      return;
+    }
+    els.themeList.hidden = false;
+    els.themeList.innerHTML =
+      '<section class="mr-theme-block">' +
+        '<div class="mr-block-head">' +
+          '<div><h2 class="mr-title" style="font-size:26px; margin:0;">Theme Bundles</h2><p class="mr-copy" style="margin:6px 0 0;">Download grouped ZIPs when you want whole families of models without pulling each series one by one.</p></div>' +
+        '</div>' +
+        '<div class="mr-theme-grid">' + themes.map(renderThemeCard).join("") + '</div>' +
+      '</section>';
   }
 
   function renderManagerState() {
@@ -249,6 +269,22 @@
           (state.canManage
             ? '<button type="button" class="mr-btn ghost" data-action="remove-archive" data-series-id="' + esc(series.id) + '" data-archive-id="' + esc(archive.id) + '">Remove</button>'
             : '') +
+        '</div>' +
+      '</article>';
+  }
+
+  function renderThemeCard(bundle) {
+    var seriesCount = Number(bundle.series_count || (bundle.series_slugs || []).length || 0);
+    return '' +
+      '<article class="mr-theme-card" data-theme-id="' + esc(bundle.id) + '">' +
+        '<strong class="mr-theme-title">' + esc(bundle.title || "Theme Bundle") + '</strong>' +
+        '<div class="mr-note">' + esc(bundle.description || "Grouped model download bundle.") + '</div>' +
+        '<div class="mr-series-stats">' +
+          '<span class="mr-stat">' + seriesCount + ' series</span>' +
+          '<span class="mr-stat">' + formatBytes(bundle.bytes) + '</span>' +
+        '</div>' +
+        '<div class="mr-asset-actions">' +
+          '<a class="mr-btn secondary" href="' + escAttr(bundle.url) + '" download="' + escAttr(bundle.file_name || "theme-bundle.zip") + '">Download Theme ZIP</a>' +
         '</div>' +
       '</article>';
   }
@@ -691,9 +727,11 @@
   function normalizeManifest(manifest) {
     var next = manifest && typeof manifest === "object" ? manifest : {};
     var series = Array.isArray(next.series) ? next.series : [];
+    var themeArchives = Array.isArray(next.theme_archives) ? next.theme_archives : [];
     return {
       version: 1,
       updated_at: String(next.updated_at || ""),
+      theme_archives: themeArchives.map(normalizeThemeArchive).filter(Boolean),
       series: series.map(function (entry, index) {
         return {
           id: String(entry.id || "series_" + index).trim(),
@@ -735,6 +773,24 @@
       url: String(asset.url || "").trim(),
       public_id: String(asset.public_id || "").trim(),
       file_name: String(asset.file_name || "series.zip").trim(),
+      mime_type: String(asset.mime_type || "application/zip").trim(),
+      bytes: Number(asset.bytes || 0),
+      created_at: String(asset.created_at || "")
+    };
+  }
+
+  function normalizeThemeArchive(asset, index) {
+    if (!asset || !asset.url) return null;
+    return {
+      id: String(asset.id || "theme_archive_" + index).trim(),
+      slug: slugify(asset.slug || asset.title || "", "theme-" + (index + 1)),
+      title: String(asset.title || "Theme Bundle").trim().slice(0, 120),
+      description: String(asset.description || "").trim().slice(0, 600),
+      series_slugs: Array.isArray(asset.series_slugs) ? asset.series_slugs.map(function (value) { return slugify(value, ""); }).filter(Boolean) : [],
+      series_count: Number(asset.series_count || 0),
+      url: String(asset.url || "").trim(),
+      public_id: String(asset.public_id || "").trim(),
+      file_name: String(asset.file_name || "theme-bundle.zip").trim(),
       mime_type: String(asset.mime_type || "application/zip").trim(),
       bytes: Number(asset.bytes || 0),
       created_at: String(asset.created_at || "")

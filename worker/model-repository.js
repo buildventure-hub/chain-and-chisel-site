@@ -118,6 +118,7 @@ function hasValidManagerKey(request, env) {
 function normalizeManifest(manifest) {
   const next = manifest && typeof manifest === "object" ? manifest : {};
   const series = Array.isArray(next.series) ? next.series : [];
+  const themeArchives = Array.isArray(next.theme_archives) ? next.theme_archives : [];
   return {
     version: 1,
     updated_at: String(next.updated_at || ""),
@@ -131,6 +132,7 @@ function normalizeManifest(manifest) {
       images: Array.isArray(entry && entry.images) ? entry.images.map(normalizeImage).filter(Boolean) : [],
       archives: Array.isArray(entry && entry.archives) ? entry.archives.map(normalizeArchive).filter(Boolean) : [],
     })),
+    theme_archives: themeArchives.map((entry, index) => normalizeThemeArchive(entry, index)).filter(Boolean),
   };
 }
 
@@ -161,6 +163,26 @@ function normalizeArchive(archive, index) {
     public_id: String(archive.public_id || "").trim().slice(0, 240),
     file_name: normalizeFileName(archive.file_name, "series.zip"),
     mime_type: String(archive.mime_type || "").trim().slice(0, 80),
+    bytes: normalizeBytes(archive.bytes),
+    created_at: String(archive.created_at || ""),
+  };
+}
+
+function normalizeThemeArchive(archive, index) {
+  if (!archive || !archive.url) return null;
+  return {
+    id: normalizeId(archive.id, "theme-archive-" + String(index || 0)),
+    slug: slugify(archive.slug || archive.title, "theme-" + String(index || 0 + 1)),
+    title: String(archive.title || "Theme Bundle").trim().slice(0, 120),
+    description: String(archive.description || "").trim().slice(0, 600),
+    series_slugs: Array.isArray(archive.series_slugs)
+      ? archive.series_slugs.map((value) => slugify(value, "")).filter(Boolean).slice(0, 120)
+      : [],
+    series_count: normalizeBytes(archive.series_count),
+    url: sanitizeHttpUrl(archive.url),
+    public_id: String(archive.public_id || "").trim().slice(0, 240),
+    file_name: normalizeFileName(archive.file_name, "theme-bundle.zip"),
+    mime_type: String(archive.mime_type || "application/zip").trim().slice(0, 80),
     bytes: normalizeBytes(archive.bytes),
     created_at: String(archive.created_at || ""),
   };
@@ -405,4 +427,3 @@ function emptyResponse(methods) {
     },
   });
 }
-

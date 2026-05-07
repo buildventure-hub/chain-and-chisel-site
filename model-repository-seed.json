@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "updated_at": "2026-05-07T13:28:53Z",
+  "updated_at": "2026-05-07T14:02:53Z",
   "series": [
     {
       "id": "seed-bear-couple-close-hug-turnaround",
       "slug": "bear-couple-close-hug-turnaround",
       "title": "Bear Couple Close Hug Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:28:54Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:02:53Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "bear-couple-close-hug-turnaround-image-01",
@@ -23,7 +23,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2201777,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:53Z"
         },
         {
           "id": "bear-couple-close-hug-turnaround-image-02",
@@ -38,7 +38,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2177166,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:53Z"
         },
         {
           "id": "bear-couple-close-hug-turnaround-image-03",
@@ -53,7 +53,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2074775,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:53Z"
         },
         {
           "id": "bear-couple-close-hug-turnaround-image-04",
@@ -68,7 +68,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2156832,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:53Z"
         },
         {
           "id": "bear-couple-close-hug-turnaround-image-05",
@@ -83,7 +83,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2138194,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:53Z"
         },
         {
           "id": "bear-couple-close-hug-turnaround-image-06",
@@ -98,7 +98,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2130790,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:53Z"
         },
         {
           "id": "bear-couple-close-hug-turnaround-image-07",
@@ -113,7 +113,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2136245,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:53Z"
         },
         {
           "id": "bear-couple-close-hug-turnaround-image-08",
@@ -128,7 +128,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2111332,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:53Z"
         }
       ],
       "archives": [
@@ -139,7 +139,7 @@
           "file_name": "bear-couple-close-hug-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 17035653,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:53Z"
         }
       ]
     },
@@ -148,8 +148,8 @@
       "slug": "bear-couple-dance-turnaround-a",
       "title": "Bear Couple Dance Turnaround A",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:28:54Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:02:54Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "bear-couple-dance-turnaround-a-image-01",
@@ -164,7 +164,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1998695,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:54Z"
         },
         {
           "id": "bear-couple-dance-turnaround-a-image-02",
@@ -179,7 +179,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1949333,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:54Z"
         },
         {
           "id": "bear-couple-dance-turnaround-a-image-03",
@@ -194,7 +194,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2055682,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:54Z"
         },
         {
           "id": "bear-couple-dance-turnaround-a-image-04",
@@ -209,7 +209,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2093063,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:54Z"
         },
         {
           "id": "bear-couple-dance-turnaround-a-image-05",
@@ -224,7 +224,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2127446,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:54Z"
         },
         {
           "id": "bear-couple-dance-turnaround-a-image-06",
@@ -239,7 +239,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1943177,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:54Z"
         },
         {
           "id": "bear-couple-dance-turnaround-a-image-07",
@@ -254,7 +254,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2052321,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:54Z"
         }
       ],
       "archives": [
@@ -265,7 +265,7 @@
           "file_name": "bear-couple-dance-turnaround-a.zip",
           "mime_type": "application/zip",
           "bytes": 14137243,
-          "created_at": "2026-05-07T13:28:54Z"
+          "created_at": "2026-05-07T14:02:54Z"
         }
       ]
     },
@@ -274,8 +274,8 @@
       "slug": "bear-couple-dance-turnaround-b",
       "title": "Bear Couple Dance Turnaround B",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:28:55Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:02:54Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "bear-couple-dance-turnaround-b-image-01",
@@ -290,7 +290,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2278552,
-          "created_at": "2026-05-07T13:28:55Z"
+          "created_at": "2026-05-07T14:02:54Z"
         },
         {
           "id": "bear-couple-dance-turnaround-b-image-02",
@@ -305,7 +305,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2332171,
-          "created_at": "2026-05-07T13:28:55Z"
+          "created_at": "2026-05-07T14:02:54Z"
         },
         {
           "id": "bear-couple-dance-turnaround-b-image-03",
@@ -320,7 +320,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2143229,
-          "created_at": "2026-05-07T13:28:55Z"
+          "created_at": "2026-05-07T14:02:54Z"
         },
         {
           "id": "bear-couple-dance-turnaround-b-image-04",
@@ -335,7 +335,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2257554,
-          "created_at": "2026-05-07T13:28:55Z"
+          "created_at": "2026-05-07T14:02:54Z"
         },
         {
           "id": "bear-couple-dance-turnaround-b-image-05",
@@ -350,7 +350,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2279383,
-          "created_at": "2026-05-07T13:28:55Z"
+          "created_at": "2026-05-07T14:02:54Z"
         },
         {
           "id": "bear-couple-dance-turnaround-b-image-06",
@@ -365,7 +365,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2294047,
-          "created_at": "2026-05-07T13:28:55Z"
+          "created_at": "2026-05-07T14:02:54Z"
         },
         {
           "id": "bear-couple-dance-turnaround-b-image-07",
@@ -380,7 +380,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2198274,
-          "created_at": "2026-05-07T13:28:55Z"
+          "created_at": "2026-05-07T14:02:54Z"
         },
         {
           "id": "bear-couple-dance-turnaround-b-image-08",
@@ -395,7 +395,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2324433,
-          "created_at": "2026-05-07T13:28:55Z"
+          "created_at": "2026-05-07T14:02:54Z"
         }
       ],
       "archives": [
@@ -406,7 +406,7 @@
           "file_name": "bear-couple-dance-turnaround-b.zip",
           "mime_type": "application/zip",
           "bytes": 18011564,
-          "created_at": "2026-05-07T13:28:55Z"
+          "created_at": "2026-05-07T14:02:54Z"
         }
       ]
     },
@@ -415,8 +415,8 @@
       "slug": "bear-couple-embrace-previews",
       "title": "Bear Couple Embrace Previews",
       "description": "Seeded preview image series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:28:55Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:02:55Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "bear-couple-embrace-previews-image-01",
@@ -431,7 +431,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2197832,
-          "created_at": "2026-05-07T13:28:55Z"
+          "created_at": "2026-05-07T14:02:55Z"
         },
         {
           "id": "bear-couple-embrace-previews-image-02",
@@ -446,7 +446,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2214844,
-          "created_at": "2026-05-07T13:28:55Z"
+          "created_at": "2026-05-07T14:02:55Z"
         },
         {
           "id": "bear-couple-embrace-previews-image-03",
@@ -461,7 +461,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2091249,
-          "created_at": "2026-05-07T13:28:55Z"
+          "created_at": "2026-05-07T14:02:55Z"
         },
         {
           "id": "bear-couple-embrace-previews-image-04",
@@ -476,7 +476,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2220013,
-          "created_at": "2026-05-07T13:28:55Z"
+          "created_at": "2026-05-07T14:02:55Z"
         }
       ],
       "archives": [
@@ -487,7 +487,7 @@
           "file_name": "bear-couple-embrace-previews.zip",
           "mime_type": "application/zip",
           "bytes": 8675074,
-          "created_at": "2026-05-07T13:28:55Z"
+          "created_at": "2026-05-07T14:02:55Z"
         }
       ]
     },
@@ -496,8 +496,8 @@
       "slug": "bear-couple-embrace-turnaround-a",
       "title": "Bear Couple Embrace Turnaround A",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:28:56Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:02:55Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "bear-couple-embrace-turnaround-a-image-01",
@@ -512,7 +512,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2083469,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:55Z"
         },
         {
           "id": "bear-couple-embrace-turnaround-a-image-02",
@@ -527,7 +527,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2157740,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:55Z"
         },
         {
           "id": "bear-couple-embrace-turnaround-a-image-03",
@@ -542,7 +542,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1895706,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:55Z"
         },
         {
           "id": "bear-couple-embrace-turnaround-a-image-04",
@@ -557,7 +557,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1868926,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:55Z"
         },
         {
           "id": "bear-couple-embrace-turnaround-a-image-05",
@@ -572,7 +572,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2186873,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:55Z"
         },
         {
           "id": "bear-couple-embrace-turnaround-a-image-06",
@@ -587,7 +587,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2021899,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:55Z"
         },
         {
           "id": "bear-couple-embrace-turnaround-a-image-07",
@@ -602,7 +602,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1947227,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:55Z"
         },
         {
           "id": "bear-couple-embrace-turnaround-a-image-08",
@@ -617,7 +617,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1970724,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:55Z"
         }
       ],
       "archives": [
@@ -628,7 +628,7 @@
           "file_name": "bear-couple-embrace-turnaround-a.zip",
           "mime_type": "application/zip",
           "bytes": 16041897,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:55Z"
         }
       ]
     },
@@ -637,8 +637,8 @@
       "slug": "bear-couple-embrace-turnaround-b",
       "title": "Bear Couple Embrace Turnaround B",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:28:56Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:02:56Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "bear-couple-embrace-turnaround-b-image-01",
@@ -653,7 +653,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2088243,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:56Z"
         },
         {
           "id": "bear-couple-embrace-turnaround-b-image-02",
@@ -668,7 +668,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1997411,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:56Z"
         },
         {
           "id": "bear-couple-embrace-turnaround-b-image-03",
@@ -683,7 +683,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1987951,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:56Z"
         },
         {
           "id": "bear-couple-embrace-turnaround-b-image-04",
@@ -698,7 +698,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2006982,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:56Z"
         },
         {
           "id": "bear-couple-embrace-turnaround-b-image-05",
@@ -713,7 +713,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2077889,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:56Z"
         },
         {
           "id": "bear-couple-embrace-turnaround-b-image-06",
@@ -728,7 +728,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1977549,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:56Z"
         },
         {
           "id": "bear-couple-embrace-turnaround-b-image-07",
@@ -743,7 +743,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1953080,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:56Z"
         }
       ],
       "archives": [
@@ -754,7 +754,7 @@
           "file_name": "bear-couple-embrace-turnaround-b.zip",
           "mime_type": "application/zip",
           "bytes": 14005057,
-          "created_at": "2026-05-07T13:28:56Z"
+          "created_at": "2026-05-07T14:02:56Z"
         }
       ]
     },
@@ -763,8 +763,8 @@
       "slug": "bear-couple-heart-hug-turnaround",
       "title": "Bear Couple Heart Hug Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:28:57Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:02:57Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "bear-couple-heart-hug-turnaround-image-01",
@@ -779,7 +779,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2314819,
-          "created_at": "2026-05-07T13:28:57Z"
+          "created_at": "2026-05-07T14:02:57Z"
         },
         {
           "id": "bear-couple-heart-hug-turnaround-image-02",
@@ -794,7 +794,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2230355,
-          "created_at": "2026-05-07T13:28:57Z"
+          "created_at": "2026-05-07T14:02:57Z"
         },
         {
           "id": "bear-couple-heart-hug-turnaround-image-03",
@@ -809,7 +809,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2287825,
-          "created_at": "2026-05-07T13:28:57Z"
+          "created_at": "2026-05-07T14:02:57Z"
         },
         {
           "id": "bear-couple-heart-hug-turnaround-image-04",
@@ -824,7 +824,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2280183,
-          "created_at": "2026-05-07T13:28:57Z"
+          "created_at": "2026-05-07T14:02:57Z"
         },
         {
           "id": "bear-couple-heart-hug-turnaround-image-05",
@@ -839,7 +839,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2289428,
-          "created_at": "2026-05-07T13:28:57Z"
+          "created_at": "2026-05-07T14:02:57Z"
         },
         {
           "id": "bear-couple-heart-hug-turnaround-image-06",
@@ -854,7 +854,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2245245,
-          "created_at": "2026-05-07T13:28:57Z"
+          "created_at": "2026-05-07T14:02:57Z"
         },
         {
           "id": "bear-couple-heart-hug-turnaround-image-07",
@@ -869,7 +869,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2282923,
-          "created_at": "2026-05-07T13:28:57Z"
+          "created_at": "2026-05-07T14:02:57Z"
         },
         {
           "id": "bear-couple-heart-hug-turnaround-image-08",
@@ -884,7 +884,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2342596,
-          "created_at": "2026-05-07T13:28:57Z"
+          "created_at": "2026-05-07T14:02:57Z"
         }
       ],
       "archives": [
@@ -895,7 +895,7 @@
           "file_name": "bear-couple-heart-hug-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 18179129,
-          "created_at": "2026-05-07T13:28:57Z"
+          "created_at": "2026-05-07T14:02:57Z"
         }
       ]
     },
@@ -904,8 +904,8 @@
       "slug": "bear-couple-hug-turnaround",
       "title": "Bear Couple Hug Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:28:58Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:02:57Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "bear-couple-hug-turnaround-image-01",
@@ -920,7 +920,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2296600,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:57Z"
         },
         {
           "id": "bear-couple-hug-turnaround-image-02",
@@ -935,7 +935,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2241198,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:57Z"
         },
         {
           "id": "bear-couple-hug-turnaround-image-03",
@@ -950,7 +950,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1990795,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:57Z"
         },
         {
           "id": "bear-couple-hug-turnaround-image-04",
@@ -965,7 +965,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2045921,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:57Z"
         },
         {
           "id": "bear-couple-hug-turnaround-image-05",
@@ -980,7 +980,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2284995,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:57Z"
         },
         {
           "id": "bear-couple-hug-turnaround-image-06",
@@ -995,7 +995,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2328669,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:57Z"
         },
         {
           "id": "bear-couple-hug-turnaround-image-07",
@@ -1010,7 +1010,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1914598,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:57Z"
         },
         {
           "id": "bear-couple-hug-turnaround-image-08",
@@ -1025,7 +1025,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2160577,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:57Z"
         }
       ],
       "archives": [
@@ -1036,7 +1036,7 @@
           "file_name": "bear-couple-hug-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 17166842,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:57Z"
         }
       ]
     },
@@ -1045,8 +1045,8 @@
       "slug": "bear-couple-slow-dance-turnaround",
       "title": "Bear Couple Slow Dance Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:28:58Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:02:58Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "bear-couple-slow-dance-turnaround-image-01",
@@ -1061,7 +1061,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2366776,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bear-couple-slow-dance-turnaround-image-02",
@@ -1076,7 +1076,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2250738,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bear-couple-slow-dance-turnaround-image-03",
@@ -1091,7 +1091,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2246690,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bear-couple-slow-dance-turnaround-image-04",
@@ -1106,7 +1106,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2231811,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bear-couple-slow-dance-turnaround-image-05",
@@ -1121,7 +1121,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2302329,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bear-couple-slow-dance-turnaround-image-06",
@@ -1136,7 +1136,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2327723,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bear-couple-slow-dance-turnaround-image-07",
@@ -1151,7 +1151,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2232550,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bear-couple-slow-dance-turnaround-image-08",
@@ -1166,7 +1166,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2262305,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:58Z"
         }
       ],
       "archives": [
@@ -1177,7 +1177,7 @@
           "file_name": "bear-couple-slow-dance-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 18126269,
-          "created_at": "2026-05-07T13:28:58Z"
+          "created_at": "2026-05-07T14:02:58Z"
         }
       ]
     },
@@ -1186,8 +1186,8 @@
       "slug": "bear-with-fishing-rod-previews",
       "title": "Bear with Fishing Rod Previews",
       "description": "Seeded preview image series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:28:59Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:02:58Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "bear-with-fishing-rod-previews-image-01",
@@ -1202,7 +1202,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1913494,
-          "created_at": "2026-05-07T13:28:59Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bear-with-fishing-rod-previews-image-02",
@@ -1217,7 +1217,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1973857,
-          "created_at": "2026-05-07T13:28:59Z"
+          "created_at": "2026-05-07T14:02:58Z"
         }
       ],
       "archives": [
@@ -1228,7 +1228,7 @@
           "file_name": "bear-with-fishing-rod-previews.zip",
           "mime_type": "application/zip",
           "bytes": 3865101,
-          "created_at": "2026-05-07T13:28:59Z"
+          "created_at": "2026-05-07T14:02:58Z"
         }
       ]
     },
@@ -1237,8 +1237,8 @@
       "slug": "bigfoot-standing-turnaround",
       "title": "Bigfoot Standing Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:28:59Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:02:58Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "bigfoot-standing-turnaround-image-01",
@@ -1253,7 +1253,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1685362,
-          "created_at": "2026-05-07T13:28:59Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bigfoot-standing-turnaround-image-02",
@@ -1268,7 +1268,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1908025,
-          "created_at": "2026-05-07T13:28:59Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bigfoot-standing-turnaround-image-03",
@@ -1283,7 +1283,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1624879,
-          "created_at": "2026-05-07T13:28:59Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bigfoot-standing-turnaround-image-04",
@@ -1298,7 +1298,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1752672,
-          "created_at": "2026-05-07T13:28:59Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bigfoot-standing-turnaround-image-05",
@@ -1313,7 +1313,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1886737,
-          "created_at": "2026-05-07T13:28:59Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bigfoot-standing-turnaround-image-06",
@@ -1328,7 +1328,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1777098,
-          "created_at": "2026-05-07T13:28:59Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bigfoot-standing-turnaround-image-07",
@@ -1343,7 +1343,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1647109,
-          "created_at": "2026-05-07T13:28:59Z"
+          "created_at": "2026-05-07T14:02:58Z"
         },
         {
           "id": "bigfoot-standing-turnaround-image-08",
@@ -1358,7 +1358,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1870005,
-          "created_at": "2026-05-07T13:28:59Z"
+          "created_at": "2026-05-07T14:02:58Z"
         }
       ],
       "archives": [
@@ -1369,7 +1369,7 @@
           "file_name": "bigfoot-standing-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 14056030,
-          "created_at": "2026-05-07T13:28:59Z"
+          "created_at": "2026-05-07T14:02:58Z"
         }
       ]
     },
@@ -1378,8 +1378,8 @@
       "slug": "celebratory-bear-turnaround",
       "title": "Celebratory Bear Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:00Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:02:59Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "celebratory-bear-turnaround-image-01",
@@ -1394,7 +1394,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1773348,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:02:59Z"
         },
         {
           "id": "celebratory-bear-turnaround-image-02",
@@ -1409,7 +1409,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1877380,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:02:59Z"
         },
         {
           "id": "celebratory-bear-turnaround-image-03",
@@ -1424,7 +1424,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1522578,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:02:59Z"
         },
         {
           "id": "celebratory-bear-turnaround-image-04",
@@ -1439,7 +1439,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1797256,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:02:59Z"
         },
         {
           "id": "celebratory-bear-turnaround-image-05",
@@ -1454,7 +1454,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1834086,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:02:59Z"
         },
         {
           "id": "celebratory-bear-turnaround-image-06",
@@ -1469,7 +1469,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1809644,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:02:59Z"
         },
         {
           "id": "celebratory-bear-turnaround-image-07",
@@ -1484,7 +1484,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1597061,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:02:59Z"
         },
         {
           "id": "celebratory-bear-turnaround-image-08",
@@ -1499,7 +1499,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1759801,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:02:59Z"
         }
       ],
       "archives": [
@@ -1510,7 +1510,7 @@
           "file_name": "celebratory-bear-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 13873720,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:02:59Z"
         }
       ]
     },
@@ -1519,8 +1519,8 @@
       "slug": "celebratory-bear-wide-stance-turnaround",
       "title": "Celebratory Bear Wide Stance Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:00Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:00Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "celebratory-bear-wide-stance-turnaround-image-01",
@@ -1535,7 +1535,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1943250,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "celebratory-bear-wide-stance-turnaround-image-02",
@@ -1550,7 +1550,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1707814,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "celebratory-bear-wide-stance-turnaround-image-03",
@@ -1565,7 +1565,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1695077,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "celebratory-bear-wide-stance-turnaround-image-04",
@@ -1580,7 +1580,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1830285,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "celebratory-bear-wide-stance-turnaround-image-05",
@@ -1595,7 +1595,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1869614,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "celebratory-bear-wide-stance-turnaround-image-06",
@@ -1610,7 +1610,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1847902,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "celebratory-bear-wide-stance-turnaround-image-07",
@@ -1625,7 +1625,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1823299,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "celebratory-bear-wide-stance-turnaround-image-08",
@@ -1640,7 +1640,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1923843,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "celebratory-bear-wide-stance-turnaround-image-09",
@@ -1655,7 +1655,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1943250,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "celebratory-bear-wide-stance-turnaround-image-10",
@@ -1670,7 +1670,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1923843,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:03:00Z"
         }
       ],
       "archives": [
@@ -1681,7 +1681,7 @@
           "file_name": "celebratory-bear-wide-stance-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 18387646,
-          "created_at": "2026-05-07T13:29:00Z"
+          "created_at": "2026-05-07T14:03:00Z"
         }
       ]
     },
@@ -1690,8 +1690,8 @@
       "slug": "cozy-bear-with-mug-turnaround",
       "title": "Cozy Bear with Mug Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:01Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:00Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "cozy-bear-with-mug-turnaround-image-01",
@@ -1706,7 +1706,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2179310,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "cozy-bear-with-mug-turnaround-image-02",
@@ -1721,7 +1721,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2172801,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "cozy-bear-with-mug-turnaround-image-03",
@@ -1736,7 +1736,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2341087,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "cozy-bear-with-mug-turnaround-image-04",
@@ -1751,7 +1751,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2276069,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "cozy-bear-with-mug-turnaround-image-05",
@@ -1766,7 +1766,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2051148,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "cozy-bear-with-mug-turnaround-image-06",
@@ -1781,7 +1781,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2201511,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:00Z"
         }
       ],
       "archives": [
@@ -1792,7 +1792,7 @@
           "file_name": "cozy-bear-with-mug-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 13152409,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:00Z"
         }
       ]
     },
@@ -1801,8 +1801,8 @@
       "slug": "curled-fox-previews",
       "title": "Curled Fox Previews",
       "description": "Seeded preview image series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:01Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:00Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "curled-fox-previews-image-01",
@@ -1817,7 +1817,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2185464,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:00Z"
         },
         {
           "id": "curled-fox-previews-image-02",
@@ -1832,7 +1832,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2195638,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:00Z"
         }
       ],
       "archives": [
@@ -1843,7 +1843,7 @@
           "file_name": "curled-fox-previews.zip",
           "mime_type": "application/zip",
           "bytes": 4357378,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:00Z"
         }
       ]
     },
@@ -1852,8 +1852,8 @@
       "slug": "curled-fox-reference-sheet",
       "title": "Curled Fox Reference Sheet",
       "description": "Seeded reference-sheet series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:01Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:00Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "curled-fox-reference-sheet-image-01",
@@ -1868,7 +1868,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3765458,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:00Z"
         }
       ],
       "archives": [
@@ -1879,7 +1879,7 @@
           "file_name": "curled-fox-reference-sheet.zip",
           "mime_type": "application/zip",
           "bytes": 3753357,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:00Z"
         }
       ]
     },
@@ -1888,8 +1888,8 @@
       "slug": "fox-and-raccoon-back-hug-previews",
       "title": "Fox and Raccoon Back Hug Previews",
       "description": "Seeded preview image series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:01Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:01Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "fox-and-raccoon-back-hug-previews-image-01",
@@ -1904,7 +1904,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2483787,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:01Z"
         },
         {
           "id": "fox-and-raccoon-back-hug-previews-image-02",
@@ -1919,7 +1919,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2479982,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:01Z"
         }
       ],
       "archives": [
@@ -1930,7 +1930,7 @@
           "file_name": "fox-and-raccoon-back-hug-previews.zip",
           "mime_type": "application/zip",
           "bytes": 4940253,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:01Z"
         }
       ]
     },
@@ -1939,8 +1939,8 @@
       "slug": "fox-and-raccoon-pair-front-previews",
       "title": "Fox and Raccoon Pair Front Previews",
       "description": "Seeded preview image series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:01Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:01Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "fox-and-raccoon-pair-front-previews-image-01",
@@ -1955,7 +1955,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2407234,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:01Z"
         },
         {
           "id": "fox-and-raccoon-pair-front-previews-image-02",
@@ -1970,7 +1970,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2546584,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:01Z"
         },
         {
           "id": "fox-and-raccoon-pair-front-previews-image-03",
@@ -1985,7 +1985,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2500023,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:01Z"
         }
       ],
       "archives": [
@@ -1996,7 +1996,7 @@
           "file_name": "fox-and-raccoon-pair-front-previews.zip",
           "mime_type": "application/zip",
           "bytes": 7417938,
-          "created_at": "2026-05-07T13:29:01Z"
+          "created_at": "2026-05-07T14:03:01Z"
         }
       ]
     },
@@ -2005,8 +2005,8 @@
       "slug": "fox-and-raccoon-pair-preview",
       "title": "Fox and Raccoon Pair Preview",
       "description": "Seeded preview image series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:02Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:01Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "fox-and-raccoon-pair-preview-image-01",
@@ -2021,7 +2021,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2661335,
-          "created_at": "2026-05-07T13:29:02Z"
+          "created_at": "2026-05-07T14:03:01Z"
         }
       ],
       "archives": [
@@ -2032,7 +2032,7 @@
           "file_name": "fox-and-raccoon-pair-preview.zip",
           "mime_type": "application/zip",
           "bytes": 2648555,
-          "created_at": "2026-05-07T13:29:02Z"
+          "created_at": "2026-05-07T14:03:01Z"
         }
       ]
     },
@@ -2041,8 +2041,8 @@
       "slug": "fox-and-raccoon-pair-preview-set",
       "title": "Fox and Raccoon Pair Preview Set",
       "description": "Seeded preview image series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:02Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:01Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "fox-and-raccoon-pair-preview-set-image-01",
@@ -2057,7 +2057,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2456747,
-          "created_at": "2026-05-07T13:29:02Z"
+          "created_at": "2026-05-07T14:03:01Z"
         },
         {
           "id": "fox-and-raccoon-pair-preview-set-image-02",
@@ -2072,7 +2072,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2518327,
-          "created_at": "2026-05-07T13:29:02Z"
+          "created_at": "2026-05-07T14:03:01Z"
         },
         {
           "id": "fox-and-raccoon-pair-preview-set-image-03",
@@ -2087,7 +2087,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2589421,
-          "created_at": "2026-05-07T13:29:02Z"
+          "created_at": "2026-05-07T14:03:01Z"
         }
       ],
       "archives": [
@@ -2098,7 +2098,7 @@
           "file_name": "fox-and-raccoon-pair-preview-set.zip",
           "mime_type": "application/zip",
           "bytes": 7528438,
-          "created_at": "2026-05-07T13:29:02Z"
+          "created_at": "2026-05-07T14:03:01Z"
         }
       ]
     },
@@ -2107,8 +2107,8 @@
       "slug": "fox-and-raccoon-pair-turnaround",
       "title": "Fox and Raccoon Pair Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:03Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:02Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "fox-and-raccoon-pair-turnaround-image-01",
@@ -2123,7 +2123,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2660762,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         },
         {
           "id": "fox-and-raccoon-pair-turnaround-image-02",
@@ -2138,7 +2138,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2407234,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         },
         {
           "id": "fox-and-raccoon-pair-turnaround-image-03",
@@ -2153,7 +2153,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2325919,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         },
         {
           "id": "fox-and-raccoon-pair-turnaround-image-04",
@@ -2168,7 +2168,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2461734,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         },
         {
           "id": "fox-and-raccoon-pair-turnaround-image-05",
@@ -2183,7 +2183,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2529587,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         },
         {
           "id": "fox-and-raccoon-pair-turnaround-image-06",
@@ -2198,7 +2198,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2534940,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         },
         {
           "id": "fox-and-raccoon-pair-turnaround-image-07",
@@ -2213,7 +2213,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2546584,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         },
         {
           "id": "fox-and-raccoon-pair-turnaround-image-08",
@@ -2228,7 +2228,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2500023,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         }
       ],
       "archives": [
@@ -2239,7 +2239,7 @@
           "file_name": "fox-and-raccoon-pair-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 19871324,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         }
       ]
     },
@@ -2248,8 +2248,8 @@
       "slug": "fox-and-raccoon-reference-sheets",
       "title": "Fox and Raccoon Reference Sheets",
       "description": "Seeded reference-sheet series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:03Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:02Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "fox-and-raccoon-reference-sheets-image-01",
@@ -2264,7 +2264,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2643113,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         },
         {
           "id": "fox-and-raccoon-reference-sheets-image-02",
@@ -2279,7 +2279,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2643113,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         }
       ],
       "archives": [
@@ -2290,7 +2290,7 @@
           "file_name": "fox-and-raccoon-reference-sheets.zip",
           "mime_type": "application/zip",
           "bytes": 5261136,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         }
       ]
     },
@@ -2299,8 +2299,8 @@
       "slug": "fox-turnaround-reference-sheets",
       "title": "Fox Turnaround Reference Sheets",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:03Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:02Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "fox-turnaround-reference-sheets-image-01",
@@ -2315,7 +2315,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1964759,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         },
         {
           "id": "fox-turnaround-reference-sheets-image-02",
@@ -2330,7 +2330,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1854392,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         },
         {
           "id": "fox-turnaround-reference-sheets-image-03",
@@ -2345,7 +2345,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1802713,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         },
         {
           "id": "fox-turnaround-reference-sheets-image-04",
@@ -2360,7 +2360,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1725411,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         },
         {
           "id": "fox-turnaround-reference-sheets-image-05",
@@ -2375,7 +2375,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2051137,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         },
         {
           "id": "fox-turnaround-reference-sheets-image-06",
@@ -2390,7 +2390,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1744014,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         }
       ],
       "archives": [
@@ -2401,7 +2401,7 @@
           "file_name": "fox-turnaround-reference-sheets.zip",
           "mime_type": "application/zip",
           "bytes": 11069113,
-          "created_at": "2026-05-07T13:29:03Z"
+          "created_at": "2026-05-07T14:03:02Z"
         }
       ]
     },
@@ -2410,8 +2410,8 @@
       "slug": "kneeling-prayer-bear-turnaround",
       "title": "Kneeling Prayer Bear Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:04Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:03Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "kneeling-prayer-bear-turnaround-image-01",
@@ -2426,7 +2426,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1975138,
-          "created_at": "2026-05-07T13:29:04Z"
+          "created_at": "2026-05-07T14:03:03Z"
         },
         {
           "id": "kneeling-prayer-bear-turnaround-image-02",
@@ -2441,7 +2441,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1982470,
-          "created_at": "2026-05-07T13:29:04Z"
+          "created_at": "2026-05-07T14:03:03Z"
         },
         {
           "id": "kneeling-prayer-bear-turnaround-image-03",
@@ -2456,7 +2456,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1937041,
-          "created_at": "2026-05-07T13:29:04Z"
+          "created_at": "2026-05-07T14:03:03Z"
         },
         {
           "id": "kneeling-prayer-bear-turnaround-image-04",
@@ -2471,7 +2471,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2033851,
-          "created_at": "2026-05-07T13:29:04Z"
+          "created_at": "2026-05-07T14:03:03Z"
         },
         {
           "id": "kneeling-prayer-bear-turnaround-image-05",
@@ -2486,7 +2486,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1954705,
-          "created_at": "2026-05-07T13:29:04Z"
+          "created_at": "2026-05-07T14:03:03Z"
         },
         {
           "id": "kneeling-prayer-bear-turnaround-image-06",
@@ -2501,7 +2501,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2057801,
-          "created_at": "2026-05-07T13:29:04Z"
+          "created_at": "2026-05-07T14:03:03Z"
         },
         {
           "id": "kneeling-prayer-bear-turnaround-image-07",
@@ -2516,7 +2516,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2030677,
-          "created_at": "2026-05-07T13:29:04Z"
+          "created_at": "2026-05-07T14:03:03Z"
         },
         {
           "id": "kneeling-prayer-bear-turnaround-image-08",
@@ -2531,7 +2531,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1981558,
-          "created_at": "2026-05-07T13:29:04Z"
+          "created_at": "2026-05-07T14:03:03Z"
         }
       ],
       "archives": [
@@ -2542,7 +2542,7 @@
           "file_name": "kneeling-prayer-bear-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 15859553,
-          "created_at": "2026-05-07T13:29:04Z"
+          "created_at": "2026-05-07T14:03:03Z"
         }
       ]
     },
@@ -2551,8 +2551,8 @@
       "slug": "owl-face-reference-sheet",
       "title": "Owl Face Reference Sheet",
       "description": "Seeded reference-sheet series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:04Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:03Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "owl-face-reference-sheet-image-01",
@@ -2567,7 +2567,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2436089,
-          "created_at": "2026-05-07T13:29:04Z"
+          "created_at": "2026-05-07T14:03:03Z"
         }
       ],
       "archives": [
@@ -2578,7 +2578,7 @@
           "file_name": "owl-face-reference-sheet.zip",
           "mime_type": "application/zip",
           "bytes": 2423380,
-          "created_at": "2026-05-07T13:29:04Z"
+          "created_at": "2026-05-07T14:03:03Z"
         }
       ]
     },
@@ -2587,8 +2587,8 @@
       "slug": "owl-in-hollow-tree-turnaround",
       "title": "Owl in Hollow Tree Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:05Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:04Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "owl-in-hollow-tree-turnaround-image-01",
@@ -2603,7 +2603,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3055312,
-          "created_at": "2026-05-07T13:29:05Z"
+          "created_at": "2026-05-07T14:03:04Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-image-02",
@@ -2618,7 +2618,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2967057,
-          "created_at": "2026-05-07T13:29:05Z"
+          "created_at": "2026-05-07T14:03:04Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-image-03",
@@ -2633,7 +2633,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2937347,
-          "created_at": "2026-05-07T13:29:05Z"
+          "created_at": "2026-05-07T14:03:04Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-image-04",
@@ -2648,7 +2648,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3303801,
-          "created_at": "2026-05-07T13:29:05Z"
+          "created_at": "2026-05-07T14:03:04Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-image-05",
@@ -2663,7 +2663,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3322206,
-          "created_at": "2026-05-07T13:29:05Z"
+          "created_at": "2026-05-07T14:03:04Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-image-06",
@@ -2678,7 +2678,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3316623,
-          "created_at": "2026-05-07T13:29:05Z"
+          "created_at": "2026-05-07T14:03:04Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-image-07",
@@ -2693,7 +2693,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3200985,
-          "created_at": "2026-05-07T13:29:05Z"
+          "created_at": "2026-05-07T14:03:04Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-image-08",
@@ -2708,7 +2708,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3163605,
-          "created_at": "2026-05-07T13:29:05Z"
+          "created_at": "2026-05-07T14:03:04Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-image-09",
@@ -2723,7 +2723,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3298320,
-          "created_at": "2026-05-07T13:29:05Z"
+          "created_at": "2026-05-07T14:03:04Z"
         }
       ],
       "archives": [
@@ -2734,7 +2734,7 @@
           "file_name": "owl-in-hollow-tree-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 28117631,
-          "created_at": "2026-05-07T13:29:05Z"
+          "created_at": "2026-05-07T14:03:04Z"
         }
       ]
     },
@@ -2743,8 +2743,8 @@
       "slug": "owl-in-hollow-tree-turnaround-extended",
       "title": "Owl in Hollow Tree Turnaround Extended",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:06Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:06Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "owl-in-hollow-tree-turnaround-extended-image-01",
@@ -2759,7 +2759,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3019158,
-          "created_at": "2026-05-07T13:29:06Z"
+          "created_at": "2026-05-07T14:03:06Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-extended-image-02",
@@ -2774,7 +2774,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3119792,
-          "created_at": "2026-05-07T13:29:06Z"
+          "created_at": "2026-05-07T14:03:06Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-extended-image-03",
@@ -2789,7 +2789,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3082265,
-          "created_at": "2026-05-07T13:29:06Z"
+          "created_at": "2026-05-07T14:03:06Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-extended-image-04",
@@ -2804,7 +2804,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3148625,
-          "created_at": "2026-05-07T13:29:06Z"
+          "created_at": "2026-05-07T14:03:06Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-extended-image-05",
@@ -2819,7 +2819,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3025059,
-          "created_at": "2026-05-07T13:29:06Z"
+          "created_at": "2026-05-07T14:03:06Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-extended-image-06",
@@ -2834,7 +2834,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3116595,
-          "created_at": "2026-05-07T13:29:06Z"
+          "created_at": "2026-05-07T14:03:06Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-extended-image-07",
@@ -2849,7 +2849,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3236440,
-          "created_at": "2026-05-07T13:29:06Z"
+          "created_at": "2026-05-07T14:03:06Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-extended-image-08",
@@ -2864,7 +2864,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3590786,
-          "created_at": "2026-05-07T13:29:06Z"
+          "created_at": "2026-05-07T14:03:06Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-extended-image-09",
@@ -2879,7 +2879,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3313476,
-          "created_at": "2026-05-07T13:29:06Z"
+          "created_at": "2026-05-07T14:03:06Z"
         },
         {
           "id": "owl-in-hollow-tree-turnaround-extended-image-10",
@@ -2894,7 +2894,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3089621,
-          "created_at": "2026-05-07T13:29:06Z"
+          "created_at": "2026-05-07T14:03:06Z"
         }
       ],
       "archives": [
@@ -2905,7 +2905,7 @@
           "file_name": "owl-in-hollow-tree-turnaround-extended.zip",
           "mime_type": "application/zip",
           "bytes": 31159857,
-          "created_at": "2026-05-07T13:29:06Z"
+          "created_at": "2026-05-07T14:03:06Z"
         }
       ]
     },
@@ -2914,8 +2914,8 @@
       "slug": "owl-stump-reference-sheet",
       "title": "Owl Stump Reference Sheet",
       "description": "Seeded reference-sheet series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:06Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:06Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "owl-stump-reference-sheet-image-01",
@@ -2930,7 +2930,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2317589,
-          "created_at": "2026-05-07T13:29:06Z"
+          "created_at": "2026-05-07T14:03:06Z"
         }
       ],
       "archives": [
@@ -2941,7 +2941,7 @@
           "file_name": "owl-stump-reference-sheet.zip",
           "mime_type": "application/zip",
           "bytes": 2306419,
-          "created_at": "2026-05-07T13:29:06Z"
+          "created_at": "2026-05-07T14:03:06Z"
         }
       ]
     },
@@ -2950,8 +2950,8 @@
       "slug": "parent-bear-cub-reference-sheets",
       "title": "Parent Bear Cub Reference Sheets",
       "description": "Seeded reference-sheet series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:07Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:06Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "parent-bear-cub-reference-sheets-image-01",
@@ -2966,7 +2966,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2453680,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:06Z"
         },
         {
           "id": "parent-bear-cub-reference-sheets-image-02",
@@ -2981,7 +2981,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2610147,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:06Z"
         },
         {
           "id": "parent-bear-cub-reference-sheets-image-03",
@@ -2996,7 +2996,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2526378,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:06Z"
         },
         {
           "id": "parent-bear-cub-reference-sheets-image-04",
@@ -3011,7 +3011,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2598818,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:06Z"
         }
       ],
       "archives": [
@@ -3022,7 +3022,7 @@
           "file_name": "parent-bear-cub-reference-sheets.zip",
           "mime_type": "application/zip",
           "bytes": 10138870,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:06Z"
         }
       ]
     },
@@ -3031,8 +3031,8 @@
       "slug": "parent-bear-holding-cub-turnaround",
       "title": "Parent Bear Holding Cub Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:07Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:07Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "parent-bear-holding-cub-turnaround-image-01",
@@ -3047,7 +3047,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1678610,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:07Z"
         },
         {
           "id": "parent-bear-holding-cub-turnaround-image-02",
@@ -3062,7 +3062,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1636318,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:07Z"
         },
         {
           "id": "parent-bear-holding-cub-turnaround-image-03",
@@ -3077,7 +3077,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1704323,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:07Z"
         },
         {
           "id": "parent-bear-holding-cub-turnaround-image-04",
@@ -3092,7 +3092,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1793570,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:07Z"
         },
         {
           "id": "parent-bear-holding-cub-turnaround-image-05",
@@ -3107,7 +3107,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1756421,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:07Z"
         },
         {
           "id": "parent-bear-holding-cub-turnaround-image-06",
@@ -3122,7 +3122,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1760592,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:07Z"
         },
         {
           "id": "parent-bear-holding-cub-turnaround-image-07",
@@ -3137,7 +3137,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1697966,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:07Z"
         },
         {
           "id": "parent-bear-holding-cub-turnaround-image-08",
@@ -3152,7 +3152,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1709535,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ],
       "archives": [
@@ -3163,7 +3163,7 @@
           "file_name": "parent-bear-holding-cub-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 13644631,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ]
     },
@@ -3172,8 +3172,8 @@
       "slug": "perched-owl-annotated-turnaround-sheet",
       "title": "Perched Owl Annotated Turnaround Sheet",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:07Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:07Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "perched-owl-annotated-turnaround-sheet-image-01",
@@ -3188,7 +3188,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2417169,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ],
       "archives": [
@@ -3199,7 +3199,7 @@
           "file_name": "perched-owl-annotated-turnaround-sheet.zip",
           "mime_type": "application/zip",
           "bytes": 2404577,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ]
     },
@@ -3208,8 +3208,8 @@
       "slug": "perched-owl-hero-preview",
       "title": "Perched Owl Hero Preview",
       "description": "Seeded preview image series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:07Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:07Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "perched-owl-hero-preview-image-01",
@@ -3224,7 +3224,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2646842,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ],
       "archives": [
@@ -3235,7 +3235,7 @@
           "file_name": "perched-owl-hero-preview.zip",
           "mime_type": "application/zip",
           "bytes": 2635938,
-          "created_at": "2026-05-07T13:29:07Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ]
     },
@@ -3244,8 +3244,8 @@
       "slug": "perched-owl-on-stump-preview",
       "title": "Perched Owl on Stump Preview",
       "description": "Seeded preview image series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:08Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:07Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "perched-owl-on-stump-preview-image-01",
@@ -3260,7 +3260,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2029707,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ],
       "archives": [
@@ -3271,7 +3271,7 @@
           "file_name": "perched-owl-on-stump-preview.zip",
           "mime_type": "application/zip",
           "bytes": 2018602,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ]
     },
@@ -3280,8 +3280,8 @@
       "slug": "perched-owl-on-stump-reference-sheet",
       "title": "Perched Owl on Stump Reference Sheet",
       "description": "Seeded reference-sheet series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:08Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:07Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "perched-owl-on-stump-reference-sheet-image-01",
@@ -3296,7 +3296,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2408615,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ],
       "archives": [
@@ -3307,7 +3307,7 @@
           "file_name": "perched-owl-on-stump-reference-sheet.zip",
           "mime_type": "application/zip",
           "bytes": 2397639,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ]
     },
@@ -3316,8 +3316,8 @@
       "slug": "perched-owl-preview",
       "title": "Perched Owl Preview",
       "description": "Seeded preview image series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:08Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:07Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "perched-owl-preview-image-01",
@@ -3332,7 +3332,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2196109,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ],
       "archives": [
@@ -3343,7 +3343,7 @@
           "file_name": "perched-owl-preview.zip",
           "mime_type": "application/zip",
           "bytes": 2185027,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ]
     },
@@ -3352,8 +3352,8 @@
       "slug": "perched-owl-reference-sheet-a",
       "title": "Perched Owl Reference Sheet A",
       "description": "Seeded reference-sheet series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:08Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:07Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "perched-owl-reference-sheet-a-image-01",
@@ -3368,7 +3368,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3929185,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ],
       "archives": [
@@ -3379,7 +3379,7 @@
           "file_name": "perched-owl-reference-sheet-a.zip",
           "mime_type": "application/zip",
           "bytes": 3918674,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ]
     },
@@ -3388,8 +3388,8 @@
       "slug": "perched-owl-reference-sheet-b",
       "title": "Perched Owl Reference Sheet B",
       "description": "Seeded reference-sheet series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:08Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:07Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "perched-owl-reference-sheet-b-image-01",
@@ -3404,7 +3404,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3907492,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ],
       "archives": [
@@ -3415,7 +3415,7 @@
           "file_name": "perched-owl-reference-sheet-b.zip",
           "mime_type": "application/zip",
           "bytes": 3895454,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ]
     },
@@ -3424,8 +3424,8 @@
       "slug": "perched-owl-turnaround-sheet",
       "title": "Perched Owl Turnaround Sheet",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:08Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:07Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "perched-owl-turnaround-sheet-image-01",
@@ -3440,7 +3440,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2377469,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ],
       "archives": [
@@ -3451,7 +3451,7 @@
           "file_name": "perched-owl-turnaround-sheet.zip",
           "mime_type": "application/zip",
           "bytes": 2364831,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ]
     },
@@ -3460,8 +3460,8 @@
       "slug": "rabbit-couple-hug-reference-sheets",
       "title": "Rabbit Couple Hug Reference Sheets",
       "description": "Seeded reference-sheet series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:08Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:07Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "rabbit-couple-hug-reference-sheets-image-01",
@@ -3476,7 +3476,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2418783,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         },
         {
           "id": "rabbit-couple-hug-reference-sheets-image-02",
@@ -3491,7 +3491,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2418783,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ],
       "archives": [
@@ -3502,7 +3502,7 @@
           "file_name": "rabbit-couple-hug-reference-sheets.zip",
           "mime_type": "application/zip",
           "bytes": 4812388,
-          "created_at": "2026-05-07T13:29:08Z"
+          "created_at": "2026-05-07T14:03:07Z"
         }
       ]
     },
@@ -3511,8 +3511,8 @@
       "slug": "rabbit-couple-hug-turnaround",
       "title": "Rabbit Couple Hug Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:09Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:08Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "rabbit-couple-hug-turnaround-image-01",
@@ -3527,7 +3527,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2306341,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:08Z"
         },
         {
           "id": "rabbit-couple-hug-turnaround-image-02",
@@ -3542,7 +3542,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2330570,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:08Z"
         },
         {
           "id": "rabbit-couple-hug-turnaround-image-03",
@@ -3557,7 +3557,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2314417,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:08Z"
         },
         {
           "id": "rabbit-couple-hug-turnaround-image-04",
@@ -3572,7 +3572,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2368273,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:08Z"
         },
         {
           "id": "rabbit-couple-hug-turnaround-image-05",
@@ -3587,7 +3587,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2444119,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:08Z"
         },
         {
           "id": "rabbit-couple-hug-turnaround-image-06",
@@ -3602,7 +3602,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2426081,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:08Z"
         },
         {
           "id": "rabbit-couple-hug-turnaround-image-07",
@@ -3617,7 +3617,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2358771,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:08Z"
         },
         {
           "id": "rabbit-couple-hug-turnaround-image-08",
@@ -3632,7 +3632,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2464875,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:08Z"
         }
       ],
       "archives": [
@@ -3643,7 +3643,7 @@
           "file_name": "rabbit-couple-hug-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 18917651,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:08Z"
         }
       ]
     },
@@ -3652,8 +3652,8 @@
       "slug": "raised-arm-bear-turnaround",
       "title": "Raised Arm Bear Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:09Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:09Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "raised-arm-bear-turnaround-image-01",
@@ -3668,7 +3668,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1820358,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:09Z"
         },
         {
           "id": "raised-arm-bear-turnaround-image-02",
@@ -3683,7 +3683,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1853613,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:09Z"
         },
         {
           "id": "raised-arm-bear-turnaround-image-03",
@@ -3698,7 +3698,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1797735,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:09Z"
         },
         {
           "id": "raised-arm-bear-turnaround-image-04",
@@ -3713,7 +3713,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2027491,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:09Z"
         },
         {
           "id": "raised-arm-bear-turnaround-image-05",
@@ -3728,7 +3728,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2001565,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:09Z"
         },
         {
           "id": "raised-arm-bear-turnaround-image-06",
@@ -3743,7 +3743,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1837310,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:09Z"
         },
         {
           "id": "raised-arm-bear-turnaround-image-07",
@@ -3758,7 +3758,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1880893,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:09Z"
         }
       ],
       "archives": [
@@ -3769,7 +3769,7 @@
           "file_name": "raised-arm-bear-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 13137565,
-          "created_at": "2026-05-07T13:29:09Z"
+          "created_at": "2026-05-07T14:03:09Z"
         }
       ]
     },
@@ -3778,8 +3778,8 @@
       "slug": "reading-bear-on-stump-turnaround",
       "title": "Reading Bear on Stump Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:10Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:09Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "reading-bear-on-stump-turnaround-image-01",
@@ -3794,7 +3794,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2041405,
-          "created_at": "2026-05-07T13:29:10Z"
+          "created_at": "2026-05-07T14:03:09Z"
         },
         {
           "id": "reading-bear-on-stump-turnaround-image-02",
@@ -3809,7 +3809,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2161407,
-          "created_at": "2026-05-07T13:29:10Z"
+          "created_at": "2026-05-07T14:03:09Z"
         },
         {
           "id": "reading-bear-on-stump-turnaround-image-03",
@@ -3824,7 +3824,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2196988,
-          "created_at": "2026-05-07T13:29:10Z"
+          "created_at": "2026-05-07T14:03:09Z"
         },
         {
           "id": "reading-bear-on-stump-turnaround-image-04",
@@ -3839,7 +3839,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2091153,
-          "created_at": "2026-05-07T13:29:10Z"
+          "created_at": "2026-05-07T14:03:09Z"
         },
         {
           "id": "reading-bear-on-stump-turnaround-image-05",
@@ -3854,7 +3854,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2226522,
-          "created_at": "2026-05-07T13:29:10Z"
+          "created_at": "2026-05-07T14:03:09Z"
         },
         {
           "id": "reading-bear-on-stump-turnaround-image-06",
@@ -3869,7 +3869,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2255870,
-          "created_at": "2026-05-07T13:29:10Z"
+          "created_at": "2026-05-07T14:03:09Z"
         },
         {
           "id": "reading-bear-on-stump-turnaround-image-07",
@@ -3884,7 +3884,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2133375,
-          "created_at": "2026-05-07T13:29:10Z"
+          "created_at": "2026-05-07T14:03:09Z"
         },
         {
           "id": "reading-bear-on-stump-turnaround-image-08",
@@ -3899,7 +3899,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2133045,
-          "created_at": "2026-05-07T13:29:10Z"
+          "created_at": "2026-05-07T14:03:09Z"
         }
       ],
       "archives": [
@@ -3910,7 +3910,7 @@
           "file_name": "reading-bear-on-stump-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 17146574,
-          "created_at": "2026-05-07T13:29:10Z"
+          "created_at": "2026-05-07T14:03:09Z"
         }
       ]
     },
@@ -3919,8 +3919,8 @@
       "slug": "seated-bear-cub-stump-turnaround",
       "title": "Seated Bear Cub Stump Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:11Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:10Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "seated-bear-cub-stump-turnaround-image-01",
@@ -3935,7 +3935,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2311904,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         },
         {
           "id": "seated-bear-cub-stump-turnaround-image-02",
@@ -3950,7 +3950,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2104903,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         },
         {
           "id": "seated-bear-cub-stump-turnaround-image-03",
@@ -3965,7 +3965,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2134436,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         },
         {
           "id": "seated-bear-cub-stump-turnaround-image-04",
@@ -3980,7 +3980,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2146462,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         },
         {
           "id": "seated-bear-cub-stump-turnaround-image-05",
@@ -3995,7 +3995,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2184577,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         },
         {
           "id": "seated-bear-cub-stump-turnaround-image-06",
@@ -4010,7 +4010,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2215266,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         }
       ],
       "archives": [
@@ -4021,7 +4021,7 @@
           "file_name": "seated-bear-cub-stump-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 13026506,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         }
       ]
     },
@@ -4030,8 +4030,8 @@
       "slug": "seated-bear-on-log-turnaround",
       "title": "Seated Bear on Log Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:11Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:10Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "seated-bear-on-log-turnaround-image-01",
@@ -4046,7 +4046,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2185588,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         },
         {
           "id": "seated-bear-on-log-turnaround-image-02",
@@ -4061,7 +4061,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2092457,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         },
         {
           "id": "seated-bear-on-log-turnaround-image-03",
@@ -4076,7 +4076,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2163379,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         },
         {
           "id": "seated-bear-on-log-turnaround-image-04",
@@ -4091,7 +4091,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2038643,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         },
         {
           "id": "seated-bear-on-log-turnaround-image-05",
@@ -4106,7 +4106,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2125269,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         },
         {
           "id": "seated-bear-on-log-turnaround-image-06",
@@ -4121,7 +4121,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2097029,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         },
         {
           "id": "seated-bear-on-log-turnaround-image-07",
@@ -4136,7 +4136,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2059165,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         },
         {
           "id": "seated-bear-on-log-turnaround-image-08",
@@ -4151,7 +4151,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1988369,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         }
       ],
       "archives": [
@@ -4162,7 +4162,7 @@
           "file_name": "seated-bear-on-log-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 16653286,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         }
       ]
     },
@@ -4171,8 +4171,8 @@
       "slug": "seated-bear-profile-preview",
       "title": "Seated Bear Profile Preview",
       "description": "Seeded preview image series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:11Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:10Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "seated-bear-profile-preview-image-01",
@@ -4187,7 +4187,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2201336,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         }
       ],
       "archives": [
@@ -4198,7 +4198,7 @@
           "file_name": "seated-bear-profile-preview.zip",
           "mime_type": "application/zip",
           "bytes": 2190272,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:10Z"
         }
       ]
     },
@@ -4207,8 +4207,8 @@
       "slug": "seated-bear-stump-turnaround",
       "title": "Seated Bear Stump Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:11Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:11Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "seated-bear-stump-turnaround-image-01",
@@ -4223,7 +4223,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2227959,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:11Z"
         },
         {
           "id": "seated-bear-stump-turnaround-image-02",
@@ -4238,7 +4238,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2163038,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:11Z"
         },
         {
           "id": "seated-bear-stump-turnaround-image-03",
@@ -4253,7 +4253,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2156936,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:11Z"
         },
         {
           "id": "seated-bear-stump-turnaround-image-04",
@@ -4268,7 +4268,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2262741,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:11Z"
         }
       ],
       "archives": [
@@ -4279,7 +4279,7 @@
           "file_name": "seated-bear-stump-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 8761342,
-          "created_at": "2026-05-07T13:29:11Z"
+          "created_at": "2026-05-07T14:03:11Z"
         }
       ]
     },
@@ -4288,8 +4288,8 @@
       "slug": "seated-rabbit-turnaround",
       "title": "Seated Rabbit Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:12Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:11Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "seated-rabbit-turnaround-image-01",
@@ -4304,7 +4304,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2028368,
-          "created_at": "2026-05-07T13:29:12Z"
+          "created_at": "2026-05-07T14:03:11Z"
         },
         {
           "id": "seated-rabbit-turnaround-image-02",
@@ -4319,7 +4319,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1924590,
-          "created_at": "2026-05-07T13:29:12Z"
+          "created_at": "2026-05-07T14:03:11Z"
         },
         {
           "id": "seated-rabbit-turnaround-image-03",
@@ -4334,7 +4334,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2027349,
-          "created_at": "2026-05-07T13:29:12Z"
+          "created_at": "2026-05-07T14:03:11Z"
         },
         {
           "id": "seated-rabbit-turnaround-image-04",
@@ -4349,7 +4349,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2003007,
-          "created_at": "2026-05-07T13:29:12Z"
+          "created_at": "2026-05-07T14:03:11Z"
         },
         {
           "id": "seated-rabbit-turnaround-image-05",
@@ -4364,7 +4364,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1953586,
-          "created_at": "2026-05-07T13:29:12Z"
+          "created_at": "2026-05-07T14:03:11Z"
         },
         {
           "id": "seated-rabbit-turnaround-image-06",
@@ -4379,7 +4379,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1969950,
-          "created_at": "2026-05-07T13:29:12Z"
+          "created_at": "2026-05-07T14:03:11Z"
         },
         {
           "id": "seated-rabbit-turnaround-image-07",
@@ -4394,7 +4394,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1884512,
-          "created_at": "2026-05-07T13:29:12Z"
+          "created_at": "2026-05-07T14:03:11Z"
         },
         {
           "id": "seated-rabbit-turnaround-image-08",
@@ -4409,7 +4409,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2059093,
-          "created_at": "2026-05-07T13:29:12Z"
+          "created_at": "2026-05-07T14:03:11Z"
         }
       ],
       "archives": [
@@ -4420,7 +4420,7 @@
           "file_name": "seated-rabbit-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 15753528,
-          "created_at": "2026-05-07T13:29:12Z"
+          "created_at": "2026-05-07T14:03:11Z"
         }
       ]
     },
@@ -4429,8 +4429,8 @@
       "slug": "shy-standing-bear-turnaround",
       "title": "Shy Standing Bear Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:13Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:12Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "shy-standing-bear-turnaround-image-01",
@@ -4445,7 +4445,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1751469,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "shy-standing-bear-turnaround-image-02",
@@ -4460,7 +4460,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1751469,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "shy-standing-bear-turnaround-image-03",
@@ -4475,7 +4475,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1649516,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "shy-standing-bear-turnaround-image-04",
@@ -4490,7 +4490,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1629724,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "shy-standing-bear-turnaround-image-05",
@@ -4505,7 +4505,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1708766,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "shy-standing-bear-turnaround-image-06",
@@ -4520,7 +4520,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1899853,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "shy-standing-bear-turnaround-image-07",
@@ -4535,7 +4535,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1787509,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "shy-standing-bear-turnaround-image-08",
@@ -4550,7 +4550,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1695891,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "shy-standing-bear-turnaround-image-09",
@@ -4565,7 +4565,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1679111,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         }
       ],
       "archives": [
@@ -4576,7 +4576,7 @@
           "file_name": "shy-standing-bear-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 15447673,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         }
       ]
     },
@@ -4585,8 +4585,8 @@
       "slug": "side-seated-bear-turnaround",
       "title": "Side Seated Bear Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:13Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:12Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "side-seated-bear-turnaround-image-01",
@@ -4601,7 +4601,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2074453,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "side-seated-bear-turnaround-image-02",
@@ -4616,7 +4616,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2061627,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "side-seated-bear-turnaround-image-03",
@@ -4631,7 +4631,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2062494,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "side-seated-bear-turnaround-image-04",
@@ -4646,7 +4646,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1992873,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "side-seated-bear-turnaround-image-05",
@@ -4661,7 +4661,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2266694,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "side-seated-bear-turnaround-image-06",
@@ -4676,7 +4676,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2266341,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "side-seated-bear-turnaround-image-07",
@@ -4691,7 +4691,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2023048,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         },
         {
           "id": "side-seated-bear-turnaround-image-08",
@@ -4706,7 +4706,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2080943,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         }
       ],
       "archives": [
@@ -4717,7 +4717,7 @@
           "file_name": "side-seated-bear-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 16733320,
-          "created_at": "2026-05-07T13:29:13Z"
+          "created_at": "2026-05-07T14:03:12Z"
         }
       ]
     },
@@ -4726,8 +4726,8 @@
       "slug": "sitting-fox-turnaround",
       "title": "Sitting Fox Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:14Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:13Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "sitting-fox-turnaround-image-01",
@@ -4742,7 +4742,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2104045,
-          "created_at": "2026-05-07T13:29:14Z"
+          "created_at": "2026-05-07T14:03:13Z"
         },
         {
           "id": "sitting-fox-turnaround-image-02",
@@ -4757,7 +4757,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2141641,
-          "created_at": "2026-05-07T13:29:14Z"
+          "created_at": "2026-05-07T14:03:13Z"
         },
         {
           "id": "sitting-fox-turnaround-image-03",
@@ -4772,7 +4772,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1946797,
-          "created_at": "2026-05-07T13:29:14Z"
+          "created_at": "2026-05-07T14:03:13Z"
         },
         {
           "id": "sitting-fox-turnaround-image-04",
@@ -4787,7 +4787,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1904234,
-          "created_at": "2026-05-07T13:29:14Z"
+          "created_at": "2026-05-07T14:03:13Z"
         },
         {
           "id": "sitting-fox-turnaround-image-05",
@@ -4802,7 +4802,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2346023,
-          "created_at": "2026-05-07T13:29:14Z"
+          "created_at": "2026-05-07T14:03:13Z"
         },
         {
           "id": "sitting-fox-turnaround-image-06",
@@ -4817,7 +4817,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2234932,
-          "created_at": "2026-05-07T13:29:14Z"
+          "created_at": "2026-05-07T14:03:13Z"
         },
         {
           "id": "sitting-fox-turnaround-image-07",
@@ -4832,7 +4832,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2183162,
-          "created_at": "2026-05-07T13:29:14Z"
+          "created_at": "2026-05-07T14:03:13Z"
         },
         {
           "id": "sitting-fox-turnaround-image-08",
@@ -4847,7 +4847,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2050093,
-          "created_at": "2026-05-07T13:29:14Z"
+          "created_at": "2026-05-07T14:03:13Z"
         },
         {
           "id": "sitting-fox-turnaround-image-09",
@@ -4862,7 +4862,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2083132,
-          "created_at": "2026-05-07T13:29:14Z"
+          "created_at": "2026-05-07T14:03:13Z"
         }
       ],
       "archives": [
@@ -4873,7 +4873,7 @@
           "file_name": "sitting-fox-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 18009492,
-          "created_at": "2026-05-07T13:29:14Z"
+          "created_at": "2026-05-07T14:03:13Z"
         }
       ]
     },
@@ -4882,8 +4882,8 @@
       "slug": "standing-bear-chest-pose-turnaround",
       "title": "Standing Bear Chest Pose Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:15Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:14Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "standing-bear-chest-pose-turnaround-image-01",
@@ -4898,7 +4898,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1873729,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         },
         {
           "id": "standing-bear-chest-pose-turnaround-image-02",
@@ -4913,7 +4913,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1807277,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         },
         {
           "id": "standing-bear-chest-pose-turnaround-image-03",
@@ -4928,7 +4928,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1770070,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         },
         {
           "id": "standing-bear-chest-pose-turnaround-image-04",
@@ -4943,7 +4943,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1827395,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         },
         {
           "id": "standing-bear-chest-pose-turnaround-image-05",
@@ -4958,7 +4958,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1896610,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         },
         {
           "id": "standing-bear-chest-pose-turnaround-image-06",
@@ -4973,7 +4973,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1798747,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         },
         {
           "id": "standing-bear-chest-pose-turnaround-image-07",
@@ -4988,7 +4988,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1807621,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         },
         {
           "id": "standing-bear-chest-pose-turnaround-image-08",
@@ -5003,7 +5003,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1798907,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         }
       ],
       "archives": [
@@ -5014,7 +5014,7 @@
           "file_name": "standing-bear-chest-pose-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 14481683,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         }
       ]
     },
@@ -5023,8 +5023,8 @@
       "slug": "standing-bear-reference-sheet",
       "title": "Standing Bear Reference Sheet",
       "description": "Seeded reference-sheet series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:15Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:14Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "standing-bear-reference-sheet-image-01",
@@ -5039,7 +5039,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2349482,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         }
       ],
       "archives": [
@@ -5050,7 +5050,7 @@
           "file_name": "standing-bear-reference-sheet.zip",
           "mime_type": "application/zip",
           "bytes": 2336861,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         }
       ]
     },
@@ -5059,8 +5059,8 @@
       "slug": "standing-bear-stump-preview",
       "title": "Standing Bear Stump Preview",
       "description": "Seeded preview image series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:15Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:14Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "standing-bear-stump-preview-image-01",
@@ -5075,7 +5075,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2022809,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         }
       ],
       "archives": [
@@ -5086,7 +5086,7 @@
           "file_name": "standing-bear-stump-preview.zip",
           "mime_type": "application/zip",
           "bytes": 2010146,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         }
       ]
     },
@@ -5095,8 +5095,8 @@
       "slug": "two-owls-on-log-preview",
       "title": "Two Owls on Log Preview",
       "description": "Seeded preview image series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:15Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:14Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "two-owls-on-log-preview-image-01",
@@ -5111,7 +5111,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2221085,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         }
       ],
       "archives": [
@@ -5122,7 +5122,7 @@
           "file_name": "two-owls-on-log-preview.zip",
           "mime_type": "application/zip",
           "bytes": 2208329,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         }
       ]
     },
@@ -5131,8 +5131,8 @@
       "slug": "two-owls-reference-sheet",
       "title": "Two Owls Reference Sheet",
       "description": "Seeded reference-sheet series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:15Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:14Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "two-owls-reference-sheet-image-01",
@@ -5147,7 +5147,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 3998250,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         }
       ],
       "archives": [
@@ -5158,7 +5158,7 @@
           "file_name": "two-owls-reference-sheet.zip",
           "mime_type": "application/zip",
           "bytes": 3986158,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:14Z"
         }
       ]
     },
@@ -5167,8 +5167,8 @@
       "slug": "upright-bear-paws-together-turnaround",
       "title": "Upright Bear Paws Together Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:15Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:15Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "upright-bear-paws-together-turnaround-image-01",
@@ -5183,7 +5183,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1844505,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:15Z"
         },
         {
           "id": "upright-bear-paws-together-turnaround-image-02",
@@ -5198,7 +5198,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1866261,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:15Z"
         },
         {
           "id": "upright-bear-paws-together-turnaround-image-03",
@@ -5213,7 +5213,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1799729,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:15Z"
         },
         {
           "id": "upright-bear-paws-together-turnaround-image-04",
@@ -5228,7 +5228,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1825397,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:15Z"
         },
         {
           "id": "upright-bear-paws-together-turnaround-image-05",
@@ -5243,7 +5243,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1935293,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:15Z"
         },
         {
           "id": "upright-bear-paws-together-turnaround-image-06",
@@ -5258,7 +5258,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1872116,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:15Z"
         },
         {
           "id": "upright-bear-paws-together-turnaround-image-07",
@@ -5273,7 +5273,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1799369,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:15Z"
         },
         {
           "id": "upright-bear-paws-together-turnaround-image-08",
@@ -5288,7 +5288,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1746783,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:15Z"
         }
       ],
       "archives": [
@@ -5299,7 +5299,7 @@
           "file_name": "upright-bear-paws-together-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 14594047,
-          "created_at": "2026-05-07T13:29:15Z"
+          "created_at": "2026-05-07T14:03:15Z"
         }
       ]
     },
@@ -5308,8 +5308,8 @@
       "slug": "upright-standing-bear-turnaround",
       "title": "Upright Standing Bear Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:16Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:15Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "upright-standing-bear-turnaround-image-01",
@@ -5324,7 +5324,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2038901,
-          "created_at": "2026-05-07T13:29:16Z"
+          "created_at": "2026-05-07T14:03:15Z"
         },
         {
           "id": "upright-standing-bear-turnaround-image-02",
@@ -5339,7 +5339,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2017157,
-          "created_at": "2026-05-07T13:29:16Z"
+          "created_at": "2026-05-07T14:03:15Z"
         },
         {
           "id": "upright-standing-bear-turnaround-image-03",
@@ -5354,7 +5354,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1853308,
-          "created_at": "2026-05-07T13:29:16Z"
+          "created_at": "2026-05-07T14:03:15Z"
         },
         {
           "id": "upright-standing-bear-turnaround-image-04",
@@ -5369,7 +5369,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2056413,
-          "created_at": "2026-05-07T13:29:16Z"
+          "created_at": "2026-05-07T14:03:15Z"
         },
         {
           "id": "upright-standing-bear-turnaround-image-05",
@@ -5384,7 +5384,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2049677,
-          "created_at": "2026-05-07T13:29:16Z"
+          "created_at": "2026-05-07T14:03:15Z"
         },
         {
           "id": "upright-standing-bear-turnaround-image-06",
@@ -5399,7 +5399,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1940037,
-          "created_at": "2026-05-07T13:29:16Z"
+          "created_at": "2026-05-07T14:03:15Z"
         },
         {
           "id": "upright-standing-bear-turnaround-image-07",
@@ -5414,7 +5414,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1900094,
-          "created_at": "2026-05-07T13:29:16Z"
+          "created_at": "2026-05-07T14:03:15Z"
         }
       ],
       "archives": [
@@ -5425,7 +5425,7 @@
           "file_name": "upright-standing-bear-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 13774603,
-          "created_at": "2026-05-07T13:29:16Z"
+          "created_at": "2026-05-07T14:03:15Z"
         }
       ]
     },
@@ -5434,8 +5434,8 @@
       "slug": "waving-bear-front-preview",
       "title": "Waving Bear Front Preview",
       "description": "Seeded preview image series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:16Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:15Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "waving-bear-front-preview-image-01",
@@ -5450,7 +5450,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1982891,
-          "created_at": "2026-05-07T13:29:16Z"
+          "created_at": "2026-05-07T14:03:15Z"
         }
       ],
       "archives": [
@@ -5461,7 +5461,7 @@
           "file_name": "waving-bear-front-preview.zip",
           "mime_type": "application/zip",
           "bytes": 1971753,
-          "created_at": "2026-05-07T13:29:16Z"
+          "created_at": "2026-05-07T14:03:15Z"
         }
       ]
     },
@@ -5470,8 +5470,8 @@
       "slug": "waving-rabbit-turnaround",
       "title": "Waving Rabbit Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:17Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:16Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "waving-rabbit-turnaround-image-01",
@@ -5486,7 +5486,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2099038,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         },
         {
           "id": "waving-rabbit-turnaround-image-02",
@@ -5501,7 +5501,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2040648,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         },
         {
           "id": "waving-rabbit-turnaround-image-03",
@@ -5516,7 +5516,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2057459,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         },
         {
           "id": "waving-rabbit-turnaround-image-04",
@@ -5531,7 +5531,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1961610,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         },
         {
           "id": "waving-rabbit-turnaround-image-05",
@@ -5546,7 +5546,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2152220,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         },
         {
           "id": "waving-rabbit-turnaround-image-06",
@@ -5561,7 +5561,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2180894,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         },
         {
           "id": "waving-rabbit-turnaround-image-07",
@@ -5576,7 +5576,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 2066905,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         },
         {
           "id": "waving-rabbit-turnaround-image-08",
@@ -5591,7 +5591,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1996150,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         }
       ],
       "archives": [
@@ -5602,7 +5602,7 @@
           "file_name": "waving-rabbit-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 16456781,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         }
       ]
     },
@@ -5611,8 +5611,8 @@
       "slug": "waving-standing-bear-turnaround",
       "title": "Waving Standing Bear Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:17Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:16Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "waving-standing-bear-turnaround-image-01",
@@ -5627,7 +5627,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1890289,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         },
         {
           "id": "waving-standing-bear-turnaround-image-02",
@@ -5642,7 +5642,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1799323,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         },
         {
           "id": "waving-standing-bear-turnaround-image-03",
@@ -5657,7 +5657,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1799448,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         },
         {
           "id": "waving-standing-bear-turnaround-image-04",
@@ -5672,7 +5672,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1862007,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         },
         {
           "id": "waving-standing-bear-turnaround-image-05",
@@ -5687,7 +5687,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1946806,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         },
         {
           "id": "waving-standing-bear-turnaround-image-06",
@@ -5702,7 +5702,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1921275,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         },
         {
           "id": "waving-standing-bear-turnaround-image-07",
@@ -5717,7 +5717,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1824410,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         }
       ],
       "archives": [
@@ -5728,7 +5728,7 @@
           "file_name": "waving-standing-bear-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 12959187,
-          "created_at": "2026-05-07T13:29:17Z"
+          "created_at": "2026-05-07T14:03:16Z"
         }
       ]
     },
@@ -5737,8 +5737,8 @@
       "slug": "winter-bear-with-mug-turnaround",
       "title": "Winter Bear with Mug Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:18Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:17Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "winter-bear-with-mug-turnaround-image-01",
@@ -5753,7 +5753,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1924678,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         },
         {
           "id": "winter-bear-with-mug-turnaround-image-02",
@@ -5768,7 +5768,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1924255,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         },
         {
           "id": "winter-bear-with-mug-turnaround-image-03",
@@ -5783,7 +5783,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1782618,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         },
         {
           "id": "winter-bear-with-mug-turnaround-image-04",
@@ -5798,7 +5798,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1785839,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         },
         {
           "id": "winter-bear-with-mug-turnaround-image-05",
@@ -5813,7 +5813,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1943620,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         },
         {
           "id": "winter-bear-with-mug-turnaround-image-06",
@@ -5828,7 +5828,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1739477,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         },
         {
           "id": "winter-bear-with-mug-turnaround-image-07",
@@ -5843,7 +5843,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1733877,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         },
         {
           "id": "winter-bear-with-mug-turnaround-image-08",
@@ -5858,7 +5858,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1839141,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         }
       ],
       "archives": [
@@ -5869,7 +5869,7 @@
           "file_name": "winter-bear-with-mug-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 14577918,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         }
       ]
     },
@@ -5878,8 +5878,8 @@
       "slug": "winter-bear-with-mug-variant-turnaround",
       "title": "Winter Bear with Mug Variant Turnaround",
       "description": "Seeded turnaround reference series from the Chain & Chisel reference library.",
-      "created_at": "2026-05-07T13:29:18Z",
-      "updated_at": "2026-05-07T13:28:53Z",
+      "created_at": "2026-05-07T14:03:17Z",
+      "updated_at": "2026-05-07T14:02:53Z",
       "images": [
         {
           "id": "winter-bear-with-mug-variant-turnaround-image-01",
@@ -5894,7 +5894,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1853484,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         },
         {
           "id": "winter-bear-with-mug-variant-turnaround-image-02",
@@ -5909,7 +5909,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1721521,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         },
         {
           "id": "winter-bear-with-mug-variant-turnaround-image-03",
@@ -5924,7 +5924,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1865665,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         },
         {
           "id": "winter-bear-with-mug-variant-turnaround-image-04",
@@ -5939,7 +5939,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1834987,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         },
         {
           "id": "winter-bear-with-mug-variant-turnaround-image-05",
@@ -5954,7 +5954,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1753807,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         },
         {
           "id": "winter-bear-with-mug-variant-turnaround-image-06",
@@ -5969,7 +5969,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1714676,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         },
         {
           "id": "winter-bear-with-mug-variant-turnaround-image-07",
@@ -5984,7 +5984,7 @@
           "zoom": 1,
           "mime_type": "image/png",
           "bytes": 1869528,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         }
       ],
       "archives": [
@@ -5995,9 +5995,208 @@
           "file_name": "winter-bear-with-mug-variant-turnaround.zip",
           "mime_type": "application/zip",
           "bytes": 12532525,
-          "created_at": "2026-05-07T13:29:18Z"
+          "created_at": "2026-05-07T14:03:17Z"
         }
       ]
+    }
+  ],
+  "theme_archives": [
+    {
+      "id": "bear-collection-a-archive-01",
+      "slug": "bear-collection-a",
+      "title": "Bear Series Collection A",
+      "description": "Grouped bear carving model series packaged together. Part A of 5.",
+      "series_slugs": [
+        "bear-couple-close-hug-turnaround",
+        "bear-couple-dance-turnaround-a",
+        "bear-couple-dance-turnaround-b",
+        "bear-couple-embrace-previews",
+        "bear-couple-embrace-turnaround-a",
+        "bear-couple-embrace-turnaround-b"
+      ],
+      "series_count": 6,
+      "url": "https://chainandchisel.art/assets/model-repository-archives/bear-collection-a.zip",
+      "public_id": "",
+      "file_name": "bear-collection-a.zip",
+      "mime_type": "application/zip",
+      "bytes": 87907890,
+      "created_at": "2026-05-07T14:03:20Z"
+    },
+    {
+      "id": "bear-collection-b-archive-01",
+      "slug": "bear-collection-b",
+      "title": "Bear Series Collection B",
+      "description": "Grouped bear carving model series packaged together. Part B of 5.",
+      "series_slugs": [
+        "bear-couple-heart-hug-turnaround",
+        "bear-couple-hug-turnaround",
+        "bear-couple-slow-dance-turnaround",
+        "bear-with-fishing-rod-previews",
+        "celebratory-bear-turnaround",
+        "celebratory-bear-wide-stance-turnaround"
+      ],
+      "series_count": 6,
+      "url": "https://chainandchisel.art/assets/model-repository-archives/bear-collection-b.zip",
+      "public_id": "",
+      "file_name": "bear-collection-b.zip",
+      "mime_type": "application/zip",
+      "bytes": 89600181,
+      "created_at": "2026-05-07T14:03:23Z"
+    },
+    {
+      "id": "bear-collection-c-archive-01",
+      "slug": "bear-collection-c",
+      "title": "Bear Series Collection C",
+      "description": "Grouped bear carving model series packaged together. Part C of 5.",
+      "series_slugs": [
+        "cozy-bear-with-mug-turnaround",
+        "kneeling-prayer-bear-turnaround",
+        "parent-bear-cub-reference-sheets",
+        "parent-bear-holding-cub-turnaround",
+        "raised-arm-bear-turnaround",
+        "reading-bear-on-stump-turnaround",
+        "seated-bear-cub-stump-turnaround"
+      ],
+      "series_count": 7,
+      "url": "https://chainandchisel.art/assets/model-repository-archives/bear-collection-c.zip",
+      "public_id": "",
+      "file_name": "bear-collection-c.zip",
+      "mime_type": "application/zip",
+      "bytes": 96107668,
+      "created_at": "2026-05-07T14:03:27Z"
+    },
+    {
+      "id": "bear-collection-d-archive-01",
+      "slug": "bear-collection-d",
+      "title": "Bear Series Collection D",
+      "description": "Grouped bear carving model series packaged together. Part D of 5.",
+      "series_slugs": [
+        "seated-bear-on-log-turnaround",
+        "seated-bear-profile-preview",
+        "seated-bear-stump-turnaround",
+        "shy-standing-bear-turnaround",
+        "side-seated-bear-turnaround",
+        "standing-bear-chest-pose-turnaround",
+        "standing-bear-reference-sheet",
+        "standing-bear-stump-preview",
+        "upright-bear-paws-together-turnaround"
+      ],
+      "series_count": 9,
+      "url": "https://chainandchisel.art/assets/model-repository-archives/bear-collection-d.zip",
+      "public_id": "",
+      "file_name": "bear-collection-d.zip",
+      "mime_type": "application/zip",
+      "bytes": 93210182,
+      "created_at": "2026-05-07T14:03:30Z"
+    },
+    {
+      "id": "bear-collection-e-archive-01",
+      "slug": "bear-collection-e",
+      "title": "Bear Series Collection E",
+      "description": "Grouped bear carving model series packaged together. Part E of 5.",
+      "series_slugs": [
+        "upright-standing-bear-turnaround",
+        "waving-bear-front-preview",
+        "waving-standing-bear-turnaround",
+        "winter-bear-with-mug-turnaround",
+        "winter-bear-with-mug-variant-turnaround"
+      ],
+      "series_count": 5,
+      "url": "https://chainandchisel.art/assets/model-repository-archives/bear-collection-e.zip",
+      "public_id": "",
+      "file_name": "bear-collection-e.zip",
+      "mime_type": "application/zip",
+      "bytes": 55816978,
+      "created_at": "2026-05-07T14:03:32Z"
+    },
+    {
+      "id": "owl-collection-archive-01",
+      "slug": "owl-collection",
+      "title": "Owl Series Collection",
+      "description": "Grouped owl carving model series packaged together.",
+      "series_slugs": [
+        "owl-face-reference-sheet",
+        "owl-in-hollow-tree-turnaround",
+        "owl-in-hollow-tree-turnaround-extended",
+        "owl-stump-reference-sheet",
+        "perched-owl-annotated-turnaround-sheet",
+        "perched-owl-hero-preview",
+        "perched-owl-on-stump-preview",
+        "perched-owl-on-stump-reference-sheet",
+        "perched-owl-preview",
+        "perched-owl-reference-sheet-a",
+        "perched-owl-reference-sheet-b",
+        "perched-owl-turnaround-sheet",
+        "two-owls-on-log-preview",
+        "two-owls-reference-sheet"
+      ],
+      "series_count": 14,
+      "url": "https://chainandchisel.art/assets/model-repository-archives/owl-collection.zip",
+      "public_id": "",
+      "file_name": "owl-collection.zip",
+      "mime_type": "application/zip",
+      "bytes": 92023160,
+      "created_at": "2026-05-07T14:03:36Z"
+    },
+    {
+      "id": "rabbit-collection-archive-01",
+      "slug": "rabbit-collection",
+      "title": "Rabbit Series Collection",
+      "description": "Grouped rabbit carving model series packaged together.",
+      "series_slugs": [
+        "rabbit-couple-hug-reference-sheets",
+        "rabbit-couple-hug-turnaround",
+        "seated-rabbit-turnaround",
+        "waving-rabbit-turnaround"
+      ],
+      "series_count": 4,
+      "url": "https://chainandchisel.art/assets/model-repository-archives/rabbit-collection.zip",
+      "public_id": "",
+      "file_name": "rabbit-collection.zip",
+      "mime_type": "application/zip",
+      "bytes": 55941218,
+      "created_at": "2026-05-07T14:03:37Z"
+    },
+    {
+      "id": "fox-raccoon-collection-archive-01",
+      "slug": "fox-raccoon-collection",
+      "title": "Fox & Raccoon Collection",
+      "description": "Grouped fox and raccoon carving model series packaged together.",
+      "series_slugs": [
+        "curled-fox-previews",
+        "curled-fox-reference-sheet",
+        "fox-and-raccoon-back-hug-previews",
+        "fox-and-raccoon-pair-front-previews",
+        "fox-and-raccoon-pair-preview",
+        "fox-and-raccoon-pair-preview-set",
+        "fox-and-raccoon-pair-turnaround",
+        "fox-and-raccoon-reference-sheets",
+        "fox-turnaround-reference-sheets",
+        "sitting-fox-turnaround"
+      ],
+      "series_count": 10,
+      "url": "https://chainandchisel.art/assets/model-repository-archives/fox-raccoon-collection.zip",
+      "public_id": "",
+      "file_name": "fox-raccoon-collection.zip",
+      "mime_type": "application/zip",
+      "bytes": 84858488,
+      "created_at": "2026-05-07T14:03:41Z"
+    },
+    {
+      "id": "bigfoot-collection-archive-01",
+      "slug": "bigfoot-collection",
+      "title": "Bigfoot Collection",
+      "description": "Grouped Bigfoot carving model series packaged together.",
+      "series_slugs": [
+        "bigfoot-standing-turnaround"
+      ],
+      "series_count": 1,
+      "url": "https://chainandchisel.art/assets/model-repository-archives/bigfoot-collection.zip",
+      "public_id": "",
+      "file_name": "bigfoot-collection.zip",
+      "mime_type": "application/zip",
+      "bytes": 14056334,
+      "created_at": "2026-05-07T14:03:41Z"
     }
   ]
 }
