@@ -10,6 +10,7 @@
     canManage: false,
     managerKey: "",
     manifest: { version: 1, updated_at: "", series: [] },
+    showingSeed: false,
     crop: null,
   };
 
@@ -103,8 +104,20 @@
       state.managerEnabled = payload.manager_enabled !== false;
       state.canManage = !!payload.can_manage;
       state.manifest = normalizeManifest(payload.manifest);
+      state.showingSeed = false;
+      if (!(state.manifest.series || []).length) {
+        var seedManifest = await fetchSeedManifest();
+        if (seedManifest && Array.isArray(seedManifest.series) && seedManifest.series.length) {
+          state.manifest = normalizeManifest(seedManifest);
+          state.showingSeed = true;
+        }
+      }
       render();
-      if (state.canManage) {
+      if (state.showingSeed && state.canManage) {
+        setStatus("Showing the local seed library. Make edits and save to publish a live repository manifest.", "info");
+      } else if (state.showingSeed) {
+        setStatus("Showing the local seed library. Enter the manager key above to publish or edit the live manifest.", "info");
+      } else if (state.canManage) {
         setStatus("Repository loaded. Manager mode is unlocked.", "ok");
       } else if (state.managerEnabled) {
         setStatus("Downloads are open. Enter the manager key above to upload or organize series.", "info");
@@ -532,6 +545,12 @@
   async function downloadSeriesZip(seriesId) {
     var series = findSeries(seriesId);
     if (!series) return;
+    if (series.archives && series.archives.length && series.archives[0] && series.archives[0].url) {
+      var archive = series.archives[0];
+      triggerDownload(archive.url, archive.file_name || slugify(series.slug || series.title, "model-series") + ".zip");
+      setStatus("ZIP download ready for " + series.title + ".", "ok");
+      return;
+    }
     if (!series.images.length) {
       setStatus("This series does not have any images to package yet.", "err");
       return;
@@ -816,6 +835,19 @@
     return Array.from(crypto.getRandomValues(new Uint8Array(6)))
       .map(function (value) { return value.toString(16).padStart(2, "0"); })
       .join("");
+  }
+
+  async function fetchSeedManifest() {
+    if (!config.seedManifestUrl) return null;
+    try {
+      var response = await fetch(config.seedManifestUrl, { cache: "no-store" });
+      if (!response.ok) return null;
+      var payload = await response.json();
+      return normalizeManifest(payload);
+    } catch (error) {
+      console.error("[chain-model-repository] seed load failed:", error);
+      return null;
+    }
   }
 
   document.addEventListener("DOMContentLoaded", init);
